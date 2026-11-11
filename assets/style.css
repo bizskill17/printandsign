@@ -1,0 +1,2708 @@
+*{box-sizing:border-box}html,body{margin:0}.bsoerp-page{font-family:Montserrat,Arial,sans-serif;background:#f4f7fb;color:#14213d}.bsoerp-app{min-height:100vh;display:flex}.bsoerp-side{width:270px;background:#101828;color:#fff;position:fixed;inset:0 auto 0 0;overflow:auto;z-index:30}.bsoerp-brand{height:76px;padding:14px 18px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #344054}.bsoerp-brand>b{width:40px;height:40px;border-radius:10px;background:#12b8a6;display:grid;place-items:center;font-size:22px}.bsoerp-brand strong,.bsoerp-brand small{display:block}.bsoerp-brand small{font-size:10px;color:#98a2b3;margin-top:3px}.bsoerp-close{display:none;margin-left:auto;background:none;border:0;color:#fff;font-size:28px}.bsoerp-side nav{padding:12px}.nav,.heading{width:100%;display:flex;align-items:center;gap:11px;padding:11px 12px;color:#d0d5dd;text-decoration:none;border:0;background:none;font:600 13px Montserrat;text-align:left;border-radius:8px;cursor:pointer}.nav.active,.heading:hover,.group.open>.heading{background:#1d2939;color:#fff}.nav em,.heading em{font-style:normal;width:21px;text-align:center}.heading i{margin-left:auto}.sub{display:none;padding:4px 0 7px 32px}.group.open .sub{display:block}.sub a{display:block;color:#98a2b3;text-decoration:none;padding:8px 10px;border-radius:6px;font-size:12px}.sub a:hover,.sub a.active{background:#12b8a6;color:#fff}.bsoerp-main{margin-left:270px;min-width:0;width:calc(100% - 270px)}.bsoerp-top{height:76px;background:#fff;border-bottom:1px solid #e4e7ec;display:flex;align-items:center;padding:0 24px;gap:15px;position:sticky;top:0;z-index:20}.bsoerp-top h1{font-size:21px;margin:0}.bsoerp-top p{font-size:11px;color:#667085;margin:4px 0 0}.bsoerp-user{margin-left:auto;font-size:12px;font-weight:600}.bsoerp-toggle{display:none;border:0;background:#eef2f6;border-radius:7px;padding:8px}.bsoerp-content{padding:22px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:20px}.card,.panel{background:#fff;border:1px solid #d0d5dd;border-radius:12px;box-shadow:0 2px 8px #1018280a}.card{padding:18px}.card span,.card small{display:block;color:#667085;font-size:11px}.card strong{display:block;font-size:28px;margin:9px 0}.panel{padding:20px}.panel-head,.line-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:17px}.panel-head h2,.line-head h3{margin:0;font-size:17px}.panel-head p,.line-head p{margin:4px 0 0;color:#667085;font-size:11px}.head-actions{display:flex;gap:8px}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid #98a2b3;background:#fff;color:#344054;text-decoration:none;border-radius:7px;padding:9px 13px;font:600 12px Montserrat;cursor:pointer}.btn.primary{background:#12b8a6;border-color:#12b8a6;color:#fff}.toolbar{display:flex;gap:8px;margin-bottom:15px}.toolbar input{max-width:360px;width:100%;padding:10px;border:1px solid #d0d5dd;border-radius:7px}.table-wrap,.line-table{overflow:auto;border:1px solid #d0d5dd;border-radius:8px}.data,.line-table table{border-collapse:collapse;width:100%;min-width:780px}.data th,.data td,.line-table th,.line-table td{padding:11px 10px;border-bottom:1px solid #e4e7ec;text-align:left;font-size:11px}.data th,.line-table th{background:#f2f4f7;font-weight:700;color:#344054}.actions{white-space:nowrap}.actions a{display:inline-grid;place-items:center;width:30px;height:30px;margin-right:5px;background:#eef2f6;border-radius:6px;text-decoration:none}.actions .delete{color:#d92d20}.status{display:inline-block;padding:5px 8px;border-radius:20px;background:#eef2f6;font-size:10px;font-weight:700}.status.completed,.status.delivered{background:#dcfae6;color:#067647}.status.in-progress{background:#e0f2fe;color:#026aa2}.status.canceled{background:#fee4e2;color:#b42318}.status.pending-approval{background:#fef0c7;color:#b54708}.erp-form{max-width:1200px}.form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.form-grid label{display:block}.form-grid label.wide{grid-column:1/-1}.form-grid span{display:block;font-size:11px;font-weight:600;margin-bottom:6px}.form-grid input,.form-grid select,.form-grid textarea,.line-table input,.line-table select{width:100%;padding:10px;border:1px solid #d0d5dd;border-radius:7px;background:#fff;font:12px Montserrat}.form-actions{display:flex;gap:9px;margin-top:20px}.line-box{margin-top:22px;border-top:1px solid #e4e7ec;padding-top:18px}.remove-line{width:28px;height:28px;border:0;border-radius:50%;background:#fee4e2;color:#b42318;cursor:pointer}.empty{padding:48px;text-align:center;color:#667085}.empty strong,.empty span{display:block}.empty strong{color:#344054;margin-bottom:6px}.notice{padding:11px 14px;border-radius:7px;margin-bottom:15px}.notice.success{background:#dcfae6;color:#067647}.pagination{display:flex;gap:6px;margin-top:16px}.pagination a{min-width:31px;height:31px;display:grid;place-items:center;border:1px solid #d0d5dd;border-radius:6px;text-decoration:none}.pagination a.active{background:#12b8a6;color:#fff}.activity>div{padding:12px 0;border-bottom:1px solid #e4e7ec}.activity b,.activity span,.activity small{display:block}.activity span{font-size:12px;margin:3px 0}.activity small{font-size:10px;color:#667085}.settings-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.settings-grid>div{padding:15px;background:#f8fafc;border:1px solid #e4e7ec;border-radius:8px}.settings-grid b,.settings-grid span{display:block}.settings-grid span{font-size:11px;color:#667085;margin-top:5px}.bsoerp-overlay{display:none}.bsoerp-login{margin:40px;padding:30px;background:#fff;border:1px solid #ddd}@media(max-width:1100px){.cards{grid-template-columns:repeat(2,1fr)}.form-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:800px){.bsoerp-side{transform:translateX(-100%);transition:.2s}.bsoerp-side.open{transform:none}.bsoerp-main{margin-left:0;width:100%}.bsoerp-toggle,.bsoerp-close{display:block}.bsoerp-overlay.show{display:block;position:fixed;inset:0;background:#0008;z-index:25}.bsoerp-content{padding:13px}.bsoerp-top{padding:0 14px}.form-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.panel-head{align-items:flex-start;flex-direction:column}.head-actions{width:100%}.head-actions .btn{flex:1}}@media(max-width:500px){.cards{grid-template-columns:1fr}.panel{padding:14px}.bsoerp-user{display:none}}
+.permission-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;padding:14px;border:1px solid #ddd;border-radius:10px;margin:10px 0 20px}.permission-grid label{display:flex;gap:8px;align-items:center}.line-table{overflow:auto}.line-table table{min-width:1350px}
+.pending-hint{display:block;margin-top:4px;font-size:11px;color:#6b7280;white-space:nowrap}.qty-error input{border-color:#dc2626!important;background:#fff7f7}.toolbar label{display:flex;align-items:center;gap:6px}.status.pending-approval{white-space:nowrap}
+.master-summary{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:16px}.master-summary .card{padding:15px 17px}.master-summary .card strong{font-size:24px}.master-toolbar{display:flex;flex-wrap:wrap;align-items:center}.master-toolbar input,.master-toolbar select{height:38px;padding:8px 10px;border:1px solid #d0d5dd;border-radius:7px;background:#fff;font:12px Montserrat;min-width:150px}.master-toolbar input{min-width:240px}.master-table{min-width:560px}@media(max-width:800px){.master-summary{grid-template-columns:1fr 1fr}.master-toolbar>*{flex:1 1 140px}.master-toolbar input{min-width:100%;flex-basis:100%}}@media(max-width:500px){.master-summary{grid-template-columns:1fr 1fr}}
+.master-summary{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:16px}.master-summary .card{padding:15px 17px}.master-summary .card strong{font-size:24px}.master-toolbar{display:flex;flex-wrap:wrap;align-items:center}.master-toolbar input,.master-toolbar select{height:38px;padding:8px 10px;border:1px solid #d0d5dd;border-radius:7px;background:#fff;font:12px Montserrat;min-width:150px}.master-toolbar input{min-width:240px}.master-table{min-width:560px}@media(max-width:800px){.master-summary{grid-template-columns:1fr 1fr}.master-toolbar>*{flex:1 1 140px}.master-toolbar input{min-width:100%;flex-basis:100%}}@media(max-width:500px){.master-summary{grid-template-columns:1fr 1fr}}
+
+/* Quick Add Master */
+.select-with-add{display:flex;align-items:stretch;gap:7px;width:100%}.select-with-add>select{min-width:0;flex:1}.quick-add-btn{flex:0 0 40px;width:40px;min-width:40px;border:1px solid #12b8a6;border-radius:7px;background:#12b8a6;color:#fff;font:700 21px/1 Montserrat;cursor:pointer;display:grid;place-items:center;transition:.15s}.quick-add-btn:hover{filter:brightness(.94)}.quick-add-btn:focus{outline:2px solid #99f6e4;outline-offset:2px}.line-select-with-add{min-width:220px}.line-select-with-add .quick-add-btn{height:38px}.quick-add-backdrop{position:fixed;inset:0;background:#10182880;z-index:200}.quick-add-modal{position:fixed;z-index:210;left:50%;top:50%;transform:translate(-50%,-50%);width:min(460px,calc(100vw - 28px));background:#fff;border:1px solid #d0d5dd;border-radius:14px;box-shadow:0 24px 70px #10182840;padding:20px}.quick-add-modal[hidden],.quick-add-backdrop[hidden]{display:none!important}.quick-add-modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:18px}.quick-add-modal-head h3{margin:0;font-size:18px}.quick-add-modal-head p{margin:5px 0 0;color:#667085;font-size:11px}.quick-add-close{border:0;background:#f2f4f7;color:#344054;width:32px;height:32px;border-radius:7px;font-size:22px;line-height:1;cursor:pointer}.quick-add-modal form>label{display:block}.quick-add-modal form>label span{display:block;font-size:11px;font-weight:600;margin-bottom:7px}.quick-add-modal input[type="text"]{width:100%;height:42px;padding:9px 11px;border:1px solid #d0d5dd;border-radius:7px;font:12px Montserrat}.quick-add-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}.quick-add-message{min-height:18px;margin-top:8px;font-size:11px}.quick-add-message.error{color:#b42318}.quick-add-message.success{color:#067647}@media(max-width:500px){.quick-add-btn{flex-basis:38px;width:38px;min-width:38px}.quick-add-modal{padding:16px}.quick-add-actions .btn{flex:1}}
+
+/* v2.3.3 Global theme-border + no-tagline UI */
+:root{--bsoerp-theme:#12b8a6;--bsoerp-theme-soft:#e8fbf8}
+/* No descriptive taglines under any view/form/section title */
+.bsoerp-top p,.panel-head p,.line-head p,.quick-add-modal-head p{display:none!important}
+/* Theme-colour outlines on all primary UI blocks / tabs */
+.card,.panel,.table-wrap,.line-table,.permission-grid,.settings-grid>div{border-color:var(--bsoerp-theme)!important}
+/* Theme-colour outline on all editable/filter controls */
+.form-grid input,.form-grid select,.form-grid textarea,
+.line-table input,.line-table select,
+.toolbar input,.toolbar select,.master-toolbar input,.master-toolbar select,
+.quick-add-modal input[type="text"],.quick-add-modal select,
+.erp-form input,.erp-form select,.erp-form textarea{
+ border-color:var(--bsoerp-theme)!important;
+}
+.form-grid input:focus,.form-grid select:focus,.form-grid textarea:focus,
+.line-table input:focus,.line-table select:focus,
+.toolbar input:focus,.toolbar select:focus,
+.quick-add-modal input:focus,.quick-add-modal select:focus,
+.erp-form input:focus,.erp-form select:focus,.erp-form textarea:focus{
+ outline:2px solid color-mix(in srgb,var(--bsoerp-theme) 22%,transparent);
+ outline-offset:1px;
+ box-shadow:0 0 0 1px var(--bsoerp-theme);
+}
+/* Tabs/status/filter/button outlines use theme colour consistently */
+.btn,.pagination a,.status,.quick-add-close{border-color:var(--bsoerp-theme)!important}
+.btn:not(.primary):hover,.pagination a:hover{background:var(--bsoerp-theme-soft);color:#0b766c}
+.form-panel fieldset{border:1px solid var(--bsoerp-theme);border-radius:8px;padding:16px;margin:0}
+@media(max-width:800px){.form-panel fieldset{padding:12px}}
+
+/* v2.3.4 searchable dropdowns */
+.erp-search-select{position:relative;min-width:0;width:100%;flex:1 1 auto}
+.erp-native-select{position:absolute!important;left:0;bottom:0;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important;margin:0!important;padding:0!important;border:0!important}
+.erp-search-select-input{width:100%;min-width:0;background:#fff!important}
+.erp-search-select-menu{position:absolute;z-index:10020;top:calc(100% + 4px);left:0;right:0;max-height:240px;overflow:auto;background:#fff;border:1px solid var(--bsoerp-theme,#0eb8aa);border-radius:8px;box-shadow:0 10px 28px rgba(20,35,55,.14);padding:4px}
+.erp-search-option{display:block;width:100%;border:0;background:#fff;text-align:left;padding:9px 10px;border-radius:6px;font:inherit;color:inherit;cursor:pointer}
+.erp-search-option:hover,.erp-search-option.selected{background:rgba(14,184,170,.10)}
+.erp-search-empty{padding:10px;color:#6c7584;font-size:12px}
+.select-with-add>.erp-search-select{flex:1 1 auto;min-width:0}
+.master-table th,.master-table td{white-space:nowrap}
+@media(max-width:760px){.erp-search-select-menu{max-height:210px}.master-table th,.master-table td{white-space:normal}}
+
+
+/* v2.3.5 — global compact filter row */
+.toolbar.master-toolbar{
+  display:flex;
+  align-items:center;
+  flex-wrap:nowrap;
+  gap:8px;
+  width:100%;
+}
+.toolbar.master-toolbar > input[type="search"]{
+  flex:1 1 320px;
+  width:auto;
+  min-width:220px;
+  max-width:340px;
+  height:38px;
+}
+.toolbar.master-toolbar > .erp-search-select{
+  flex:0 1 190px;
+  width:190px;
+  min-width:145px;
+  max-width:220px;
+}
+.toolbar.master-toolbar > .erp-search-select .erp-search-select-input{
+  height:38px;
+  width:100%;
+  padding:8px 34px 8px 10px;
+  border:1px solid var(--bsoerp-theme,#12b8a6)!important;
+  border-radius:7px;
+  font:12px Montserrat,Arial,sans-serif;
+  background-color:#fff!important;
+  background-image:linear-gradient(45deg,transparent 50%,#344054 50%),linear-gradient(135deg,#344054 50%,transparent 50%);
+  background-position:calc(100% - 15px) 16px,calc(100% - 10px) 16px;
+  background-size:5px 5px,5px 5px;
+  background-repeat:no-repeat;
+}
+.toolbar.master-toolbar > .btn{
+  flex:0 0 auto;
+  white-space:nowrap;
+  height:38px;
+  padding-top:0;
+  padding-bottom:0;
+}
+.toolbar.master-toolbar .filter-clear{
+  background:#fff;
+}
+
+/* Keep all list-view toolbars compact and aligned even when enhanced selects are used. */
+.panel .toolbar{
+  align-items:center;
+}
+
+@media(max-width:1180px){
+  .toolbar.master-toolbar{flex-wrap:wrap}
+  .toolbar.master-toolbar > input[type="search"]{flex:1 1 280px;max-width:none}
+  .toolbar.master-toolbar > .erp-search-select{flex:1 1 165px;width:auto;max-width:none}
+}
+@media(max-width:800px){
+  .toolbar.master-toolbar{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .toolbar.master-toolbar > input[type="search"]{grid-column:1/-1;width:100%;min-width:0;max-width:none}
+  .toolbar.master-toolbar > .erp-search-select{width:100%;min-width:0;max-width:none}
+  .toolbar.master-toolbar > .btn{width:100%}
+}
+@media(max-width:500px){
+  .toolbar.master-toolbar{grid-template-columns:1fr}
+  .toolbar.master-toolbar > input[type="search"]{grid-column:auto}
+}
+
+
+/* v2.3.6 — searchable filter spacing/overflow fix */
+/* Older .master-toolbar input rules gave every enhanced select's internal search
+   input a 240px minimum width. The select wrapper itself is narrower, so controls
+   visually overlapped. Reset sizing at the component boundary. */
+.toolbar.master-toolbar{
+  gap:12px!important;
+}
+.toolbar.master-toolbar > .erp-search-select{
+  min-width:0!important;
+  overflow:visible;
+}
+.toolbar.master-toolbar > .erp-search-select > .erp-search-select-input{
+  display:block;
+  width:100%!important;
+  min-width:0!important;
+  max-width:none!important;
+  box-sizing:border-box!important;
+  margin:0!important;
+}
+.toolbar.master-toolbar > .btn{
+  flex-shrink:0!important;
+  margin:0!important;
+}
+@media(min-width:1181px){
+  .toolbar.master-toolbar > input[type="search"]{
+    flex:0 1 320px;
+    width:320px;
+    min-width:240px;
+    max-width:320px;
+  }
+  .toolbar.master-toolbar > .erp-search-select{
+    flex:0 0 180px;
+    width:180px;
+    max-width:180px;
+  }
+}
+@media(max-width:1180px){
+  .toolbar.master-toolbar{gap:10px!important}
+  .toolbar.master-toolbar > .erp-search-select > .erp-search-select-input{
+    min-width:0!important;
+  }
+}
+
+/* v2.3.9 searchable dropdown typography normalization */
+.erp-search-select-menu{
+  font-family:Montserrat,Arial,sans-serif!important;
+  font-size:12px!important;
+  line-height:1.35!important;
+}
+.erp-search-option{
+  font-family:Montserrat,Arial,sans-serif!important;
+  font-size:12px!important;
+  line-height:1.35!important;
+  font-weight:400!important;
+  padding:8px 10px!important;
+}
+.erp-search-empty{
+  font-family:Montserrat,Arial,sans-serif!important;
+  font-size:12px!important;
+  line-height:1.35!important;
+}
+
+/* v2.4.0 - Global table cell borders */
+.table-wrap,
+.line-table{
+  border:1px solid #12b8a6;
+}
+.data,
+.line-table table{
+  border-collapse:collapse;
+}
+.data th,
+.data td,
+.line-table th,
+.line-table td{
+  border:1px solid #12b8a6;
+}
+.data tr:last-child td,
+.line-table tr:last-child td{
+  border-bottom:1px solid #12b8a6;
+}
+
+/* v2.4.1 global pagination */
+.pagination-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:14px;padding-top:12px;border-top:1px solid var(--bsoerp-theme,#12b8a6)}
+.pagination-info{font-size:11px;color:#667085}.pagination-info strong{color:#14213d}
+.page-size{margin-left:auto}.page-size label{display:flex;align-items:center;gap:6px;font-size:11px;color:#667085}.page-size select{height:32px;min-width:68px;border:1px solid var(--bsoerp-theme,#12b8a6);border-radius:7px;background:#fff;padding:0 8px;font:11px Montserrat,Arial,sans-serif}
+.pagination{display:flex;align-items:center;gap:6px;margin-top:0}.pagination a,.pagination span{min-width:32px;height:32px;display:grid;place-items:center;border:1px solid var(--bsoerp-theme,#12b8a6);border-radius:7px;text-decoration:none;font-size:11px;background:#fff;color:#344054}.pagination span{border-color:transparent;background:transparent}.pagination a.active{background:var(--bsoerp-theme,#12b8a6);color:#fff}.pagination a:hover{background:var(--bsoerp-theme-soft,#e8fbf8)}
+@media(max-width:700px){.pagination-bar{align-items:flex-start}.pagination-info{width:100%}.page-size{margin-left:0}.pagination{width:100%;justify-content:flex-start;flex-wrap:wrap}}
+
+/* v2.4.2 - darker global typography for better readability */
+.bsoerp-page{color:#111827}
+.bsoerp-top h1,.panel-head h2,.line-head h3,.quick-add-modal-head h3,.empty strong,.settings-grid b,.activity b{color:#111827}
+.bsoerp-user,.form-grid span,.quick-add-modal form>label span,.data td,.line-table td,.erp-search-option{color:#1f2937}
+.data th,.line-table th{color:#111827;font-weight:700}
+.form-grid input,.form-grid select,.form-grid textarea,.line-table input,.line-table select,.toolbar input,.master-filter-form input,.master-filter-form select,.erp-search-input,.page-size select{color:#111827}
+.form-grid input::placeholder,.form-grid textarea::placeholder,.toolbar input::placeholder,.master-filter-form input::placeholder,.erp-search-input::placeholder{color:#6b7280;opacity:1}
+.card span,.card small,.panel-head p,.line-head p,.activity small,.settings-grid span,.pagination-info,.page-size label,.empty,.quick-add-modal-head p,.quick-add-message,.pending-hint{color:#4b5563}
+.pagination-info strong,.pagination a,.pagination span{color:#1f2937}
+.status{color:#111827}
+.btn{color:#1f2937}
+
+/* v2.4.3 configurable UI theme */
+.bsoerp-page{
+  color:var(--bsoerp-font-color,#0b1220)!important;
+  font-weight:var(--bsoerp-font-weight,500);
+}
+.bsoerp-top h1,.panel-head h2,.line-head h3,.quick-add-modal-head h3,.empty strong,.settings-grid b,.activity b,
+.data th,.line-table th,.form-grid span,.quick-add-modal form>label span,.bsoerp-user{
+  color:var(--bsoerp-font-color,#0b1220)!important;
+}
+.data td,.line-table td,.erp-search-option,.pagination-info strong,.pagination a,.pagination span,
+.form-grid input,.form-grid select,.form-grid textarea,.line-table input,.line-table select,.toolbar input,
+.master-filter-form input,.master-filter-form select,.erp-search-input,.page-size select,.btn,.status{
+  color:var(--bsoerp-font-color,#0b1220)!important;
+  font-weight:var(--bsoerp-font-weight,500);
+}
+.card span,.card small,.activity small,.settings-grid span,.pagination-info,.page-size label,.empty,.quick-add-message,.pending-hint{
+  color:var(--bsoerp-secondary-color,#374151)!important;
+}
+.card,.panel,.table-wrap,.line-table,.permission-grid,.settings-grid>div,
+.form-grid input,.form-grid select,.form-grid textarea,.line-table input,.line-table select,.toolbar input,.toolbar select,
+.master-toolbar input,.master-toolbar select,.quick-add-modal input[type="text"],.quick-add-modal select,.erp-form input,.erp-form select,.erp-form textarea,
+.data th,.data td,.line-table th,.line-table td,.pagination-bar,.page-size select,.pagination a,.quick-add-close,.btn{
+  border-color:var(--bsoerp-border-color,#12b8a6)!important;
+}
+.card,.panel{background:var(--bsoerp-card-bg,#fff)!important}
+.data th,.line-table th{background:var(--bsoerp-table-head-bg,#f2f4f7)!important}
+.btn.primary,.quick-add-btn,.pagination a.active{background:var(--bsoerp-theme,#12b8a6)!important;border-color:var(--bsoerp-theme,#12b8a6)!important;color:var(--bsoerp-button-text,#fff)!important}
+.sub a:hover,.sub a.active{background:var(--bsoerp-theme,#12b8a6)!important;color:var(--bsoerp-button-text,#fff)!important}
+.bsoerp-brand>b{background:var(--bsoerp-theme,#12b8a6)!important}
+.theme-color-field{display:grid;grid-template-columns:52px 1fr;gap:8px;align-items:center}
+.theme-color-field input[type="color"]{width:52px;height:42px;padding:3px;cursor:pointer}
+.theme-color-field input[type="text"]{width:100%;text-transform:uppercase}
+.theme-preview{margin:14px 0 20px}
+.theme-preview-card{max-width:720px;padding:16px;border:1px solid var(--bsoerp-border-color,#12b8a6);border-radius:10px;background:var(--bsoerp-card-bg,#fff);color:var(--bsoerp-font-color,#0b1220);font-weight:var(--bsoerp-font-weight,500)}
+.theme-preview-controls{display:flex;align-items:center;gap:12px;margin:14px 0;color:var(--bsoerp-secondary-color,#374151)}
+.theme-preview-controls button{border:1px solid var(--bsoerp-theme,#12b8a6);background:var(--bsoerp-theme,#12b8a6);color:var(--bsoerp-button-text,#fff);border-radius:7px;padding:8px 12px;font:inherit}
+.theme-preview-table{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--bsoerp-border-color,#12b8a6)}
+.theme-preview-table>*{padding:9px;border-right:1px solid var(--bsoerp-border-color,#12b8a6)}
+.theme-preview-table>*:last-child{border-right:0}
+.theme-preview-table b{background:var(--bsoerp-table-head-bg,#f2f4f7);color:var(--bsoerp-font-color,#0b1220)}
+.theme-actions{margin-top:0;margin-bottom:20px}
+@media(max-width:700px){.theme-color-field{grid-template-columns:46px 1fr}.theme-preview-controls{align-items:flex-start;flex-direction:column}.theme-preview-table{grid-template-columns:1fr}}
+\n/* v2.4.4 configurable global interface font size */
+.bsoerp-page{font-size:var(--bsoerp-font-size,12px)}
+.data th,.data td,.line-table th,.line-table td,
+.form-grid span,.form-grid input,.form-grid select,.form-grid textarea,
+.line-table input,.line-table select,.toolbar input,.toolbar select,
+.master-toolbar input,.master-toolbar select,.master-filter-form input,.master-filter-form select,
+.erp-search-input,.erp-search-option,.erp-search-empty,.btn,.status,
+.pagination-info,.page-size label,.page-size select,.pagination a,.pagination span,
+.quick-add-modal input[type="text"],.quick-add-modal select,.quick-add-message,
+.activity span,.settings-grid span,.pending-hint{
+  font-size:var(--bsoerp-font-size,12px)!important;
+}
+.card span,.card small,.activity small{
+  font-size:calc(var(--bsoerp-font-size,12px) - 1px)!important;
+}
+
+/* v2.4.8 — mobile list controls only: search + funnel, compact add/export */
+.mobile-filter-toggle{display:none}
+.mobile-action-icon{display:none}
+@media(max-width:600px){
+  /* Do not alter tables or pagination in this release. */
+  .panel-head{display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .panel-head>div:first-child{flex:1 1 auto}
+  .head-actions{width:auto;display:flex;gap:8px;margin-left:auto}
+  .head-actions .btn{flex:0 0 auto;width:auto}
+  .head-actions .mobile-excel{width:42px;min-width:42px;padding:0;display:inline-grid;place-items:center;font-size:0;height:38px}
+  .head-actions .mobile-excel::before{content:'▦';font-size:20px;line-height:1;font-weight:700}
+  .head-actions .mobile-excel .desktop-action-text{display:none}
+  .head-actions .primary{white-space:nowrap}
+
+  .panel .toolbar.master-toolbar{display:grid!important;grid-template-columns:minmax(0,1fr) 42px!important;gap:8px!important;align-items:center!important}
+  .toolbar.master-toolbar>input[type="search"]{grid-column:1!important;grid-row:1!important;width:100%!important;min-width:0!important;max-width:none!important;margin:0!important}
+  .toolbar.master-toolbar>.mobile-filter-toggle{display:inline-grid!important;grid-column:2!important;grid-row:1!important;width:42px!important;height:38px!important;padding:0!important;place-items:center!important;font-size:0!important}
+  .toolbar.master-toolbar>.mobile-filter-toggle::before{content:'⌄';font-size:0}
+  .toolbar.master-toolbar>.mobile-filter-toggle svg{display:block;width:18px;height:18px}
+
+  .toolbar.master-toolbar>.erp-search-select,
+  .toolbar.master-toolbar>button[type="submit"],
+  .toolbar.master-toolbar>.filter-clear{display:none!important}
+  .toolbar.master-toolbar.mobile-filters-open>.erp-search-select,
+  .toolbar.master-toolbar.mobile-filters-open>button[type="submit"],
+  .toolbar.master-toolbar.mobile-filters-open>.filter-clear{display:flex!important;grid-column:1/-1!important;width:100%!important;max-width:none!important}
+  .toolbar.master-toolbar.mobile-filters-open>.erp-search-select{height:38px!important}
+  .toolbar.master-toolbar.mobile-filters-open>button[type="submit"],
+  .toolbar.master-toolbar.mobile-filters-open>.filter-clear{justify-content:center!important}
+}
+
+/* v2.4.9 — compact mobile list header pattern */
+.mobile-top-actions{display:none}
+@media(max-width:600px){
+  /* Header: title left, Filter / Excel / Add icons right. */
+  .bsoerp-top{height:64px;padding:0 12px;gap:10px}
+  .bsoerp-top h1{font-size:20px;white-space:nowrap}
+  .bsoerp-toggle{width:38px;height:38px;padding:0;display:grid;place-items:center;font-size:18px}
+  .mobile-top-actions{margin-left:auto;display:flex;align-items:center;gap:7px}
+  .mobile-top-action{width:40px;height:40px;min-width:40px;padding:0;border:1px solid var(--bsoerp-border-color,#12b8a6);border-radius:8px;background:#fff;color:var(--bsoerp-font-color,#0b1220);display:grid;place-items:center;text-decoration:none;cursor:pointer}
+  .mobile-top-action svg{width:19px;height:19px;display:block}
+  .mobile-top-action.mobile-top-add{background:var(--bsoerp-theme,#12b8a6);border-color:var(--bsoerp-theme,#12b8a6);color:var(--bsoerp-button-text,#fff);font-size:26px;font-weight:500;line-height:1}
+
+  /* Remove duplicated list title/action row above the table. */
+  .listing-panel>.panel-head{display:none!important}
+
+  /* Compact summary counts in one horizontal row. */
+  .master-summary{display:flex!important;grid-template-columns:none!important;gap:0!important;margin:0 0 12px!important;border:1px solid var(--bsoerp-border-color,#12b8a6);border-radius:10px;background:var(--bsoerp-card-bg,#fff);overflow:hidden}
+  .master-summary .card{flex:1 1 0;min-width:0;padding:11px 8px!important;border:0!important;border-right:1px solid var(--bsoerp-border-color,#12b8a6)!important;border-radius:0!important;box-shadow:none!important;display:flex;align-items:center;justify-content:center;gap:4px;white-space:nowrap;background:transparent!important}
+  .master-summary .card:last-child{border-right:0!important}
+  .master-summary .card span{display:inline!important;margin:0!important;font-size:12px!important;font-weight:600;color:var(--bsoerp-font-color,#0b1220)!important}
+  .master-summary .card strong{display:inline!important;margin:0!important;font-size:12px!important;font-weight:700;color:var(--bsoerp-font-color,#0b1220)!important}
+  .master-summary .card strong::before{content:'('}
+  .master-summary .card strong::after{content:')'}
+  .master-summary .card small{display:none!important}
+
+  /* Search remains visible; filters expand only from the top funnel button. */
+  .listing-panel{padding:12px!important}
+  .panel .toolbar.master-toolbar{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:8px!important;margin-bottom:12px!important}
+  .toolbar.master-toolbar>input[type="search"]{grid-column:1!important;grid-row:1!important;width:100%!important;min-width:0!important;height:42px!important}
+  .toolbar.master-toolbar>.mobile-filter-toggle{display:none!important}
+  .toolbar.master-toolbar>.erp-search-select,
+  .toolbar.master-toolbar>button[type="submit"],
+  .toolbar.master-toolbar>.filter-clear{display:none!important}
+  .toolbar.master-toolbar.mobile-filters-open>.erp-search-select,
+  .toolbar.master-toolbar.mobile-filters-open>button[type="submit"],
+  .toolbar.master-toolbar.mobile-filters-open>.filter-clear{display:flex!important;grid-column:1!important;width:100%!important;max-width:none!important}
+  .toolbar.master-toolbar.mobile-filters-open>.erp-search-select{height:40px!important}
+  .toolbar.master-toolbar.mobile-filters-open>button[type="submit"],
+  .toolbar.master-toolbar.mobile-filters-open>.filter-clear{justify-content:center!important}
+
+  /* Preserve existing table and pagination layout; no card conversion. */
+  .listing-panel .table-wrap{margin-top:0}
+}
+
+
+/* v2.5.0 save validation feedback */
+.erp-save-message{margin:12px 0 0;padding:10px 12px;border:1px solid #dc2626;border-radius:8px;background:#fef2f2;color:#991b1b;font-weight:500}
+.erp-save-message[hidden]{display:none!important}
+.erp-field-error .erp-search-select-input{border-color:#dc2626!important;box-shadow:0 0 0 1px #dc2626!important}
+.erp-save-btn[disabled]{opacity:.7;cursor:wait}
+
+/* Task update timeline */
+.task-updates{margin-top:18px;padding-top:18px;border-top:1px solid var(--bsoerp-border-color,#12b8a6)}
+.task-update-history{margin-top:16px}
+.task-update-history h3{margin:0 0 10px;font-size:15px}
+.task-update{padding:11px 12px;margin:8px 0;border:1px solid #dfe7e5;border-radius:8px;background:#f9fcfb}
+.task-update small{display:block;margin-top:7px;color:#63706c}
+.form-status{display:flex;justify-content:flex-end;margin-bottom:12px}
+.actions .task-update-action{display:inline-flex;align-items:center;justify-content:center;min-width:68px;height:30px;padding:0 10px;border:1px solid var(--bsoerp-theme,#12b8a6);border-radius:6px;background:var(--bsoerp-theme,#12b8a6);color:var(--bsoerp-button-text,#fff);font-size:12px;font-weight:600;text-decoration:none}
+.actions .task-edit-action{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;margin-left:6px;border:1px solid var(--bsoerp-border-color,#12b8a6);border-radius:6px;background:#fff;color:var(--bsoerp-font-color,#0b1220);text-decoration:none}
+.task-history-action{width:32px;height:30px;margin-left:6px;border:1px solid var(--bsoerp-border-color,#12b8a6);border-radius:6px;background:#fff;color:var(--bsoerp-font-color,#0b1220);cursor:pointer;font-size:17px}
+.task-history-modal{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(11,18,32,.45)}
+.task-history-dialog{width:min(950px,100%);max-height:85vh;overflow:auto;padding:20px;border-radius:12px;background:#fff;box-shadow:0 22px 60px rgba(0,0,0,.25)}
+.task-history-head{display:flex;align-items:center;justify-content:space-between;gap:16px}.task-history-head h2{margin:0;font-size:19px}.task-history-close{border:0;background:transparent;font-size:30px;line-height:1;cursor:pointer}.task-history-actions{margin:14px 0}
+.bsoerp-top .universal-excel-export{margin-left:8px;padding:7px 11px}
+.erp-confirm-modal{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(11,18,32,.45)}
+.erp-confirm-dialog{width:min(420px,100%);padding:22px;border-radius:12px;background:#fff;box-shadow:0 22px 60px rgba(0,0,0,.25)}
+.erp-confirm-dialog h2{margin:0 0 10px;font-size:19px}.erp-confirm-dialog p{margin:0;color:#4b5563;line-height:1.5}.erp-confirm-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:20px}.erp-confirm-delete{background:#d92d20!important;border-color:#d92d20!important}
+.bsoerp-top .top-excel-export{margin-left:auto;padding:7px 11px}.bsoerp-top .top-excel-export+.bsoerp-user{margin-left:10px}
+.bsoerp-top .universal-excel-export,.bsoerp-top .top-excel-export{position:absolute;right:24px;top:18px;margin:0;z-index:1}
+.task-filter-control,.master-toolbar select,.master-toolbar input[type="date"]{min-height:38px;padding:8px 10px;border:1px solid var(--bsoerp-border-color,#12b8a6);border-radius:7px;background:#fff;font:12px Montserrat}
+.master-toolbar input[name="due_from"],.master-toolbar input[name="due_to"]{width:155px;max-width:155px}
+.bsoerp-app .toolbar.master-toolbar input[name="due_from"],.bsoerp-app .toolbar.master-toolbar input[name="due_to"]{width:150px!important;max-width:150px!important;flex:0 0 150px!important}
+.bsoerp-app .toolbar.master-toolbar>.erp-search-select:has(input[name="due_from"]),.bsoerp-app .toolbar.master-toolbar>.erp-search-select:has(input[name="due_to"]){width:150px!important;max-width:150px!important;min-width:150px!important;flex:0 0 150px!important}
+.bsoerp-app .toolbar.master-toolbar>input[type="date"],.bsoerp-app .toolbar.master-toolbar>input:nth-of-type(2),.bsoerp-app .toolbar.master-toolbar>input:nth-of-type(3){width:150px!important;min-width:150px!important;max-width:150px!important;flex:0 0 150px!important}
+.bsoerp-app .listing-panel .master-toolbar>button[type="submit"]{font-size:0}.bsoerp-app .listing-panel .master-toolbar>button[type="submit"]::after{content:'Clear';font-size:12px}
+.bsoerp-app .master-toolbar:has(input[name="due_from"])>button[type="submit"]{display:none!important}
+.bsoerp-app .listing-panel .toolbar.master-toolbar>button[type="submit"]{display:none!important}
+.bsoerp-account{position:sticky;bottom:0;margin-top:auto;padding:14px 18px;background:#101828;border-top:1px solid #344054}.bsoerp-account strong{display:block;color:#fff;font-size:12px}.bsoerp-account a{display:inline-block;margin-top:7px;color:#98a2b3;font-size:12px;text-decoration:none}.bsoerp-account a:hover{color:#fff}
+.task-log-toolbar input{width:300px;max-width:100%}.task-log-toolbar select{min-width:170px;padding:9px;border:1px solid var(--bsoerp-border-color,#12b8a6);border-radius:7px;background:#fff}
+/* v2.5.41 task export alignment */
+@media(max-width:600px){
+  .mobile-top-pdf{font-size:10px!important;font-weight:700!important;letter-spacing:-.2px}
+}
+
+
+/* v2.5.42 global filter containment + page-header exports */
+/* Every filter/search toolbar must stay inside its panel and wrap instead of overflowing. */
+.bsoerp-app .panel .toolbar,
+.bsoerp-app .listing-panel .toolbar,
+.bsoerp-app .master-toolbar,
+.bsoerp-app .task-log-toolbar{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  align-items:center!important;
+  gap:8px!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  overflow:visible!important;
+}
+.bsoerp-app .panel .toolbar > *,
+.bsoerp-app .listing-panel .toolbar > *,
+.bsoerp-app .master-toolbar > *,
+.bsoerp-app .task-log-toolbar > *{
+  min-width:0;
+  max-width:100%;
+}
+.bsoerp-app .listing-panel .master-toolbar > input[type="search"],
+.bsoerp-app .listing-panel .task-live-toolbar > input[type="search"],
+.bsoerp-app .task-log-toolbar > input[type="search"]{
+  flex:1 1 210px!important;
+  width:auto!important;
+  min-width:180px!important;
+  max-width:320px!important;
+}
+.bsoerp-app .listing-panel .master-toolbar > .erp-search-select,
+.bsoerp-app .listing-panel .task-live-toolbar > .erp-search-select,
+.bsoerp-app .task-log-toolbar > .erp-search-select{
+  flex:1 1 145px!important;
+  width:auto!important;
+  min-width:135px!important;
+  max-width:200px!important;
+}
+.bsoerp-app .listing-panel .master-toolbar > input[type="date"],
+.bsoerp-app .listing-panel .task-live-toolbar > input[type="date"],
+.bsoerp-app .task-log-toolbar input[type="date"],
+.bsoerp-app .task-log-toolbar .task-log-date{
+  flex:0 1 145px!important;
+  width:145px!important;
+  min-width:130px!important;
+  max-width:145px!important;
+}
+.bsoerp-app .listing-panel .master-toolbar > .btn,
+.bsoerp-app .listing-panel .task-live-toolbar > .btn,
+.bsoerp-app .task-log-toolbar > .btn{
+  flex:0 0 auto!important;
+}
+/* Override older fixed-width task date rules that could push Clear outside the box. */
+.bsoerp-app .toolbar.master-toolbar input[name="due_from"],
+.bsoerp-app .toolbar.master-toolbar input[name="due_to"],
+.bsoerp-app .toolbar.master-toolbar > .erp-search-select:has(input[name="due_from"]),
+.bsoerp-app .toolbar.master-toolbar > .erp-search-select:has(input[name="due_to"]){
+  width:145px!important;
+  min-width:130px!important;
+  max-width:145px!important;
+  flex:0 1 145px!important;
+}
+
+/* Excel/PDF sit immediately to the right of the page/view name on desktop. */
+.bsoerp-top{position:sticky}
+.bsoerp-top .view-export-actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-left:auto;
+}
+.bsoerp-top .view-export-actions .btn{
+  white-space:nowrap;
+  padding:8px 12px;
+}
+.bsoerp-top .view-export-actions .top-excel-export,
+.bsoerp-top .view-export-actions .universal-excel-export,
+.bsoerp-top .view-export-actions .task-pdf,
+.bsoerp-top .view-export-actions .mobile-excel{
+  position:static!important;
+  right:auto!important;
+  top:auto!important;
+  margin:0!important;
+}
+/* The old panel export row is no longer needed after actions are moved to the page header. */
+.listing-panel > .panel-head .head-actions:empty{display:none!important}
+
+@media(max-width:800px){
+  .bsoerp-app .panel .toolbar,
+  .bsoerp-app .listing-panel .toolbar,
+  .bsoerp-app .master-toolbar,
+  .bsoerp-app .task-log-toolbar{gap:7px!important}
+  .bsoerp-top .view-export-actions{display:none!important}
+}
+
+/* v2.5.43 filter labels + automatic-filter layout */
+.bsoerp-app .toolbar .filter-field,
+.bsoerp-app .master-toolbar .filter-field,
+.bsoerp-app .task-log-toolbar .filter-field{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:5px!important;
+  flex:1 1 145px;
+  min-width:135px;
+  max-width:220px;
+  margin:0!important;
+}
+.bsoerp-app .toolbar .filter-field .filter-label,
+.bsoerp-app .master-toolbar .filter-field .filter-label,
+.bsoerp-app .task-log-toolbar .filter-field .filter-label,
+.bsoerp-app .task-log-toolbar .filter-field>span:first-child{
+  display:block;
+  font-size:11px;
+  line-height:1.2;
+  font-weight:600;
+  color:#344054;
+  white-space:nowrap;
+}
+.bsoerp-app .toolbar .filter-field>input,
+.bsoerp-app .toolbar .filter-field>select,
+.bsoerp-app .toolbar .filter-field>.erp-search-select,
+.bsoerp-app .master-toolbar .filter-field>input,
+.bsoerp-app .master-toolbar .filter-field>select,
+.bsoerp-app .master-toolbar .filter-field>.erp-search-select,
+.bsoerp-app .task-log-toolbar .filter-field>input,
+.bsoerp-app .task-log-toolbar .filter-field>select,
+.bsoerp-app .task-log-toolbar .filter-field>.erp-search-select{
+  width:100%!important;
+  min-width:0!important;
+  max-width:none!important;
+  flex:1 1 auto!important;
+}
+.bsoerp-app .toolbar .filter-field:has(input[type="search"]),
+.bsoerp-app .master-toolbar .filter-field:has(input[type="search"]),
+.bsoerp-app .task-log-toolbar .filter-field:has(input[type="search"]){
+  flex:1 1 210px;
+  max-width:320px;
+}
+.bsoerp-app .toolbar .filter-field:has(input[type="date"]),
+.bsoerp-app .master-toolbar .filter-field:has(input[type="date"]),
+.bsoerp-app .task-log-toolbar .filter-field:has(input[type="date"]){
+  flex:0 1 155px;
+  min-width:140px;
+  max-width:165px;
+}
+/* Filter buttons are obsolete: changes apply automatically. */
+.bsoerp-app form.toolbar>button[type="submit"],
+.bsoerp-app form.master-toolbar>button[type="submit"]{display:none!important}
+@media(max-width:800px){
+  .bsoerp-app .toolbar .filter-field,
+  .bsoerp-app .master-toolbar .filter-field,
+  .bsoerp-app .task-log-toolbar .filter-field{min-width:calc(50% - 5px);max-width:none;flex:1 1 calc(50% - 5px)}
+}
+
+/* v2.5.44 uniform filter labels and control heights */
+.bsoerp-app .toolbar .filter-field,
+.bsoerp-app .master-toolbar .filter-field,
+.bsoerp-app .task-log-toolbar .filter-field{
+  align-items:stretch!important;
+  justify-content:flex-start!important;
+}
+.bsoerp-app .toolbar .filter-field .filter-label,
+.bsoerp-app .master-toolbar .filter-field .filter-label,
+.bsoerp-app .task-log-toolbar .filter-field .filter-label,
+.bsoerp-app .task-log-toolbar .filter-field>span:first-child{
+  width:100%!important;
+  text-align:left!important;
+  align-self:flex-start!important;
+}
+.bsoerp-app .toolbar .filter-field>input,
+.bsoerp-app .toolbar .filter-field>select,
+.bsoerp-app .master-toolbar .filter-field>input,
+.bsoerp-app .master-toolbar .filter-field>select,
+.bsoerp-app .task-log-toolbar .filter-field>input,
+.bsoerp-app .task-log-toolbar .filter-field>select,
+.bsoerp-app .toolbar .filter-field>.erp-search-select,
+.bsoerp-app .master-toolbar .filter-field>.erp-search-select,
+.bsoerp-app .task-log-toolbar .filter-field>.erp-search-select{
+  height:38px!important;
+  min-height:38px!important;
+  max-height:38px!important;
+  box-sizing:border-box!important;
+  flex:0 0 38px!important;
+}
+.bsoerp-app .toolbar .filter-field>input[type="date"],
+.bsoerp-app .master-toolbar .filter-field>input[type="date"],
+.bsoerp-app .task-log-toolbar .filter-field>input[type="date"]{
+  height:38px!important;
+  min-height:38px!important;
+  max-height:38px!important;
+  padding:8px 10px!important;
+  line-height:20px!important;
+  flex:0 0 38px!important;
+}
+
+
+/* v2.5.51 — Leads CRM workflow */
+.lead-summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 18px}
+.lead-summary-grid>div{border:1px solid var(--bsoerp-border-color);border-radius:8px;padding:10px 12px;background:var(--bsoerp-card-bg)}
+.lead-summary-grid span{display:block;font-size:10px;color:var(--bsoerp-secondary-color);margin-bottom:4px}
+.lead-summary-grid strong{display:block;overflow-wrap:anywhere}
+.lead-server-toolbar{align-items:flex-end;flex-wrap:wrap;overflow:visible}
+.lead-server-toolbar>input,.lead-server-toolbar>select,.lead-server-toolbar>label{min-width:150px;flex:1 1 150px;max-width:240px}
+.lead-server-toolbar>label{display:flex;flex-direction:column;gap:5px}
+.lead-server-toolbar>label>span{text-align:left!important}
+.lead-server-toolbar input[type="date"]{height:38px;min-height:38px}
+.lead-table .compact-action{display:inline-flex;align-items:center;justify-content:center;padding:5px 10px;margin-right:5px;min-height:28px}
+@media(max-width:780px){
+ .lead-summary-grid{grid-template-columns:1fr}
+ .lead-server-toolbar>input,.lead-server-toolbar>select,.lead-server-toolbar>label{max-width:none;min-width:calc(50% - 6px);flex:1 1 calc(50% - 6px)}
+}
+
+/* v2.5.52 — consistent breathing room between filter controls */
+.bsoerp-app .panel .toolbar,
+.bsoerp-app .listing-panel .toolbar,
+.bsoerp-app .master-toolbar,
+.bsoerp-app .task-log-toolbar,
+.bsoerp-app .lead-server-toolbar{
+  column-gap:14px!important;
+  row-gap:10px!important;
+}
+.bsoerp-app .toolbar .filter-field,
+.bsoerp-app .master-toolbar .filter-field,
+.bsoerp-app .task-log-toolbar .filter-field,
+.bsoerp-app .lead-server-toolbar>label{
+  margin-right:0!important;
+}
+@media(max-width:800px){
+  .bsoerp-app .panel .toolbar,
+  .bsoerp-app .listing-panel .toolbar,
+  .bsoerp-app .master-toolbar,
+  .bsoerp-app .task-log-toolbar,
+  .bsoerp-app .lead-server-toolbar{
+    column-gap:10px!important;
+    row-gap:10px!important;
+  }
+}
+
+
+/* v2.5.53 — Lead Update centered popup */
+.lead-update-modal{display:none;position:fixed;inset:0;z-index:999999;align-items:center;justify-content:center;padding:20px}
+.lead-update-modal.is-open{display:flex}
+.lead-update-modal-backdrop{position:absolute;inset:0;background:rgba(11,18,32,.48)}
+.lead-update-modal-card{position:relative;z-index:1;width:min(620px,calc(100vw - 32px));max-height:calc(100vh - 40px);overflow:auto;background:#fff;border:1px solid var(--bsoerp-border-color);border-radius:12px;padding:20px;box-shadow:0 18px 55px rgba(0,0,0,.22)}
+.lead-update-modal-card .panel-head{margin-bottom:16px;padding-right:32px}
+.lead-update-modal-card .panel-head h2{margin-bottom:3px}
+.lead-update-modal-card .panel-head small{display:block;color:var(--bsoerp-secondary-color);overflow-wrap:anywhere}
+.lead-update-modal-close{position:absolute;right:12px;top:10px;width:30px;height:30px;border:0;background:transparent;font-size:24px;line-height:30px;cursor:pointer;color:var(--bsoerp-font-color)}
+.lead-update-modal .form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.lead-update-modal .form-grid label.wide{grid-column:1/-1}
+.lead-update-modal .lead-next-follow-up-field[hidden]{display:none!important}
+body.lead-modal-open{overflow:hidden}
+.lead-update-standalone-wrap{min-height:60vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.lead-update-standalone{width:min(620px,100%)}
+.lead-update-form .lead-next-follow-up-field[hidden]{display:none!important}
+@media(max-width:640px){
+ .lead-update-modal{padding:10px}
+ .lead-update-modal-card{width:100%;max-height:calc(100vh - 20px);padding:16px}
+ .lead-update-modal .form-grid{grid-template-columns:1fr}
+ .lead-update-modal .form-grid label.wide{grid-column:auto}
+}
+
+/* v2.5.54 — clearer spacing between all filter fields application-wide */
+.bsoerp-app .toolbar,
+.bsoerp-app .master-toolbar,
+.bsoerp-app .task-log-toolbar,
+.bsoerp-app .lead-server-toolbar,
+.bsoerp-app .master-filter-form{
+  column-gap:18px!important;
+  row-gap:14px!important;
+}
+.bsoerp-app .toolbar .filter-field,
+.bsoerp-app .master-toolbar .filter-field,
+.bsoerp-app .task-log-toolbar .filter-field,
+.bsoerp-app .lead-server-toolbar>label,
+.bsoerp-app .master-filter-form>label{
+  margin:0!important;
+}
+@media(max-width:800px){
+  .bsoerp-app .toolbar,
+  .bsoerp-app .master-toolbar,
+  .bsoerp-app .task-log-toolbar,
+  .bsoerp-app .lead-server-toolbar,
+  .bsoerp-app .master-filter-form{
+    column-gap:12px!important;
+    row-gap:12px!important;
+  }
+}
+
+
+/* v2.5.56 — unified filter typography and spacing application-wide */
+.bsoerp-app .toolbar,
+.bsoerp-app .master-toolbar,
+.bsoerp-app .task-log-toolbar,
+.bsoerp-app .lead-server-toolbar,
+.bsoerp-app .master-filter-form{
+  column-gap:24px!important;
+  row-gap:16px!important;
+  align-items:flex-end!important;
+}
+
+/* All filter labels — generated or native — use one visual standard. */
+.bsoerp-app .toolbar .filter-field .filter-label,
+.bsoerp-app .master-toolbar .filter-field .filter-label,
+.bsoerp-app .task-log-toolbar .filter-field .filter-label,
+.bsoerp-app .task-log-toolbar .filter-field>span:first-child,
+.bsoerp-app .lead-server-toolbar>label>span,
+.bsoerp-app .master-filter-form>label>span{
+  display:block!important;
+  width:100%!important;
+  margin:0 0 5px 0!important;
+  padding:0!important;
+  font-family:inherit!important;
+  font-size:11px!important;
+  line-height:1.2!important;
+  font-weight:600!important;
+  letter-spacing:0!important;
+  color:#344054!important;
+  text-align:left!important;
+  white-space:nowrap!important;
+}
+
+/* All filter control text uses the same size/weight and control height. */
+.bsoerp-app .toolbar input,
+.bsoerp-app .toolbar select,
+.bsoerp-app .master-toolbar input,
+.bsoerp-app .master-toolbar select,
+.bsoerp-app .task-log-toolbar input,
+.bsoerp-app .task-log-toolbar select,
+.bsoerp-app .lead-server-toolbar input,
+.bsoerp-app .lead-server-toolbar select,
+.bsoerp-app .master-filter-form input,
+.bsoerp-app .master-filter-form select,
+.bsoerp-app .erp-search-select input{
+  font-family:inherit!important;
+  font-size:12px!important;
+  line-height:20px!important;
+  font-weight:400!important;
+  height:38px!important;
+  min-height:38px!important;
+  box-sizing:border-box!important;
+}
+
+/* Native label wrappers should behave exactly like generated filter fields. */
+.bsoerp-app .lead-server-toolbar>label,
+.bsoerp-app .master-filter-form>label{
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:flex-start!important;
+  align-items:stretch!important;
+  gap:0!important;
+  margin:0!important;
+  min-width:150px!important;
+}
+
+/* Prevent any two adjacent filter controls from visually touching. */
+.bsoerp-app .toolbar>* ,
+.bsoerp-app .master-toolbar>* ,
+.bsoerp-app .task-log-toolbar>* ,
+.bsoerp-app .lead-server-toolbar>* ,
+.bsoerp-app .master-filter-form>*{
+  margin-left:0!important;
+  margin-right:0!important;
+}
+
+@media(max-width:800px){
+  .bsoerp-app .toolbar,
+  .bsoerp-app .master-toolbar,
+  .bsoerp-app .task-log-toolbar,
+  .bsoerp-app .lead-server-toolbar,
+  .bsoerp-app .master-filter-form{
+    column-gap:14px!important;
+    row-gap:14px!important;
+  }
+}
+
+
+/* v2.5.57 — definitive filter separation and Lead Update status control */
+/* Reserve physical space inside every generated filter field so borders can never touch,
+   even where older width rules or enhanced searchable selects consume the full flex track. */
+.bsoerp-app form.toolbar > .filter-field,
+.bsoerp-app form.master-toolbar > .filter-field,
+.bsoerp-app form.task-log-toolbar > .filter-field,
+.bsoerp-app form.lead-server-toolbar > .filter-field,
+.bsoerp-app .master-filter-form > .filter-field{
+  box-sizing:border-box!important;
+  padding-right:14px!important;
+}
+/* Native date-label wrappers used before JS enhancement receive the same separation. */
+.bsoerp-app form.lead-server-toolbar > label,
+.bsoerp-app .master-filter-form > label{
+  box-sizing:border-box!important;
+  padding-right:14px!important;
+}
+/* Keep label typography identical everywhere, including direct/native labels. */
+.bsoerp-app form.toolbar > label > span,
+.bsoerp-app form.master-toolbar > label > span,
+.bsoerp-app form.task-log-toolbar > label > span,
+.bsoerp-app form.lead-server-toolbar > label > span,
+.bsoerp-app .master-filter-form > label > span,
+.bsoerp-app .filter-field > .filter-label{
+  font-family:Montserrat,Arial,sans-serif!important;
+  font-size:11px!important;
+  line-height:1.2!important;
+  font-weight:600!important;
+  text-align:left!important;
+  color:#344054!important;
+}
+/* Lead update Status is intentionally a normal select so conditional visibility is exact. */
+.lead-update-form select.lead-status-select{
+  width:100%!important;
+  height:38px!important;
+  min-height:38px!important;
+  padding:8px 10px!important;
+  border:1px solid var(--bsoerp-border-color,#12b8a6)!important;
+  border-radius:7px!important;
+  background:#fff!important;
+  font:12px Montserrat,Arial,sans-serif!important;
+}
+.lead-update-form .lead-next-follow-up-field[hidden]{display:none!important}
+@media(max-width:800px){
+  .bsoerp-app form.toolbar > .filter-field,
+  .bsoerp-app form.master-toolbar > .filter-field,
+  .bsoerp-app form.task-log-toolbar > .filter-field,
+  .bsoerp-app form.lead-server-toolbar > .filter-field,
+  .bsoerp-app form.lead-server-toolbar > label,
+  .bsoerp-app .master-filter-form > label,
+  .bsoerp-app .master-filter-form > .filter-field{padding-right:10px!important}
+}
+
+/* v2.5.58 — physical spacing between every filter field */
+/* Use outer margins on filter wrappers so spacing remains visible even when
+   enhanced searchable controls expand to 100% of their wrapper. */
+.bsoerp-app form.toolbar > .filter-field,
+.bsoerp-app form.master-toolbar > .filter-field,
+.bsoerp-app form.task-log-toolbar > .filter-field,
+.bsoerp-app form.lead-server-toolbar > .filter-field,
+.bsoerp-app form.lead-server-toolbar > label,
+.bsoerp-app .master-filter-form > .filter-field,
+.bsoerp-app .master-filter-form > label{
+  padding-right:0!important;
+  margin-right:14px!important;
+  box-sizing:border-box!important;
+}
+/* Clear/action buttons also keep a little breathing room from the preceding filter. */
+.bsoerp-app form.toolbar > .filter-clear,
+.bsoerp-app form.master-toolbar > .filter-clear,
+.bsoerp-app form.task-log-toolbar > .filter-clear,
+.bsoerp-app form.lead-server-toolbar > .filter-clear,
+.bsoerp-app .master-filter-form > .filter-clear{
+  margin-left:2px!important;
+}
+/* Searchable select shell must stay inside the filter wrapper. */
+.bsoerp-app .filter-field > .erp-search-select,
+.bsoerp-app form.lead-server-toolbar > label > .erp-search-select,
+.bsoerp-app .master-filter-form > label > .erp-search-select{
+  width:100%!important;
+  min-width:0!important;
+  max-width:100%!important;
+  box-sizing:border-box!important;
+}
+/* Keep identical filter label typography everywhere. */
+.bsoerp-app .filter-field > .filter-label,
+.bsoerp-app form.lead-server-toolbar > label > span,
+.bsoerp-app .master-filter-form > label > span{
+  font-family:Montserrat,Arial,sans-serif!important;
+  font-size:11px!important;
+  line-height:1.2!important;
+  font-weight:600!important;
+  text-align:left!important;
+  margin:0 0 6px!important;
+}
+@media(max-width:800px){
+  .bsoerp-app form.toolbar > .filter-field,
+  .bsoerp-app form.master-toolbar > .filter-field,
+  .bsoerp-app form.task-log-toolbar > .filter-field,
+  .bsoerp-app form.lead-server-toolbar > .filter-field,
+  .bsoerp-app form.lead-server-toolbar > label,
+  .bsoerp-app .master-filter-form > .filter-field,
+  .bsoerp-app .master-filter-form > label{
+    margin-right:8px!important;
+  }
+}
+
+/* v2.5.59 — inline field validation and queue modal */
+.bsoerp-app .erp-form label .field-error{
+  display:block;
+  margin-top:5px;
+  color:#d92d20!important;
+  font-size:11px!important;
+  line-height:1.35;
+  font-weight:600!important;
+  text-align:left!important;
+}
+.bsoerp-app .erp-form label .field-error[hidden]{display:none!important}
+.bsoerp-app .erp-form label.has-field-error input,
+.bsoerp-app .erp-form label.has-field-error select,
+.bsoerp-app .erp-form label.has-field-error textarea,
+.bsoerp-app .erp-form .erp-field-error .erp-search-select-input{
+  border-color:#d92d20!important;
+  box-shadow:0 0 0 1px rgba(217,45,32,.08)!important;
+}
+.lead-queue-modal .lead-queue-assignee-field[hidden],
+.lead-queue-modal .lead-queue-estimate-field[hidden]{display:none!important}
+.lead-queue-open{white-space:nowrap!important}
+
+/* v2.5.60 — required Lead Owner, clear queue dropdown, header add actions */
+.bsoerp-top .view-export-actions{
+  display:flex!important;
+  align-items:center!important;
+  gap:8px!important;
+  margin-left:auto!important;
+}
+.bsoerp-top .view-export-actions + .bsoerp-user{margin-left:10px!important}
+.bsoerp-top .view-export-actions .view-add-action{
+  position:static!important;
+  margin:0!important;
+  white-space:nowrap!important;
+}
+.lead-queue-modal-card{overflow:visible!important}
+.lead-queue-modal .lead-queue-user-select{
+  display:block!important;
+  width:100%!important;
+  min-height:40px!important;
+  padding:9px 36px 9px 10px!important;
+  background:#fff!important;
+  color:#111827!important;
+  border:1px solid var(--bsoerp-theme,#12b8a6)!important;
+  border-radius:7px!important;
+  font:12px Montserrat,Arial,sans-serif!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+.lead-queue-modal .lead-queue-assignee-field{position:relative;z-index:3}
+@media(max-width:800px){
+  .bsoerp-top .view-export-actions{display:none!important}
+  .lead-queue-modal-card{overflow:auto!important}
+}
+
+/* v2.5.65 — Read-only Recce summary fields */
+.recce-update-form .recce-readonly-field[readonly]{background:#f3f6f8!important;color:#4b5563!important;cursor:not-allowed;opacity:1;}
+
+/* v2.5.71 — Recce Master action history modal. */
+.recce-details-modal-card{width:min(980px,calc(100vw - 32px))}
+.recce-details-modal-body{overflow:auto}
+.recce-history-table th,.recce-history-table td{white-space:normal;vertical-align:top}
+
+/* v2.7.47 — show Search by default; reveal the remaining filters on request. */
+.bsoerp-app .listing-panel .bsoerp-filter-collapsible{display:flex!important}
+.bsoerp-app .listing-panel .bsoerp-filter-collapsible:not(.bsoerp-filter-open):not(.mobile-filters-open)>*:not(.bsoerp-default-search){display:none!important}
+.bsoerp-top .bsoerp-header-filter{display:inline-flex!important;align-items:center!important;gap:6px!important}
+.bsoerp-top .bsoerp-header-filter svg{width:16px;height:16px;display:block}
+.bsoerp-app .bsoerp-filter-collapsible .mobile-filter-toggle{display:none!important}
+.recce-history-table td:nth-child(6){min-width:220px}
+.recce-details-empty{min-height:120px}
+@media(max-width:700px){.recce-details-modal-card{width:100%}.recce-history-table{min-width:760px}}
+
+/* v2.5.84 - Design Approval popup vertical field layout */
+.design-approval-modal .form-grid{grid-template-columns:1fr !important;}
+.design-approval-modal .form-grid label,.design-approval-modal .form-grid label.full{grid-column:1/-1 !important;width:100%;}
+.design-approval-modal textarea{min-height:110px;}
+
+/* v2.5.91 - Global containment + quotation form */
+.bsoerp-page *, .bsoerp-page *::before, .bsoerp-page *::after{box-sizing:border-box}
+.panel,.form-panel,.form-grid,.form-grid>label,.toolbar,.toolbar>label,.select-with-add,.erp-search-select,.erp-search-select-wrap{min-width:0;max-width:100%}
+.form-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.form-grid>label{width:100%;overflow:visible}
+.form-grid input,.form-grid select,.form-grid textarea,.form-grid .erp-search-select,.form-grid .erp-search-input,.select-with-add{width:100%!important;max-width:100%!important;min-width:0!important}
+.form-grid textarea{resize:vertical}
+.line-box,.line-table,.table-wrap{max-width:100%;min-width:0}
+.line-table,.table-wrap{overflow-x:auto;overflow-y:visible;-webkit-overflow-scrolling:touch}
+.quotation-line-table table{min-width:1420px}
+.quotation-line-table th,.quotation-line-table td{white-space:nowrap;vertical-align:middle}
+.quotation-line-table td:nth-child(2){min-width:190px}
+.quotation-line-table td input,.quotation-line-table td select,.quotation-line-table .erp-search-select{max-width:100%!important;min-width:90px}
+.quotation-line-table .line-select-with-add{min-width:210px;max-width:260px}
+.erp-readonly{background:#f8fafc!important;color:#475467!important;cursor:not-allowed}
+.quotation-summary-field{font-weight:600}
+.quotation-terms-grid{margin-top:18px}
+.quotation-terms-grid label.wide{grid-column:1/-1!important}
+.quotation-terms-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.quotation-terms-grid label{grid-column:auto!important}
+@media(max-width:800px){.quotation-terms-grid{grid-template-columns:1fr!important}}
+.bsoerp-app .quotation-only-table table{width:1100px!important;min-width:1100px!important}
+.bsoerp-app .quotation-only-table th:nth-child(1),.bsoerp-app .quotation-only-table td:nth-child(1){width:250px!important}
+.bsoerp-app .quotation-only-table th:nth-child(2),.bsoerp-app .quotation-only-table td:nth-child(2){width:250px!important}
+.settings-panel .settings-section+.settings-section{margin-top:24px;padding-top:22px;border-top:1px solid var(--bsoerp-theme)}
+.settings-section-title{margin-bottom:16px}
+.settings-section-title h2{margin:0;font-size:18px}
+@media(max-width:1100px){.form-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:800px){.form-grid{grid-template-columns:1fr!important}}
+
+/* v2.5.92 - Strong global field containment + quotation Create By dropdown */
+.bsoerp-content,.panel,.form-panel,.erp-form,.form-panel fieldset,.form-grid,.line-box,.line-table,.table-wrap{width:100%;max-width:100%;min-width:0}
+.form-panel{overflow:hidden}
+.form-panel fieldset{overflow:visible}
+.form-grid{overflow:visible}
+.form-grid>label,.form-grid>div{min-width:0;max-width:100%}
+.form-grid input,.form-grid select,.form-grid textarea,.form-grid .erp-search-select,.form-grid .erp-search-select-input,.form-grid .erp-search-input{display:block;width:100%!important;max-width:100%!important;min-width:0!important}
+.select-with-add{display:flex!important;width:100%!important;max-width:100%!important;min-width:0!important;gap:7px}
+.select-with-add>select,.select-with-add>.erp-search-select{flex:1 1 0!important;width:auto!important;max-width:100%!important;min-width:0!important}
+.select-with-add>.quick-add-btn{flex:0 0 40px!important;width:40px!important;min-width:40px!important;max-width:40px!important}
+.line-table{width:100%;max-width:100%;overflow-x:auto!important;overflow-y:visible}
+.quotation-line-table{width:100%;max-width:100%;overflow-x:auto!important}
+.quotation-line-table table{width:max-content;min-width:1420px;max-width:none}
+.quotation-line-table td,.quotation-line-table th{max-width:none}
+@media(max-width:500px){.select-with-add>.quick-add-btn{flex-basis:38px!important;width:38px!important;min-width:38px!important;max-width:38px!important}}
+
+
+/* v2.5.93 - Compact quotation item columns + clear Item dropdown */
+.quotation-line-table{
+  overflow-x:auto!important;
+  overflow-y:visible!important;
+}
+.quotation-line-table table{
+  width:1125px!important;
+  min-width:1125px!important;
+  table-layout:fixed!important;
+}
+.quotation-line-table th,
+.quotation-line-table td{
+  padding:7px 6px!important;
+  white-space:nowrap!important;
+}
+.quotation-line-table th:nth-child(1),.quotation-line-table td:nth-child(1){width:188px!important}
+.quotation-line-table th:nth-child(2),.quotation-line-table td:nth-child(2){width:170px!important}
+.quotation-line-table th:nth-child(3),.quotation-line-table td:nth-child(3){width:68px!important}
+.quotation-line-table th:nth-child(4),.quotation-line-table td:nth-child(4){width:68px!important}
+.quotation-line-table th:nth-child(5),.quotation-line-table td:nth-child(5){width:82px!important}
+.quotation-line-table th:nth-child(6),.quotation-line-table td:nth-child(6){width:68px!important}
+.quotation-line-table th:nth-child(7),.quotation-line-table td:nth-child(7){width:82px!important}
+.quotation-line-table th:nth-child(8),.quotation-line-table td:nth-child(8){width:82px!important}
+.quotation-line-table th:nth-child(9),.quotation-line-table td:nth-child(9){width:88px!important}
+.quotation-line-table th:nth-child(10),.quotation-line-table td:nth-child(10){width:96px!important}
+.quotation-line-table th:nth-child(11),.quotation-line-table td:nth-child(11){width:42px!important}
+.quotation-line-table td input,
+.quotation-line-table td select,
+.quotation-line-table .erp-search-select{
+  width:100%!important;
+  min-width:0!important;
+  max-width:100%!important;
+  padding-left:7px!important;
+  padding-right:7px!important;
+}
+.quotation-line-table .line-select-with-add{
+  width:100%!important;
+  min-width:0!important;
+  max-width:100%!important;
+  gap:5px!important;
+}
+.quotation-line-table .line-select-with-add .quick-add-btn{
+  flex:0 0 36px!important;
+  width:36px!important;
+  min-width:36px!important;
+  max-width:36px!important;
+  height:38px!important;
+}
+.quotation-line-table .quotation-item-select{
+  display:block!important;
+  width:100%!important;
+  min-width:0!important;
+  height:38px!important;
+  background:#fff!important;
+  color:#111827!important;
+  border:1px solid var(--bsoerp-theme,#12b8a6)!important;
+  border-radius:7px!important;
+  font:12px Montserrat,Arial,sans-serif!important;
+}
+@media(max-width:800px){
+  .quotation-line-table table{width:1080px!important;min-width:1080px!important}
+}
+
+/* v2.5.95 - Quotation summary below items + Discount before GST */
+.quotation-summary-box{
+  margin-top:14px;
+  padding:12px 14px;
+  border:1px solid var(--bsoerp-theme,#12b8a6);
+  border-radius:9px;
+  background:#f8fffe;
+}
+.quotation-summary-title{
+  font-size:12px;
+  font-weight:700;
+  color:#111827;
+  margin-bottom:9px;
+}
+.quotation-summary-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(110px,1fr));
+  gap:10px;
+  max-width:760px;
+  margin-left:auto;
+}
+.quotation-summary-grid label{display:block;min-width:0}
+.quotation-summary-grid label span{
+  display:block;
+  font-size:10px;
+  font-weight:600;
+  margin-bottom:4px;
+  color:#344054;
+}
+.quotation-summary-grid input{
+  width:100%!important;
+  height:34px!important;
+  padding:6px 8px!important;
+  font-size:11px!important;
+  text-align:right;
+  font-weight:700;
+}
+@media(max-width:800px){
+  .quotation-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none;margin-left:0}
+}
+@media(max-width:480px){
+  .quotation-summary-grid{grid-template-columns:1fr}
+}
+
+
+/* v2.5.96 - Quotation compact totals fields without summary box */
+.quotation-summary-fields{
+  margin-top:14px;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(120px,180px));
+  gap:12px;
+  justify-content:end;
+  align-items:end;
+}
+.quotation-summary-fields label{display:block;min-width:0;margin:0}
+.quotation-summary-fields label span{
+  display:block;
+  font-size:10px;
+  font-weight:600;
+  line-height:1.2;
+  margin-bottom:5px;
+  color:#344054;
+}
+.quotation-summary-fields input{
+  width:100%!important;
+  height:36px!important;
+  padding:7px 9px!important;
+  font-size:11px!important;
+  text-align:right;
+}
+.quotation-summary-fields input.quotation-round-off{
+  background:#fff!important;
+}
+/* v2.7.78 - Order totals: force all five fields on one desktop row */
+@media(min-width:801px){
+  .quotation-summary-fields.order-summary-fields{
+    grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    width:100%!important;
+    max-width:none!important;
+    justify-content:stretch!important;
+  }
+  .quotation-summary-fields.order-summary-fields > label{
+    width:auto!important;
+    min-width:0!important;
+  }
+}
+@media(max-width:800px){
+  .quotation-summary-fields{grid-template-columns:repeat(2,minmax(0,1fr));justify-content:stretch}
+}
+
+
+/* v2.5.97 — global desktop show/hide left menu */
+@media(min-width:801px){
+  .bsoerp-side{transition:transform .2s ease}
+  .bsoerp-main{transition:margin-left .2s ease,width .2s ease}
+  .bsoerp-toggle{display:grid!important;place-items:center;width:38px;height:38px;min-width:38px;padding:0;font-size:18px;cursor:pointer}
+  .bsoerp-app.sidebar-collapsed .bsoerp-side{transform:translateX(-100%)}
+  .bsoerp-app.sidebar-collapsed .bsoerp-main{margin-left:0!important;width:100%!important}
+}
+
+/* v2.5.98 - compact Disc% label + quotation item table uses full available width */
+.quotation-line-table table{
+  width:100%!important;
+  min-width:1050px!important;
+  max-width:none!important;
+  table-layout:fixed!important;
+}
+.quotation-line-table th:nth-child(1),.quotation-line-table td:nth-child(1){width:18%!important}
+.quotation-line-table th:nth-child(2),.quotation-line-table td:nth-child(2){width:16%!important}
+.quotation-line-table th:nth-child(3),.quotation-line-table td:nth-child(3){width:6%!important}
+.quotation-line-table th:nth-child(4),.quotation-line-table td:nth-child(4){width:6%!important}
+.quotation-line-table th:nth-child(5),.quotation-line-table td:nth-child(5){width:7%!important}
+.quotation-line-table th:nth-child(6),.quotation-line-table td:nth-child(6){width:7%!important}
+.quotation-line-table th:nth-child(7),.quotation-line-table td:nth-child(7){width:8%!important}
+.quotation-line-table th:nth-child(8),.quotation-line-table td:nth-child(8){width:7%!important}
+.quotation-line-table th:nth-child(9),.quotation-line-table td:nth-child(9){width:8%!important}
+.quotation-line-table th:nth-child(10),.quotation-line-table td:nth-child(10){width:10%!important}
+.quotation-line-table th:nth-child(11),.quotation-line-table td:nth-child(11){width:4%!important}
+/* Let the item table expand into the extra workspace exposed by a collapsed sidebar. */
+.bsoerp-page.sidebar-collapsed .quotation-line-table table,
+body.bsoerp-sidebar-collapsed .quotation-line-table table,
+.bsoerp-app.sidebar-collapsed .quotation-line-table table{
+  width:100%!important;
+}
+@media(max-width:800px){
+  .quotation-line-table table{width:1050px!important;min-width:1050px!important}
+}
+
+/* v2.6.04 quotation workflow popup sizing */
+#quotation-checking-modal .lead-update-modal-card{width:min(760px,calc(100vw - 32px));}
+#quotation-checking-modal .form-grid{gap:18px;}
+#quotation-checking-modal .form-grid input,#quotation-checking-modal .form-grid select{min-height:42px;font-size:13px;}
+@media(max-width:800px){#quotation-checking-modal .lead-update-modal-card{width:calc(100vw - 20px);}}
+
+
+/* v2.6.06 - High-density quotation item entry */
+.quotation-line-box{margin-top:16px!important;padding-top:14px!important}
+.quotation-line-box .line-head{margin-bottom:10px!important}
+.quotation-line-box .line-head h3{font-size:15px!important}
+.quotation-line-box .add-line{
+  min-height:30px!important;
+  height:30px!important;
+  padding:5px 10px!important;
+  font-size:11px!important;
+}
+.quotation-line-table{
+  max-height:330px!important;
+  overflow-x:auto!important;
+  overflow-y:auto!important;
+  scrollbar-gutter:stable;
+}
+.quotation-line-table table{
+  min-width:980px!important;
+}
+.quotation-line-table thead th{
+  position:sticky!important;
+  top:0!important;
+  z-index:4!important;
+  background:#f2f4f7!important;
+}
+.quotation-line-table th,
+.quotation-line-table td{
+  padding:3px 5px!important;
+  font-size:11px!important;
+  line-height:1.15!important;
+  height:34px!important;
+}
+.quotation-line-table td input,
+.quotation-line-table td select,
+.quotation-line-table .quotation-item-select{
+  height:29px!important;
+  min-height:29px!important;
+  padding:4px 6px!important;
+  font-size:11px!important;
+  line-height:1.1!important;
+  border-radius:6px!important;
+}
+.quotation-line-table .line-select-with-add{
+  gap:4px!important;
+}
+.quotation-line-table .line-select-with-add .quick-add-btn{
+  flex:0 0 29px!important;
+  width:29px!important;
+  min-width:29px!important;
+  max-width:29px!important;
+  height:29px!important;
+  min-height:29px!important;
+  padding:0!important;
+  font-size:15px!important;
+  border-radius:6px!important;
+}
+.quotation-line-table .remove-line{
+  width:24px!important;
+  height:24px!important;
+  min-width:24px!important;
+  font-size:12px!important;
+  line-height:24px!important;
+}
+/* Give text columns room; keep numeric columns dense. */
+.quotation-line-table th:nth-child(1),.quotation-line-table td:nth-child(1){width:18.5%!important}
+.quotation-line-table th:nth-child(2),.quotation-line-table td:nth-child(2){width:17%!important}
+.quotation-line-table th:nth-child(3),.quotation-line-table td:nth-child(3){width:5.5%!important}
+.quotation-line-table th:nth-child(4),.quotation-line-table td:nth-child(4){width:5.5%!important}
+.quotation-line-table th:nth-child(5),.quotation-line-table td:nth-child(5){width:6.5%!important}
+.quotation-line-table th:nth-child(6),.quotation-line-table td:nth-child(6){width:6.5%!important}
+.quotation-line-table th:nth-child(7),.quotation-line-table td:nth-child(7){width:7.5%!important}
+.quotation-line-table th:nth-child(8),.quotation-line-table td:nth-child(8){width:6.5%!important}
+.quotation-line-table th:nth-child(9),.quotation-line-table td:nth-child(9){width:7.5%!important}
+.quotation-line-table th:nth-child(10),.quotation-line-table td:nth-child(10){width:9%!important}
+.quotation-line-table th:nth-child(11),.quotation-line-table td:nth-child(11){width:3.5%!important}
+.quotation-summary-fields{
+  margin-top:8px!important;
+  gap:9px!important;
+}
+.quotation-summary-fields label span{margin-bottom:3px!important;font-size:9px!important}
+.quotation-summary-fields input{height:30px!important;padding:4px 7px!important;font-size:10px!important}
+.quotation-terms-grid{margin-top:10px!important}
+.quotation-terms-grid textarea{
+  min-height:62px!important;
+  height:62px!important;
+  padding:7px 9px!important;
+  resize:vertical;
+}
+@media(max-width:800px){
+  .quotation-line-table{max-height:300px!important}
+  .quotation-line-table table{min-width:980px!important;width:980px!important}
+}
+
+/* v2.6.07 - Design approval checkbox + global readonly/calculated styling */
+.form-grid label.checkbox-field{display:flex!important;flex-direction:column;align-items:flex-start;justify-content:flex-end}
+.form-grid .checkbox-inline{display:flex;align-items:center;gap:8px;height:38px;width:100%;padding:0 10px;border:1px solid var(--border,#13b8aa);border-radius:7px;background:#fff}
+.form-grid .checkbox-inline input[type="checkbox"]{width:18px!important;height:18px!important;min-width:18px!important;max-width:18px!important;margin:0!important}
+.form-grid .checkbox-inline em{font-style:normal;color:#475467;font-size:12px}
+
+/* All non-editable / calculated controls use a clear grey background. */
+.bsoerp-app input[readonly],
+.bsoerp-app textarea[readonly],
+.bsoerp-app select[disabled],
+.bsoerp-app input[disabled],
+.bsoerp-app textarea[disabled],
+.bsoerp-app .erp-readonly,
+.bsoerp-app .recce-readonly-field,
+.bsoerp-app .discount-amount,
+.bsoerp-app .gst-amount,
+.bsoerp-app .quote-line-amount,
+.bsoerp-app .quotation-summary-field{
+  background:#eef1f4!important;
+  color:#475467!important;
+  cursor:not-allowed!important;
+  opacity:1!important;
+}
+
+/* v2.6.09 - Remove number input spinner arrows globally */
+.bsoerp-app input[type="number"]::-webkit-outer-spin-button,
+.bsoerp-app input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+.bsoerp-app input[type="number"] {
+  -moz-appearance: textfield !important;
+  appearance: textfield !important;
+}
+
+/* v2.6.10 - remove redundant nested form box; outer panel remains the single form container */
+.bsoerp-app .form-panel fieldset{
+  border:0!important;
+  border-radius:0!important;
+  padding:0!important;
+  margin:0!important;
+  min-width:0!important;
+  width:100%!important;
+  max-width:100%!important;
+}
+/* v2.6.11 quotation workflow refinements */
+.quotation-workflow-modal{width:min(760px,calc(100vw - 32px));}
+.quotation-workflow-modal .form-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 16px;}
+.quotation-workflow-modal .form-grid .wide{grid-column:1/-1;}
+.quotation-workflow-modal input[type="file"]{min-height:42px;padding:7px;background:#fff;}
+.quotation-status-modal-card{width:min(620px,calc(100vw - 32px));}
+.quotation-status-modal-card .single-column{grid-template-columns:1fr;gap:14px;}
+.quotation-items-filter{align-items:end;}
+.quotation-items-filter>label{min-width:140px;flex:1 1 150px;}
+.quotation-items-filter>label>span{display:block;}
+@media(max-width:700px){.quotation-workflow-modal .form-grid{grid-template-columns:1fr;}.quotation-workflow-modal .form-grid .wide{grid-column:auto;}}
+/* v2.6.12 - User signature upload */
+.erp-image-upload{display:flex;align-items:flex-start;gap:12px;flex-wrap:wrap;width:100%}
+.erp-image-upload input[type="file"]{width:min(100%,420px);min-width:0}
+.erp-image-upload small{display:block;width:100%;color:#667085;font-size:11px}
+.erp-image-preview{width:180px;min-height:70px;padding:8px;border:1px solid #d0d5dd;border-radius:8px;background:#f8fafc;display:flex;align-items:center;justify-content:center}
+.erp-image-preview img{display:block;max-width:100%;max-height:90px;object-fit:contain}
+.signature-cell{min-width:120px}
+.signature-thumb{display:block;max-width:110px;max-height:48px;object-fit:contain;background:#fff}
+
+/* v2.6.14 - Quotation item table: readable columns + always-clear horizontal scrolling */
+.bsoerp-app .quotation-line-table{
+  width:100%!important;
+  max-width:100%!important;
+  overflow-x:scroll!important;
+  overflow-y:auto!important;
+  scrollbar-gutter:stable both-edges!important;
+  padding-bottom:3px!important;
+}
+.bsoerp-app .quotation-line-table table{
+  width:1260px!important;
+  min-width:1260px!important;
+  max-width:none!important;
+  table-layout:fixed!important;
+}
+/* Keep every field comfortably readable instead of squeezing the row. */
+.bsoerp-app .quotation-line-table th:nth-child(1),.bsoerp-app .quotation-line-table td:nth-child(1){width:215px!important}
+.bsoerp-app .quotation-line-table th:nth-child(2),.bsoerp-app .quotation-line-table td:nth-child(2){width:205px!important}
+.bsoerp-app .quotation-line-table th:nth-child(3),.bsoerp-app .quotation-line-table td:nth-child(3){width:70px!important}
+.bsoerp-app .quotation-line-table th:nth-child(4),.bsoerp-app .quotation-line-table td:nth-child(4){width:88px!important}
+.bsoerp-app .quotation-line-table th:nth-child(5),.bsoerp-app .quotation-line-table td:nth-child(5){width:90px!important}
+.bsoerp-app .quotation-line-table th:nth-child(6),.bsoerp-app .quotation-line-table td:nth-child(6){width:82px!important}
+.bsoerp-app .quotation-line-table th:nth-child(7),.bsoerp-app .quotation-line-table td:nth-child(7){width:95px!important}
+.bsoerp-app .quotation-line-table th:nth-child(8),.bsoerp-app .quotation-line-table td:nth-child(8){width:82px!important}
+.bsoerp-app .quotation-line-table th:nth-child(9),.bsoerp-app .quotation-line-table td:nth-child(9){width:95px!important}
+.bsoerp-app .quotation-line-table th:nth-child(10),.bsoerp-app .quotation-line-table td:nth-child(10){width:118px!important}
+.bsoerp-app .quotation-line-table th:nth-child(11),.bsoerp-app .quotation-line-table td:nth-child(11){width:45px!important}
+.bsoerp-app .quotation-line-table::-webkit-scrollbar{height:12px!important;width:10px!important}
+.bsoerp-app .quotation-line-table::-webkit-scrollbar-track{background:#eef2f4!important;border-radius:8px!important}
+.bsoerp-app .quotation-line-table::-webkit-scrollbar-thumb{background:#9aa6b2!important;border-radius:8px!important;border:2px solid #eef2f4!important}
+.bsoerp-app .quotation-line-table::-webkit-scrollbar-thumb:hover{background:#7b8794!important}
+@media(max-width:800px){
+  .bsoerp-app .quotation-line-table table{width:1260px!important;min-width:1260px!important}
+}
+
+/* v2.6.40 - Wider Update Delivery modal */
+#order-delivery-modal .lead-update-modal-card{
+  width:min(1100px,calc(100vw - 40px));
+  max-width:1100px;
+  padding:22px 24px;
+}
+#order-delivery-modal .order-delivery-form{
+  max-width:none;
+  width:100%;
+}
+#order-delivery-modal .order-delivery-form>.form-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:14px 16px;
+}
+#order-delivery-modal .order-delivery-items{
+  width:100%;
+  margin-top:14px;
+}
+#order-delivery-modal .order-delivery-items .table-wrap{
+  width:100%;
+  overflow-x:auto;
+}
+#order-delivery-modal .order-delivery-items table.data{
+  min-width:760px;
+}
+#order-delivery-modal .order-delivery-remarks-grid{
+  margin-top:14px;
+}
+.grn-line-table table{min-width:760px}.grn-line-table th:nth-child(1){width:20%}.grn-line-table th:nth-child(2){width:28%}.grn-line-table th:nth-child(n+3){width:13%}.grn-line-row td{vertical-align:middle}.grn-line-row span{display:block}.grn-receive-qty{min-width:100px}.grn-remarks-field{display:block!important;width:100%!important;margin-top:16px!important}.grn-remarks-field textarea{width:100%;min-height:80px}
+.grn-form fieldset>.form-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+@media(max-width:1000px){.grn-form fieldset>.form-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:600px){.grn-form fieldset>.form-grid{grid-template-columns:1fr!important}}
+@media(max-width:900px){
+  #order-delivery-modal .lead-update-modal-card{width:calc(100vw - 24px);padding:18px;}
+  #order-delivery-modal .order-delivery-form>.form-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+}
+@media(max-width:600px){
+  #order-delivery-modal .lead-update-modal-card{width:calc(100vw - 16px);padding:15px;}
+  #order-delivery-modal .order-delivery-form>.form-grid{grid-template-columns:1fr!important;}
+}
+
+/* v2.6.41 - Keep inline Add New master modal above workflow popups */
+.quick-add-backdrop{z-index:1000010!important;}
+.quick-add-modal{z-index:1000020!important;}
+body:has(.quick-add-modal:not([hidden])) .quick-add-modal{isolation:isolate;}
+
+/* v2.6.43 - expandable Order item details */
+.order-expand-row{cursor:pointer;}
+.order-expand-row:hover>td{background:rgba(20,184,166,.045);}
+.order-expand-row.is-expanded>td{background:rgba(20,184,166,.07);}
+.order-item-detail-row>td{padding:8px 12px!important;background:#f8fbfc!important;}
+.order-item-detail-wrap{overflow-x:auto;width:100%;}
+.order-item-detail-table{margin:0;min-width:850px;background:#fff;}
+.order-item-detail-table th,.order-item-detail-table td{font-size:12px;padding:7px 9px;}
+
+
+/* v2.6.68 — global floating searchable dropdown visibility fix */
+.erp-search-select{position:relative!important;overflow:visible!important}
+.erp-search-select-menu{
+  position:fixed!important;
+  right:auto!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  background:#fff!important;
+  border:1px solid var(--bsoerp-theme,#0eb8aa)!important;
+  box-shadow:0 14px 36px rgba(15,23,42,.22)!important;
+  z-index:2147483000!important;
+  min-width:180px!important;
+  padding:5px!important;
+}
+.erp-search-select-menu[hidden]{display:none!important}
+.erp-search-option{white-space:normal!important;overflow-wrap:anywhere!important;line-height:1.35!important;min-height:36px!important}
+.form-panel,.panel,.table-wrap,.line-table,.quotation-line-table,.order-line-table,.modal-card,.lead-update-modal-card,.lead-queue-modal-card{isolation:auto}
+@media(max-width:760px){
+  .erp-search-select-menu{max-width:calc(100vw - 16px)!important;min-width:0!important}
+}
+
+
+/* v2.6.74 — clean delivery quantity cells */
+.order-delivery-items .delivery-readonly-qty{
+  background:#f3f4f6;
+  color:#111827;
+  font-weight:500;
+}
+.order-delivery-items .delivery-qty-input{
+  width:100%!important;
+  min-width:72px!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  outline:none!important;
+  padding:4px 6px!important;
+  margin:0!important;
+  border-radius:0!important;
+}
+.order-delivery-items .delivery-qty-input:focus{
+  background:#fff!important;
+  box-shadow:inset 0 -2px 0 var(--bsoerp-theme,#0eb8aa)!important;
+}
+/* v2.6.77 delivery validation: keep errors inside the form */
+.delivery-qty-input.delivery-qty-error{outline:2px solid #dc2626!important;outline-offset:1px;background:#fff7f7!important}
+.delivery-form-error{margin:0 0 12px!important}
+
+/* v2.6.78 - Per-user left-menu view permissions */
+.user-view-permissions{margin-top:22px;grid-column:1/-1}.user-view-permissions-head{margin-bottom:10px}.user-view-permissions-head h3{margin:0 0 4px;font-size:16px}.user-view-permissions-head p{margin:0;color:var(--bsoerp-secondary-font,#374151)}.permission-table{width:100%}.permission-table th.permission-show,.permission-table td.permission-show{width:120px;text-align:center}.permission-table th.permission-show label{display:inline-flex;align-items:center;justify-content:center;gap:7px;white-space:nowrap}.permission-table input[type=checkbox]{width:16px;height:16px;margin:0;accent-color:var(--bsoerp-theme,#12b8a6)}
+
+
+/* v2.6.82 production multi-user and jobs */
+.erp-multiuser{position:relative;width:100%}.erp-multiuser-toggle{width:100%;min-height:35px;background:#fff;border:1px solid #11b8ad;border-radius:7px;padding:7px 10px;display:flex;justify-content:space-between;align-items:center;text-align:left;font:inherit}.erp-multiuser-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.erp-multiuser-menu{position:absolute;z-index:99999;left:0;right:0;top:calc(100% + 4px);background:#fff;border:1px solid #11b8ad;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.14);padding:8px;max-height:260px;overflow:auto}.erp-multiuser-search{width:100%;margin-bottom:6px}.erp-multiuser-option{display:flex!important;flex-direction:row!important;align-items:center;gap:8px;padding:6px 4px;margin:0!important;cursor:pointer}.erp-multiuser-option input{width:auto!important;margin:0!important}.production-line-table table{min-width:1050px}.production-line-table th:nth-child(3),.production-line-table th:nth-child(4),.production-line-table th:nth-child(5),.production-line-table th:nth-child(6){width:90px}.production-line-table th:nth-child(7){width:130px}
+.production-work-order-form .erp-multiuser-menu{padding:8px;overflow-x:hidden}.production-work-order-form .erp-multiuser-menu>.erp-multiuser-search{display:block;width:100%!important;max-width:none!important;min-width:0!important;box-sizing:border-box;margin:0 0 6px!important}.production-work-order-form .erp-multiuser-menu>.erp-multiuser-option{display:grid!important;grid-template-columns:18px minmax(0,1fr)!important;width:100%!important;min-height:34px;box-sizing:border-box;align-items:center!important;justify-content:initial!important;gap:10px!important;padding:7px 8px!important;margin:0!important;border-radius:5px;text-align:left!important;line-height:1.25;white-space:normal}.production-work-order-form .erp-multiuser-menu>.erp-multiuser-option:hover{background:#f0fbfa}.production-work-order-form .erp-multiuser-menu>.erp-multiuser-option>input[type="checkbox"]{position:static!important;display:block!important;width:16px!important;height:16px!important;min-width:16px!important;margin:0!important;padding:0!important;justify-self:start}.production-work-order-form .erp-multiuser-menu>.erp-multiuser-option>span{display:block!important;width:auto!important;min-width:0!important;margin:0!important;padding:0!important;text-align:left!important;overflow-wrap:anywhere}.production-work-order-form .erp-multiuser-selectall>span{font-weight:600}
+
+/* v2.6.87 - compact Production / Work Order header fields */
+.production-work-order-form>.form-grid{
+  gap:9px 14px!important;
+}
+.production-work-order-form>.form-grid>label>span{
+  margin-bottom:3px!important;
+  line-height:1.15!important;
+}
+.production-work-order-form>.form-grid input,
+.production-work-order-form>.form-grid select,
+.production-work-order-form>.form-grid .erp-search-select-input,
+.production-work-order-form>.form-grid .erp-search-input{
+  min-height:34px!important;
+  height:34px!important;
+  padding:6px 9px!important;
+}
+.production-work-order-form>.form-grid .select-with-add{
+  gap:6px!important;
+}
+.production-work-order-form>.form-grid .quick-add-btn{
+  width:34px!important;
+  min-width:34px!important;
+  height:34px!important;
+  padding:0!important;
+}
+.production-work-order-form>.form-grid .erp-multiselect-control,
+.production-work-order-form>.form-grid .multi-select-display{
+  min-height:34px!important;
+  height:34px!important;
+}
+@media(max-width:800px){
+  .production-work-order-form>.form-grid{gap:9px!important;}
+}
+
+/* v2.6.91 - Production Job Update workflow */
+#job-update-modal .job-update-modal-card{width:min(1120px,calc(100vw - 32px));overflow:visible}
+#job-update-modal .job-update-work-order{margin:-2px 0 14px;font-size:15px}
+#job-update-modal .job-update-items{margin-bottom:16px}
+#job-update-modal .job-update-table{min-width:860px}
+#job-update-modal .job-update-table input[type="number"]{width:120px;min-height:34px}
+#job-update-modal .job-update-meta{grid-template-columns:minmax(220px,320px) 1fr;gap:14px 18px}
+#job-update-modal .job-update-meta .wide{grid-column:2}
+@media(max-width:760px){#job-update-modal .job-update-modal-card{width:calc(100vw - 16px);padding:15px}#job-update-modal .job-update-meta{grid-template-columns:1fr}#job-update-modal .job-update-meta .wide{grid-column:auto}}
+
+/* v2.6.96 - icon-only update actions */
+.actions .update-icon-action, .update-icon-action {
+  width: 34px;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 7px;
+}
+
+/* v2.6.98 - green checked-box icon for all Update actions */
+.actions .update-icon-action,
+.update-icon-action {
+  width: 34px !important;
+  min-width: 34px !important;
+  height: 34px !important;
+  padding: 0 !important;
+  border: 1px solid #d9e3df !important;
+  border-radius: 7px !important;
+  background-color: #fff !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  box-shadow: none !important;
+  position: relative;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+.actions .update-icon-action::before,
+.update-icon-action::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='10' y='12' width='39' height='39' rx='5' fill='none' stroke='%2300a651' stroke-width='7'/%3E%3Cpath d='M20 31l11 11L55 16' fill='none' stroke='%2300a651' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.actions .update-icon-action:hover,
+.update-icon-action:hover {
+  background-color: #f2fbf6 !important;
+  border-color: #00a651 !important;
+}
+
+
+/* v2.7.03 - unified one-line action icon tiles */
+.bsoerp-app td.actions,
+.bsoerp-app .actions {
+  white-space: nowrap !important;
+}
+.bsoerp-app td.actions {
+  display: table-cell !important;
+}
+.bsoerp-app td.actions > .bsoerp-action-row,
+.bsoerp-app td.actions > .action-row {
+  display: inline-flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+/* Direct action children also stay on one line even where no wrapper exists. */
+.bsoerp-app td.actions > a,
+.bsoerp-app td.actions > button,
+.bsoerp-app td.actions > .btn {
+  display: inline-flex !important;
+  vertical-align: middle !important;
+  margin: 0 5px 0 0 !important;
+  flex: 0 0 auto !important;
+}
+.bsoerp-app td.actions > a,
+.bsoerp-app td.actions > button,
+.bsoerp-app td.actions > .btn,
+.bsoerp-app .actions a,
+.bsoerp-app .actions button,
+.bsoerp-app .actions .btn {
+  width: 34px !important;
+  min-width: 34px !important;
+  height: 34px !important;
+  padding: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 7px !important;
+  border: 1px solid #d9e2ec !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  overflow: hidden !important;
+}
+/* Update / workflow */
+.bsoerp-app .actions .update-icon-action,
+.bsoerp-app td.actions .update-icon-action {
+  background: #ecfdf3 !important;
+  border-color: #abefc6 !important;
+}
+/* Edit */
+.bsoerp-app .actions a[title="Edit"],
+.bsoerp-app .actions button[title="Edit"],
+.bsoerp-app td.actions a[title="Edit"],
+.bsoerp-app td.actions button[title="Edit"] {
+  background: #eff8ff !important;
+  border-color: #b2ddff !important;
+  color: #175cd3 !important;
+}
+/* PDF / Print-document actions */
+.bsoerp-app .actions a[title*="PDF" i],
+.bsoerp-app .actions button[title*="PDF" i],
+.bsoerp-app .actions a[aria-label*="PDF" i],
+.bsoerp-app .actions button[aria-label*="PDF" i],
+.bsoerp-app td.actions a[title*="PDF" i],
+.bsoerp-app td.actions button[title*="PDF" i] {
+  background: #fff4ed !important;
+  border-color: #ffd6ae !important;
+  color: #b93815 !important;
+}
+/* Cancel / delete / remove */
+.bsoerp-app .actions .delete,
+.bsoerp-app .actions a[title*="Cancel" i],
+.bsoerp-app .actions button[title*="Cancel" i],
+.bsoerp-app td.actions .delete,
+.bsoerp-app td.actions a[title*="Cancel" i],
+.bsoerp-app td.actions button[title*="Cancel" i] {
+  background: #fff1f3 !important;
+  border-color: #fecdd6 !important;
+  color: #c01048 !important;
+}
+/* Neutral action/history/details */
+.bsoerp-app .actions a:not(.delete):not([title="Edit"]):not([title*="PDF" i]):not([title*="Cancel" i]):not(.update-icon-action),
+.bsoerp-app .actions button:not(.delete):not([title="Edit"]):not([title*="PDF" i]):not([title*="Cancel" i]):not(.update-icon-action) {
+  background: #f2f4f7 !important;
+  border-color: #e4e7ec !important;
+  color: #344054 !important;
+}
+.bsoerp-app .actions a:hover,
+.bsoerp-app .actions button:hover,
+.bsoerp-app td.actions a:hover,
+.bsoerp-app td.actions button:hover {
+  filter: brightness(.97);
+}
+
+
+/* v2.7.06 - Production Work Order: always 4 fields per row on desktop */
+.production-work-order-form>.form-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:8px 10px!important;
+}
+.production-work-order-form>.form-grid>label{min-width:0!important;}
+@media(max-width:900px){
+  .production-work-order-form>.form-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+}
+@media(max-width:600px){
+  .production-work-order-form>.form-grid{grid-template-columns:1fr!important;}
+}
+
+/* v2.7.27 - Purchase Order total below Remarks */
+.po-total-footer{
+  display:flex;
+  align-items:baseline;
+  justify-content:flex-end;
+  gap:8px;
+  width:100%;
+  margin:8px 0 2px;
+  padding-top:8px;
+  text-align:right;
+  white-space:nowrap;
+}
+.po-total-footer span{
+  font-size:14px;
+  font-weight:600;
+}
+.po-total-footer strong{
+  min-width:90px;
+  font-size:18px;
+  font-weight:700;
+  text-align:right;
+}
+@media(max-width:600px){
+  .po-total-footer{margin-top:6px;}
+  .po-total-footer strong{font-size:16px;min-width:80px;}
+}
+
+/* v2.7.07 - FIX: Production Work Order header grid is inside fieldset, so target actual DOM */
+.production-work-order-form fieldset > .form-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:8px 10px!important;
+}
+.production-work-order-form fieldset > .form-grid > label{
+  min-width:0!important;
+  width:100%!important;
+}
+.production-work-order-form fieldset > .form-grid input,
+.production-work-order-form fieldset > .form-grid select,
+.production-work-order-form fieldset > .form-grid .erp-search-select,
+.production-work-order-form fieldset > .form-grid .erp-search-select-input,
+.production-work-order-form fieldset > .form-grid .erp-search-input,
+.production-work-order-form fieldset > .form-grid .erp-multiuser,
+.production-work-order-form fieldset > .form-grid .select-with-add{
+  min-width:0!important;
+  max-width:100%!important;
+  width:100%!important;
+}
+@media(max-width:900px){
+  .production-work-order-form fieldset > .form-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+}
+@media(max-width:600px){
+  .production-work-order-form fieldset > .form-grid{grid-template-columns:1fr!important;}
+}
+
+.order-delivery-items{margin-top:18px!important;}
+.installation-required-field{display:flex!important;align-items:center!important;gap:9px!important;margin:14px 0 2px!important;width:max-content!important;font-weight:600!important;}
+.installation-required-field input{width:18px!important;height:18px!important;margin:0!important;}
+\n\n/* v2.7.26 - Purchase Order line-head alignment */\n.purchase-order-line-box .line-head{\n  display:flex!important;\n  align-items:center!important;\n  justify-content:space-between!important;\n  gap:12px!important;\n}\n.purchase-order-line-box .po-line-head-actions{\n  display:flex!important;\n  flex-direction:row!important;\n  align-items:center!important;\n  justify-content:flex-end!important;\n  gap:10px!important;\n  flex-wrap:nowrap!important;\n  margin-left:auto!important;\n}\n.purchase-order-line-box .po-total-amount{\n  display:inline-flex!important;\n  flex-direction:row!important;\n  align-items:center!important;\n  gap:6px!important;\n  white-space:nowrap!important;\n  font-size:13px!important;\n  line-height:1!important;\n}\n.purchase-order-line-box .po-total-amount span,\n.purchase-order-line-box .po-total-amount strong{\n  display:inline!important;\n  margin:0!important;\n  white-space:nowrap!important;\n}\n.purchase-order-line-box .po-total-amount span{font-weight:600!important;}\n.purchase-order-line-box .po-total-amount strong{font-size:14px!important;min-width:auto!important;text-align:left!important;}\n.purchase-order-line-box .po-line-head-actions .add-line{flex:0 0 auto!important;margin:0!important;}\n@media(max-width:700px){\n  .purchase-order-line-box .line-head{align-items:flex-start!important;}\n  .purchase-order-line-box .po-line-head-actions{flex-wrap:wrap!important;}\n}\n
+
+
+/* v2.7.77 - Keep all five Order amount summary fields on one desktop row */
+@media(min-width:801px){
+  .bsoerp-app .quotation-summary-fields.order-summary-fields{
+    grid-template-columns:repeat(5,minmax(110px,1fr))!important;
+    width:100%!important;
+    max-width:none!important;
+    justify-content:stretch!important;
+  }
+}
+
+/* v2.7.79 - Show a clear down arrow at the right side of every dropdown */
+.bsoerp-app .erp-search-select::after{
+  content:'▾';
+  position:absolute;
+  right:11px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:3;
+  color:#667085;
+  font-size:14px;
+  line-height:1;
+  pointer-events:none;
+}
+.bsoerp-app .erp-search-select-input{
+  padding-right:34px!important;
+}
+/* Keep native/fallback selects consistent if a select is visible before enhancement. */
+.bsoerp-app select:not(.erp-native-select){
+  padding-right:34px!important;
+}
+/* Multi-user checkbox dropdowns use a custom toggle rather than a native select. */
+.bsoerp-app .erp-multiuser-toggle::after{
+  content:'▾';
+  flex:0 0 auto;
+  margin-left:8px;
+  color:#667085;
+  font-size:14px;
+  line-height:1;
+  pointer-events:none;
+}
+
+
+/* v2.7.80 Dashboard header: company logo on the right, no dashboard Excel action. */
+.bsoerp-top .dashboard-company-logo{margin-left:auto;display:flex;align-items:center;justify-content:flex-end;min-width:0;height:58px}
+.bsoerp-top .dashboard-company-logo img{display:block;max-width:180px;max-height:50px;width:auto;height:auto;object-fit:contain}
+.bsoerp-top .dashboard-company-logo + .bsoerp-user{margin-left:10px}
+@media(max-width:800px){.bsoerp-top .dashboard-company-logo{display:none!important}}
+
+/* v2.7.81 Dashboard summary cards: label left, count right, no helper line */
+.dashboard-card{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:16px;min-height:86px}
+.dashboard-card span{margin:0!important;line-height:1.35}
+.dashboard-card strong{display:block!important;margin:0!important;font-size:28px;line-height:1;text-align:right}
+@media(max-width:500px){.dashboard-card{min-height:72px;column-gap:10px}.dashboard-card strong{font-size:24px}}
+
+/* v2.7.89 Daily Activity links: clickable without underline */
+.daily-activity-summary-table a,
+.daily-activity-summary-table a:visited,
+.daily-activity-summary-table a:hover,
+.daily-activity-summary-table a:focus{
+  text-decoration:none!important;
+}
+
+/* v2.7.94 — clickable sortable headers; sorting direction is intentionally icon-free. */
+table.data th.bsoerp-sortable{cursor:pointer;user-select:none}
+table.data th.bsoerp-sortable:hover{filter:brightness(.98)}
+
+/* v2.7.95 — show company logo in every ERP top header on desktop only. */
+@media(min-width:801px){.bsoerp-top .dashboard-company-logo{display:flex!important}}
+
+/* v2.7.96: keep company logo as the final item at the far right of desktop header */
+@media(min-width:801px){.bsoerp-top .bsoerp-user{margin-left:auto}.bsoerp-top .dashboard-company-logo{margin-left:10px!important;margin-right:0!important;flex:0 0 auto}.bsoerp-top .bsoerp-user + .dashboard-company-logo{margin-left:10px!important}}
+
+
+/* v2.7.97 — company logo is always the last desktop header item, after Filter/Excel/actions. */
+@media(min-width:801px){
+  .bsoerp-top .dashboard-company-logo{order:999!important;margin-right:0!important;flex:0 0 auto!important;}
+  .bsoerp-top .view-export-actions{order:900!important;margin-left:auto!important;}
+  .bsoerp-top:has(.view-export-actions) .dashboard-company-logo{margin-left:10px!important;}
+  .bsoerp-top:not(:has(.view-export-actions)) .dashboard-company-logo{margin-left:auto!important;}
+  .bsoerp-top > .top-excel-export,.bsoerp-top > .universal-excel-export{order:900!important;}
+  .bsoerp-top:has(> .top-excel-export) > .dashboard-company-logo,.bsoerp-top:has(> .universal-excel-export) > .dashboard-company-logo{margin-left:10px!important;}
+}
+
+
+/* v2.8.09 — Master-only filter removal. Operational views keep their Filter button. */
+.bsoerp-app.bsoerp-master-view .bsoerp-header-filter,
+.bsoerp-app.bsoerp-master-view .mobile-filter-toggle,
+.bsoerp-app.bsoerp-master-view .filter-clear{display:none!important;}
+.master-listing-panel .mobile-filter-toggle,
+.master-listing-panel .filter-clear{display:none!important;}
+.master-listing-panel .master-toolbar>label:not(:has(input[name="s"])) {display:none!important;}
+
+/* v2.8.08 — Master views: never display Filter controls. */
+.bsoerp-app.bsoerp-master-view .bsoerp-header-filter,
+.bsoerp-app.bsoerp-master-view .mobile-filter-toggle,
+.bsoerp-app.bsoerp-master-view .filter-clear{display:none!important;}
+
+/* v2.8.32 — Recce Master row opens Action Details. */
+tr.recce-details-row{cursor:pointer;}
+
+/* v2.8.34 — Design Master row opens Action Details. */
+tr.design-details-row{cursor:pointer}
+tr.design-details-row .actions{cursor:default}
+
+
+/* v2.8.38 — Design Action Details fit-to-screen layout */
+#design-details-modal .recce-details-modal-card{
+  width:calc(100vw - 28px)!important;
+  max-width:1500px!important;
+  max-height:calc(100vh - 28px)!important;
+  overflow:auto!important;
+}
+#design-details-modal .design-details-modal-body{
+  width:100%!important;
+  max-width:100%!important;
+  overflow-x:hidden!important;
+}
+#design-details-modal .design-details-modal-body .table-wrap{
+  width:100%!important;
+  max-width:100%!important;
+  overflow-x:hidden!important;
+}
+#design-details-modal .design-details-modal-body table.data{
+  width:100%!important;
+  min-width:0!important;
+  table-layout:fixed!important;
+}
+#design-details-modal .design-details-modal-body table.data th,
+#design-details-modal .design-details-modal-body table.data td{
+  padding:7px 5px!important;
+  font-size:10px!important;
+  line-height:1.25!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+  word-break:break-word!important;
+  vertical-align:top!important;
+}
+#design-details-modal .recce-details-head{
+  margin-bottom:12px!important;
+}
+@media(max-width:700px){
+  #design-details-modal .recce-details-modal-card{
+    width:calc(100vw - 12px)!important;
+    max-height:calc(100vh - 12px)!important;
+  }
+  #design-details-modal .design-details-modal-body,
+  #design-details-modal .design-details-modal-body .table-wrap{
+    overflow-x:auto!important;
+  }
+  #design-details-modal .design-details-modal-body table.data{
+    min-width:900px!important;
+    table-layout:auto!important;
+  }
+}
+
+/* v2.8.39 — Design Action Details: remove Pending Approval and increase row height */
+#design-details-modal .design-details-modal-body table.data th,
+#design-details-modal .design-details-modal-body table.data td{
+  padding:11px 7px!important;
+  font-size:11px!important;
+  line-height:1.45!important;
+  vertical-align:middle!important;
+}
+
+/* v2.8.46 — Leads Master expandable row details */
+.lead-details-row{cursor:pointer;}
+.lead-details-row.is-expanded{background:rgba(0,0,0,.025);}
+.lead-details-expanded-cell{padding:14px 16px!important;background:#f8fbfc;}
+.lead-details-expanded-head{margin:0 0 10px;font-size:14px;}
+.lead-details-history-table th,.lead-details-history-table td{padding:9px 10px;vertical-align:top;}
+@media (max-width:700px){.lead-details-expanded-cell{padding:10px!important}.lead-details-table-wrap{overflow-x:auto}.lead-details-history-table{min-width:850px}}
+
+
+/* v2.8.47 — Add Quotation: compact Remove column */
+.bsoerp-app .quotation-only-table th:last-child,
+.bsoerp-app .quotation-only-table td:last-child{
+  width:30px!important;
+  min-width:30px!important;
+  max-width:30px!important;
+  padding-left:3px!important;
+  padding-right:3px!important;
+  text-align:center!important;
+}
+.bsoerp-app .quotation-only-table td:last-child .remove-line{
+  margin:0 auto!important;
+}
+
+
+/* v2.8.48 — Add Quotation: make selected UOM clearly visible */
+.bsoerp-app .quotation-only-table th:nth-child(4),
+.bsoerp-app .quotation-only-table td:nth-child(4){
+  width:118px!important;
+  min-width:118px!important;
+}
+.bsoerp-app .quotation-only-table td:nth-child(4) .line-select-with-add{
+  min-width:0!important;
+}
+.bsoerp-app .quotation-only-table td:nth-child(4) .line-select-with-add select,
+.bsoerp-app .quotation-only-table td:nth-child(4) .line-select-with-add .erp-search-select{
+  min-width:78px!important;
+  padding-left:8px!important;
+  padding-right:20px!important;
+}
+
+
+/* v2.8.49 — quotation client approval image icon */
+.bsoerp-app .actions a.client-approval-image-action{padding:0;overflow:hidden;}
+.bsoerp-app .actions a.client-approval-image-action img{display:block;width:18px;height:18px;object-fit:contain;}
+
+
+/* v2.8.50 — Add Quotation: ensure full UOM value is visible */
+.bsoerp-app .quotation-only-table th:nth-child(4),
+.bsoerp-app .quotation-only-table td:nth-child(4){
+  width:150px!important;
+  min-width:150px!important;
+  max-width:150px!important;
+}
+.bsoerp-app .quotation-only-table td:nth-child(4) .line-select-with-add{
+  display:flex!important;
+  align-items:center!important;
+  width:100%!important;
+  min-width:0!important;
+  max-width:none!important;
+  gap:4px!important;
+}
+.bsoerp-app .quotation-only-table td:nth-child(4) .line-select-with-add select,
+.bsoerp-app .quotation-only-table td:nth-child(4) .line-select-with-add .erp-search-select{
+  flex:1 1 auto!important;
+  width:calc(100% - 33px)!important;
+  min-width:110px!important;
+  max-width:none!important;
+  padding-left:8px!important;
+  padding-right:24px!important;
+  text-overflow:clip!important;
+}
+.bsoerp-app .quotation-only-table td:nth-child(4) .line-select-with-add .quick-add-btn{
+  flex:0 0 29px!important;
+  width:29px!important;
+  min-width:29px!important;
+  max-width:29px!important;
+}
+
+
+/* v2.8.51 — Add Quotation: remove UOM dropdown arrow for cleaner display */
+.bsoerp-app .quotation-only-table td:nth-child(4) .line-select-with-add select,
+.bsoerp-app .quotation-only-table td:nth-child(4) .line-select-with-add .erp-search-select{
+  -webkit-appearance:none!important;
+  -moz-appearance:none!important;
+  appearance:none!important;
+  background-image:none!important;
+  padding-right:8px!important;
+}
+.bsoerp-app .quotation-only-table td:nth-child(4) .line-select-with-add select::-ms-expand{display:none!important;}
+
+
+/* v2.8.55 — Order Update Delivery vehicle action */
+.bsoerp-app .delivery-vehicle-action{font-size:16px!important;line-height:1!important;padding:0!important;width:30px!important;height:30px!important;}
+.bsoerp-app .delivery-vehicle-action span{display:block;line-height:1;}
+
+
+/* v2.8.56 — Order Master Update Delivery: show truck only, no generic update tick */
+.bsoerp-app .actions .delivery-vehicle-action,
+.bsoerp-app td.actions .delivery-vehicle-action{
+  color:inherit!important;
+  font-size:16px!important;
+  line-height:1!important;
+  width:30px!important;
+  min-width:30px!important;
+  height:30px!important;
+  padding:0!important;
+}
+.bsoerp-app .actions .delivery-vehicle-action::before,
+.bsoerp-app td.actions .delivery-vehicle-action::before{
+  content:none!important;
+  display:none!important;
+  background-image:none!important;
+}
+.bsoerp-app .delivery-vehicle-action span{display:block!important;font-size:16px!important;line-height:1!important;color:initial!important;}
+
+
+/* v2.8.66 — Multi-order Work Order Jobs table */
+.bsoerp-app .production-line-table table{min-width:980px!important;}
+.bsoerp-app .production-line-table th:nth-child(1),.bsoerp-app .production-line-table td:nth-child(1){min-width:220px;}
+.bsoerp-app .production-line-table th:nth-child(2),.bsoerp-app .production-line-table td:nth-child(2){min-width:220px;}
+.bsoerp-app .production-line-table th:nth-child(3),.bsoerp-app .production-line-table td:nth-child(3){min-width:220px;}
+.bsoerp-app .production-line-table th:nth-child(4),.bsoerp-app .production-line-table td:nth-child(4),
+.bsoerp-app .production-line-table th:nth-child(5),.bsoerp-app .production-line-table td:nth-child(5),
+.bsoerp-app .production-line-table th:nth-child(6),.bsoerp-app .production-line-table td:nth-child(6){min-width:85px;width:85px;}
+
+
+/* v2.8.85 — Add Work Order: compact L, B, Nos, Rate and Amount columns */
+.bsoerp-app .production-line-table table{min-width:900px!important;}
+.bsoerp-app .production-line-table th:nth-child(4),.bsoerp-app .production-line-table td:nth-child(4),
+.bsoerp-app .production-line-table th:nth-child(5),.bsoerp-app .production-line-table td:nth-child(5){min-width:58px!important;width:58px!important;max-width:58px!important;}
+.bsoerp-app .production-line-table th:nth-child(6),.bsoerp-app .production-line-table td:nth-child(6){min-width:68px!important;width:68px!important;max-width:68px!important;}
+.bsoerp-app .production-line-table th:nth-child(7),.bsoerp-app .production-line-table td:nth-child(7){min-width:82px!important;width:82px!important;max-width:82px!important;}
+.bsoerp-app .production-line-table th:nth-child(8),.bsoerp-app .production-line-table td:nth-child(8){min-width:96px!important;width:96px!important;max-width:96px!important;}
+.bsoerp-app .production-line-table th:nth-child(9),.bsoerp-app .production-line-table td:nth-child(9){min-width:42px!important;width:42px!important;max-width:42px!important;padding-left:3px!important;padding-right:3px!important;text-align:center!important;}
+.bsoerp-app .production-line-table td:nth-child(4) input,
+.bsoerp-app .production-line-table td:nth-child(5) input,
+.bsoerp-app .production-line-table td:nth-child(6) input,
+.bsoerp-app .production-line-table td:nth-child(7) input,
+.bsoerp-app .production-line-table td:nth-child(8) input{padding-left:7px!important;padding-right:7px!important;}
+
+
+/* v2.8.89 — Work Order: rename Pending Order to Order and wrap long Order values */
+.bsoerp-app .production-line-table td:nth-child(3) .erp-search-select{min-width:0!important;}
+.bsoerp-app .production-line-table td:nth-child(3) .job-order-wrap-input{
+  width:100%!important;
+  min-height:42px!important;
+  height:42px!important;
+  padding:6px 24px 6px 8px!important;
+  line-height:1.25!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+  resize:none!important;
+  overflow:hidden!important;
+  font:12px Montserrat,Arial,sans-serif!important;
+}
+.bsoerp-app .production-line-table td:nth-child(3) .erp-search-option{
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+  line-height:1.3!important;
+}
+
+
+/* v2.8.95 — Add PO: increase Item, Description and UOM column widths */
+.bsoerp-app .purchase-order-line-table table{min-width:980px!important;}
+.bsoerp-app .purchase-order-line-table th:nth-child(1),
+.bsoerp-app .purchase-order-line-table td:nth-child(1){width:300px!important;min-width:300px!important;}
+.bsoerp-app .purchase-order-line-table th:nth-child(2),
+.bsoerp-app .purchase-order-line-table td:nth-child(2){width:300px!important;min-width:300px!important;}
+.bsoerp-app .purchase-order-line-table th:nth-child(3),
+.bsoerp-app .purchase-order-line-table td:nth-child(3){width:72px!important;min-width:72px!important;max-width:72px!important;}
+.bsoerp-app .purchase-order-line-table th:nth-child(4),
+.bsoerp-app .purchase-order-line-table td:nth-child(4){width:130px!important;min-width:130px!important;max-width:130px!important;}
+.bsoerp-app .purchase-order-line-table th:nth-child(5),
+.bsoerp-app .purchase-order-line-table td:nth-child(5){width:88px!important;min-width:88px!important;max-width:88px!important;}
+.bsoerp-app .purchase-order-line-table th:nth-child(6),
+.bsoerp-app .purchase-order-line-table td:nth-child(6){width:95px!important;min-width:95px!important;max-width:95px!important;}
+
+
+/* v2.8.96 — Add PO: keep selected UOM text clearly visible */
+.bsoerp-app .purchase-order-line-table table{min-width:1080px!important;}
+.bsoerp-app .purchase-order-line-table th:nth-child(1),
+.bsoerp-app .purchase-order-line-table td:nth-child(1){width:310px!important;min-width:310px!important;}
+.bsoerp-app .purchase-order-line-table th:nth-child(2),
+.bsoerp-app .purchase-order-line-table td:nth-child(2){width:300px!important;min-width:300px!important;}
+.bsoerp-app .purchase-order-line-table th:nth-child(3),
+.bsoerp-app .purchase-order-line-table td:nth-child(3){width:72px!important;min-width:72px!important;max-width:72px!important;}
+.bsoerp-app .purchase-order-line-table th:nth-child(4),
+.bsoerp-app .purchase-order-line-table td:nth-child(4){width:175px!important;min-width:175px!important;max-width:175px!important;}
+.bsoerp-app .purchase-order-line-table th:nth-child(5),
+.bsoerp-app .purchase-order-line-table td:nth-child(5){width:85px!important;min-width:85px!important;max-width:85px!important;}
+.bsoerp-app .purchase-order-line-table th:nth-child(6),
+.bsoerp-app .purchase-order-line-table td:nth-child(6){width:95px!important;min-width:95px!important;max-width:95px!important;}
+.bsoerp-app .purchase-order-line-table td:nth-child(4) .line-select-with-add{
+  display:flex!important;
+  align-items:center!important;
+  gap:6px!important;
+  width:100%!important;
+  min-width:0!important;
+}
+.bsoerp-app .purchase-order-line-table td:nth-child(4) .line-select-with-add > .erp-search-select{
+  flex:1 1 auto!important;
+  min-width:115px!important;
+  width:auto!important;
+}
+.bsoerp-app .purchase-order-line-table td:nth-child(4) .erp-search-select-input{
+  width:100%!important;
+  min-width:115px!important;
+  padding-left:8px!important;
+  padding-right:8px!important;
+  text-overflow:clip!important;
+}
+.bsoerp-app .purchase-order-line-table td:nth-child(4) .quick-add-btn{
+  flex:0 0 38px!important;
+  width:38px!important;
+  min-width:38px!important;
+  max-width:38px!important;
+  padding-left:0!important;
+  padding-right:0!important;
+}
+
+
+/* v2.8.97 — Add PO: make Qty fully visible */
+.bsoerp-app .purchase-order-line-table th:nth-child(3),
+.bsoerp-app .purchase-order-line-table td:nth-child(3){
+  width:95px!important;
+  min-width:95px!important;
+  max-width:95px!important;
+}
+.bsoerp-app .purchase-order-line-table td:nth-child(3) input{
+  width:100%!important;
+  min-width:0!important;
+  padding-left:8px!important;
+  padding-right:8px!important;
+  box-sizing:border-box!important;
+}
+
+
+/* v2.9.00 — Pending PO row click item details */
+.po-expand-row{cursor:pointer;}
+.po-expand-row:hover>td{background:rgba(20,184,166,.045);}
+.po-expand-row.is-expanded>td{background:rgba(20,184,166,.07);}
+\n\n/* v2.9.04 — Application Theme selector and Black & White mode */\n.settings-panel .application-theme-section .theme-choice-note{grid-column:1/-1;font-size:11px;color:var(--bsoerp-secondary-color,#374151);line-height:1.5;padding:10px 12px;border:1px solid var(--bsoerp-border-color,#12b8a6);border-radius:7px;background:#fafafa}\nbody.bsoerp-theme-bw{background:#fff!important;color:#111!important}\nbody.bsoerp-theme-bw .bsoerp-page,body.bsoerp-theme-bw .bsoerp-content{background:#fff!important}\nbody.bsoerp-theme-bw .bsoerp-side{background:#111!important;color:#fff!important}\nbody.bsoerp-theme-bw .bsoerp-brand{border-color:#555!important}\nbody.bsoerp-theme-bw .nav.active,body.bsoerp-theme-bw .heading:hover,body.bsoerp-theme-bw .group.open>.heading{background:#2a2a2a!important;color:#fff!important}\nbody.bsoerp-theme-bw .erp-search-option:hover,body.bsoerp-theme-bw .erp-search-option.selected{background:#efefef!important;color:#111!important}\nbody.bsoerp-theme-bw .btn:not(.primary):hover,body.bsoerp-theme-bw .pagination a:hover{background:#f2f2f2!important;color:#111!important}\nbody.bsoerp-theme-bw .status,body.bsoerp-theme-bw .status.completed,body.bsoerp-theme-bw .status.delivered,body.bsoerp-theme-bw .status.in-progress,body.bsoerp-theme-bw .status.canceled,body.bsoerp-theme-bw .status.pending-approval{background:#f2f2f2!important;color:#111!important;border-color:#888!important}\nbody.bsoerp-theme-bw .actions a{background:#fff!important;border:1px solid #aaa!important;color:#111!important}\nbody.bsoerp-theme-bw .remove-line,body.bsoerp-theme-bw .actions .delete{background:#fff!important;color:#111!important;border:1px solid #aaa!important}\nbody.bsoerp-theme-bw .quick-add-modal,body.bsoerp-theme-bw .erp-search-select-menu{border-color:#222!important}\n
+
+/* v2.9.07 — Add Order: keep selected UOM clearly visible */
+.bsoerp-app .quotation-line-table:not(.quotation-only-table) th:nth-child(4),
+.bsoerp-app .quotation-line-table:not(.quotation-only-table) td:nth-child(4){
+  width:140px!important;
+  min-width:140px!important;
+  max-width:140px!important;
+}
+.bsoerp-app .quotation-line-table:not(.quotation-only-table) td:nth-child(4) .line-select-with-add{
+  display:flex!important;
+  align-items:center!important;
+  gap:4px!important;
+  width:100%!important;
+  min-width:0!important;
+}
+.bsoerp-app .quotation-line-table:not(.quotation-only-table) td:nth-child(4) .line-select-with-add>.erp-search-select,
+.bsoerp-app .quotation-line-table:not(.quotation-only-table) td:nth-child(4) .line-select-with-add>select{
+  flex:1 1 auto!important;
+  width:calc(100% - 34px)!important;
+  min-width:0!important;
+  max-width:none!important;
+}
+.bsoerp-app .quotation-line-table:not(.quotation-only-table) td:nth-child(4) .erp-search-select-input{
+  padding-left:8px!important;
+  padding-right:24px!important;
+  text-overflow:clip!important;
+  color:#111827!important;
+}
+.bsoerp-app .quotation-line-table:not(.quotation-only-table) td:nth-child(4) .line-select-with-add .quick-add-btn{
+  flex:0 0 30px!important;
+  width:30px!important;
+  min-width:30px!important;
+  max-width:30px!important;
+}
+
+
+/* v2.9.08 — Organized Settings view */
+.settings-organized{padding:18px 20px!important;}
+.settings-organized .settings-tabs{display:flex;gap:8px;align-items:center;margin:0 0 18px;padding-bottom:14px;border-bottom:1px solid var(--bsoerp-border-color,var(--bsoerp-theme));}
+.settings-organized .settings-tab{appearance:none;border:1px solid var(--bsoerp-border-color,var(--bsoerp-theme));background:#fff;color:#111;border-radius:8px;padding:9px 18px;font:600 13px Montserrat,Arial,sans-serif;cursor:pointer;}
+.settings-organized .settings-tab.active{background:var(--bsoerp-theme);border-color:var(--bsoerp-theme);color:#fff;}
+.settings-organized .settings-section{display:none;margin:0!important;padding:0!important;border:0!important;}
+.settings-organized .settings-section.active{display:block;}
+.settings-organized .settings-section-title{margin:0 0 16px!important;}
+.settings-organized .settings-section-title h2{font-size:19px!important;margin:0!important;}
+.settings-organized .settings-company-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px!important;}
+.settings-organized .settings-company-grid .wide{grid-column:1/-1;}
+.settings-organized .settings-company-grid textarea{min-height:74px!important;}
+.settings-organized .settings-logo-field .erp-image-upload{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.settings-organized .settings-logo-field .erp-image-preview{margin:0!important;min-width:92px;}
+.settings-organized .settings-contact-preview textarea{background:#f7f8fa!important;}
+.settings-organized .settings-theme-grid{grid-template-columns:minmax(260px,380px) minmax(260px,380px);max-width:800px;}
+.settings-organized .settings-save-actions{margin-top:22px;padding-top:16px;border-top:1px solid var(--bsoerp-border-color,var(--bsoerp-theme));}
+@media(max-width:900px){.settings-organized .settings-company-grid{grid-template-columns:1fr 1fr;}.settings-organized .settings-theme-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:640px){.settings-organized{padding:14px!important;}.settings-organized .settings-tabs{overflow-x:auto;}.settings-organized .settings-tab{white-space:nowrap;}.settings-organized .settings-company-grid,.settings-organized .settings-theme-grid{grid-template-columns:1fr;}.settings-organized .settings-company-grid .wide{grid-column:auto;}}
+body.bsoerp-theme-bw .settings-organized .settings-tab.active{background:#111!important;border-color:#111!important;color:#fff!important;}
+
+
+/* v2.9.10 — Settings: logo preview inside the same upload field */
+.settings-organized .settings-logo-upload-box{
+  width:100%!important;
+  min-height:72px!important;
+  padding:8px 10px!important;
+  border:1px solid var(--bsoerp-theme-color,#12b8a6)!important;
+  border-radius:8px!important;
+  background:#fff!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:12px!important;
+  flex-wrap:nowrap!important;
+  box-sizing:border-box!important;
+}
+.settings-organized .settings-logo-upload-box .erp-image-preview{
+  width:86px!important;
+  min-width:86px!important;
+  height:54px!important;
+  min-height:54px!important;
+  padding:4px!important;
+  margin:0!important;
+  border:0!important;
+  background:#f8fafc!important;
+  border-radius:6px!important;
+}
+.settings-organized .settings-logo-upload-box .erp-image-preview img{
+  max-width:100%!important;
+  max-height:46px!important;
+  object-fit:contain!important;
+}
+.settings-organized .settings-logo-file-control{
+  flex:1 1 auto!important;
+  min-width:0!important;
+}
+.settings-organized .settings-logo-file-control input[type="file"]{
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  margin:0!important;
+  border:0!important;
+  padding:0!important;
+  background:transparent!important;
+}
+@media(max-width:700px){
+ .settings-organized .settings-logo-upload-box{flex-wrap:wrap!important;}
+ .settings-organized .settings-logo-file-control{flex-basis:100%!important;}
+}
+
+/* v2.9.13 — Power BI style executive dashboard */
+.bi-dashboard{display:flex;flex-direction:column;gap:16px;padding-bottom:12px}
+.bi-dash-toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;background:#fff;border:1px solid #e5e9ef;border-radius:12px;padding:12px 14px;box-shadow:0 4px 16px rgba(16,24,40,.04)}
+.bi-period-buttons{display:flex;gap:8px;flex-wrap:wrap}.bi-period-buttons a{display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 14px;border:1px solid #d8dee8;border-radius:8px;background:#fff;color:#344054;text-decoration:none;font-size:12px;font-weight:600}.bi-period-buttons a.active{background:var(--bsoerp-theme);border-color:var(--bsoerp-theme);color:var(--bsoerp-button-text,#fff)}
+.bi-date-filter{display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap}.bi-date-filter label{display:grid;gap:3px;font-size:10px;color:#667085}.bi-date-filter input{height:34px;border:1px solid #d8dee8;border-radius:7px;padding:0 9px;font:11px Montserrat,Arial,sans-serif;background:#fff}.bi-date-filter .btn{height:34px;padding:0 14px}
+.bi-kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.bi-kpi{position:relative;display:grid;grid-template-columns:1fr auto;grid-template-areas:'label icon' 'value icon' 'small small';gap:3px 8px;min-height:105px;padding:14px;border:1px solid #e5e9ef;border-radius:12px;background:#fff;color:#101828;text-decoration:none;box-shadow:0 5px 18px rgba(16,24,40,.045);transition:.15s ease}.bi-kpi:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(16,24,40,.08);border-color:var(--bsoerp-theme)}.bi-kpi-label{grid-area:label;font-size:11px;font-weight:600;color:#475467}.bi-kpi strong{grid-area:value;font-size:25px;line-height:1.1;letter-spacing:-.5px;white-space:nowrap}.bi-kpi small{grid-area:small;font-size:9px;color:#98a2b3}.bi-kpi-icon{grid-area:icon;align-self:start;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--bsoerp-theme-soft,#e8fbf8);color:var(--bsoerp-theme);font-size:18px;font-weight:700}
+.bi-grid{display:grid;gap:12px}.bi-grid-top{grid-template-columns:1.45fr .85fr .95fr}.bi-grid-mid{grid-template-columns:1fr 1fr 1fr}.bi-grid-bottom{grid-template-columns:1fr 1.1fr 1.05fr}.bi-widget{min-width:0;background:#fff;border:1px solid #e5e9ef;border-radius:12px;padding:14px;box-shadow:0 5px 18px rgba(16,24,40,.04);overflow:hidden}.bi-widget-wide{min-width:0}.bi-widget-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:9px}.bi-widget-head h3{margin:0;font-size:13px;font-weight:700;color:#101828}.bi-widget-head span{font-size:9px;color:#98a2b3}.bi-widget svg{width:100%;height:auto;display:block;overflow:visible}.bi-grid-line{stroke:#e9edf3;stroke-width:1}.bi-line{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.bi-line-leads{stroke:var(--bsoerp-theme)}.bi-line-quotations{stroke:#2f6fed}.bi-line-orders{stroke:#ff8a1f}.bi-axis{fill:#667085;font:9px Montserrat,Arial,sans-serif}.bi-legend{display:flex;gap:14px;align-items:center;margin-bottom:5px;font-size:9px;color:#667085}.bi-legend span:before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:-1px}.bi-legend .lead:before{background:var(--bsoerp-theme)}.bi-legend .quote:before{background:#2f6fed}.bi-legend .order:before{background:#ff8a1f}
+.bi-donut-wrap{display:grid;grid-template-columns:138px 1fr;gap:12px;align-items:center;padding-top:8px}.bi-donut{width:132px;height:132px;border-radius:50%;display:grid;place-items:center}.bi-donut>div{display:grid;place-items:center;align-content:center;width:76px;height:76px;border-radius:50%;background:#fff;box-shadow:0 0 0 1px rgba(16,24,40,.03)}.bi-donut strong{font-size:22px;line-height:1}.bi-donut small{font-size:8px;color:#667085;margin-top:4px}.bi-donut-legend{list-style:none;margin:0;padding:0;display:grid;gap:7px}.bi-donut-legend li{display:grid;grid-template-columns:10px 1fr auto;gap:6px;align-items:center;font-size:9px}.bi-donut-legend i{width:8px;height:8px;border-radius:2px}.bi-donut-legend b{font-size:9px}
+.bi-bars{display:grid;gap:10px;padding-top:5px}.bi-bar-row{display:grid;grid-template-columns:92px 1fr 38px;gap:8px;align-items:center}.bi-bar-row>span{font-size:9px;color:#475467;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bi-bar-track{height:14px;border-radius:5px;background:#f1f4f8;overflow:hidden}.bi-bar-track i{display:block;height:100%;border-radius:5px;background:var(--bsoerp-theme);min-width:3px}.bi-bar-row b{font-size:9px;text-align:right;color:#344054}
+.bi-funnel{display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 14px 2px}.bi-funnel a{height:32px;min-width:35%;display:flex;align-items:center;justify-content:space-between;padding:0 12px;color:#fff;text-decoration:none;background:var(--bsoerp-theme);clip-path:polygon(5% 0,95% 0,88% 100%,12% 100%);font-size:9px;font-weight:600}.bi-funnel a:nth-child(2){filter:brightness(.92)}.bi-funnel a:nth-child(3){background:#ff8a1f}.bi-funnel a:nth-child(4){background:#7b61c9}.bi-funnel a:nth-child(5){background:#2f6fed}.bi-funnel b{font-size:10px}
+.bi-month-bars{height:160px;display:flex;align-items:flex-end;justify-content:space-around;gap:8px;padding:12px 5px 0;border-bottom:1px solid #e9edf3}.bi-month-col{height:100%;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:5px}.bi-month-pair{display:flex;align-items:flex-end;justify-content:center;gap:4px;height:118px}.bi-month-pair i{display:block;width:13px;border-radius:3px 3px 0 0;min-height:4px}.bi-month-pair .po{background:var(--bsoerp-theme)}.bi-month-pair .grn{background:#2f6fed}.bi-month-col span{font-size:8px;color:#667085;white-space:nowrap}
+.bi-mini-table{border:0!important;overflow:auto}.bi-mini-table table{width:100%;border-collapse:collapse}.bi-mini-table th,.bi-mini-table td{padding:8px 7px;border-bottom:1px solid #edf0f4;text-align:left;font-size:9px}.bi-mini-table th{color:#667085;background:#f8fafc;font-weight:600}.bi-mini-table td{color:#344054}.bi-mini-table td:last-child,.bi-mini-table th:last-child{text-align:right}.bi-overdue{color:#d92d20!important;font-weight:700}.bi-pill{display:inline-flex;padding:3px 7px;border-radius:999px;background:var(--bsoerp-theme-soft,#e8fbf8);color:#344054;font-size:8px;white-space:nowrap}
+.bi-activity-list{display:grid;gap:9px;padding-top:3px}.bi-activity-list>div{display:grid;grid-template-columns:10px 1fr;gap:8px;align-items:start}.bi-activity-list i{width:8px;height:8px;border-radius:50%;background:var(--bsoerp-theme);margin-top:4px;box-shadow:0 0 0 3px var(--bsoerp-theme-soft,#e8fbf8)}.bi-activity-list p{display:grid;gap:2px;margin:0}.bi-activity-list strong{font-size:9px;color:#344054}.bi-activity-list span{font-size:9px;color:#667085;line-height:1.35}.bi-activity-list small{font-size:8px;color:#98a2b3}.bi-no-data{font-size:10px;color:#98a2b3}
+body.bsoerp-theme-bw .bi-period-buttons a.active,body.bsoerp-theme-bw .bi-kpi-icon,body.bsoerp-theme-bw .bi-bar-track i,body.bsoerp-theme-bw .bi-line-leads,body.bsoerp-theme-bw .bi-month-pair .po,body.bsoerp-theme-bw .bi-activity-list i{background:#111!important;color:#fff!important;stroke:#111!important}body.bsoerp-theme-bw .bi-kpi:hover{border-color:#111!important}body.bsoerp-theme-bw .bi-funnel a{background:#111!important}body.bsoerp-theme-bw .bi-funnel a:nth-child(3),body.bsoerp-theme-bw .bi-funnel a:nth-child(4),body.bsoerp-theme-bw .bi-funnel a:nth-child(5){background:#555!important}
+@media(max-width:1180px){.bi-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.bi-grid-top,.bi-grid-mid,.bi-grid-bottom{grid-template-columns:1fr 1fr}.bi-widget-wide{grid-column:1/-1}}
+@media(max-width:760px){.bi-dash-toolbar{align-items:stretch}.bi-date-filter{width:100%}.bi-date-filter label{flex:1}.bi-date-filter input{width:100%}.bi-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.bi-grid-top,.bi-grid-mid,.bi-grid-bottom{grid-template-columns:1fr}.bi-widget-wide{grid-column:auto}.bi-donut-wrap{grid-template-columns:120px 1fr}.bi-donut{width:116px;height:116px}.bi-kpi{min-height:98px}.bi-kpi strong{font-size:21px}}
+@media(max-width:460px){.bi-kpis{grid-template-columns:1fr}.bi-period-buttons{display:grid;grid-template-columns:repeat(3,1fr);width:100%}.bi-period-buttons a{padding:0 8px}.bi-donut-wrap{grid-template-columns:1fr;justify-items:center}.bi-donut-legend{width:100%}.bi-bar-row{grid-template-columns:78px 1fr 32px}}
+
+
+/* v2.9.94 — Quotation dimensions added: keep UOM column clearly readable */
+.bsoerp-app .quotation-only-table th:nth-child(7),
+.bsoerp-app .quotation-only-table td:nth-child(7){
+  width:120px!important;
+  min-width:120px!important;
+  max-width:120px!important;
+}
+.bsoerp-app .quotation-only-table td:nth-child(7) .line-select-with-add{
+  display:flex!important;
+  align-items:center!important;
+  width:100%!important;
+  min-width:0!important;
+  gap:4px!important;
+}
+.bsoerp-app .quotation-only-table td:nth-child(7) .line-select-with-add select,
+.bsoerp-app .quotation-only-table td:nth-child(7) .line-select-with-add .erp-search-select{
+  flex:1 1 auto!important;
+  width:calc(100% - 33px)!important;
+  min-width:80px!important;
+  max-width:none!important;
+  padding-left:8px!important;
+  padding-right:8px!important;
+  text-overflow:clip!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+  -webkit-appearance:auto!important;
+  -moz-appearance:auto!important;
+  appearance:auto!important;
+}
+.bsoerp-app .quotation-only-table td:nth-child(7) .line-select-with-add .quick-add-btn{
+  flex:0 0 29px!important;
+  width:29px!important;
+  min-width:29px!important;
+  max-width:29px!important;
+}
+
+
+/* v2.10.08 — Add Quotation: make UOM fully readable after dimension columns */
+.bsoerp-app .quotation-only-table th:nth-child(7),
+.bsoerp-app .quotation-only-table td:nth-child(7){
+  width:155px!important;
+  min-width:155px!important;
+  max-width:155px!important;
+}
+.bsoerp-app .quotation-only-table td:nth-child(7) .line-select-with-add{
+  display:flex!important;
+  align-items:center!important;
+  width:100%!important;
+  min-width:0!important;
+  gap:4px!important;
+}
+.bsoerp-app .quotation-only-table td:nth-child(7) .line-select-with-add>select,
+.bsoerp-app .quotation-only-table td:nth-child(7) .line-select-with-add>.erp-search-select{
+  flex:1 1 auto!important;
+  width:auto!important;
+  min-width:118px!important;
+  max-width:none!important;
+  padding-left:8px!important;
+  padding-right:8px!important;
+  white-space:nowrap!important;
+  text-overflow:clip!important;
+  overflow:visible!important;
+}
+.bsoerp-app .quotation-only-table td:nth-child(7) .line-select-with-add .erp-search-select-input{
+  width:100%!important;
+  min-width:0!important;
+  padding-left:8px!important;
+  padding-right:8px!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+}
+.bsoerp-app .quotation-only-table td:nth-child(7) .line-select-with-add .quick-add-btn{
+  flex:0 0 26px!important;
+  width:26px!important;
+  min-width:26px!important;
+  max-width:26px!important;
+  height:29px!important;
+  padding:0!important;
+  font-size:16px!important;
+}
+
+
+/* v2.10.09 — Add Quotation: keep Amount column fully visible */
+.bsoerp-app .quotation-only-table th:nth-child(11),
+.bsoerp-app .quotation-only-table td:nth-child(11){
+  width:135px!important;
+  min-width:135px!important;
+  max-width:135px!important;
+}
+.bsoerp-app .quotation-only-table td:nth-child(11) input,
+.bsoerp-app .quotation-only-table td:nth-child(11) .quote-line-amount{
+  width:100%!important;
+  min-width:0!important;
+  max-width:none!important;
+  box-sizing:border-box!important;
+  text-align:right!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  padding-left:6px!important;
+  padding-right:6px!important;
+}
+.bsoerp-app .quotation-only-table th:nth-child(12),
+.bsoerp-app .quotation-only-table td:nth-child(12){
+  width:38px!important;
+  min-width:38px!important;
+  max-width:38px!important;
+}
+
+
+/* v2.10.38 — nested Customer Category modal must stay centered in viewport */
+.customer-category-inline-backdrop{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;background:rgba(16,24,40,.52)!important;z-index:2147483000!important;}
+.customer-category-inline-backdrop[hidden],.customer-category-inline-modal[hidden]{display:none!important;}
+.customer-category-inline-modal{position:fixed!important;left:50%!important;top:50%!important;right:auto!important;bottom:auto!important;transform:translate(-50%,-50%)!important;margin:0!important;width:min(440px,calc(100vw - 32px))!important;max-width:440px!important;background:#fff!important;border:1px solid #d0d5dd!important;border-radius:14px!important;box-shadow:0 24px 70px rgba(16,24,40,.30)!important;padding:20px!important;box-sizing:border-box!important;z-index:2147483001!important;}
+.customer-category-inline-modal .quick-add-modal-head{display:flex!important;align-items:flex-start!important;justify-content:space-between!important;gap:12px!important;margin-bottom:18px!important;}
+.customer-category-inline-modal .quick-add-modal-head h3{margin:0!important;font-size:18px!important;line-height:1.3!important;color:#111827!important;}
+.customer-category-inline-modal form>label{display:block!important;margin:0!important;}
+.customer-category-inline-modal form>label span{display:block!important;font-size:12px!important;font-weight:600!important;margin:0 0 7px!important;color:#1f2937!important;}
+.customer-category-inline-modal input[type="text"]{display:block!important;width:100%!important;height:42px!important;padding:9px 11px!important;border:1px solid #12b8a6!important;border-radius:7px!important;box-sizing:border-box!important;margin:0!important;background:#fff!important;}
+.customer-category-inline-modal .quick-add-actions{display:flex!important;justify-content:flex-end!important;gap:8px!important;margin-top:18px!important;}
+@media(max-width:500px){.customer-category-inline-modal{width:calc(100vw - 24px)!important;padding:16px!important;}.customer-category-inline-modal .quick-add-actions .btn{flex:1!important;}}
+
+/* v2.10.40 — Quick Add Customer modal exactly matches approved single-column mockup */
+.quick-add-modal:has(.quick-add-customer-fields:not([hidden])){
+  width:min(620px,calc(100vw - 32px))!important;
+  max-width:620px!important;
+  padding:20px!important;
+  box-sizing:border-box!important;
+}
+.quick-add-modal .quick-add-customer-grid{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  gap:12px!important;
+  width:100%!important;
+}
+.quick-add-modal .quick-add-customer-grid>label,
+.quick-add-modal .quick-add-customer-grid>label.wide{
+  grid-column:1/-1!important;
+  display:flex!important;
+  flex-direction:column!important;
+  gap:6px!important;
+  width:100%!important;
+  min-width:0!important;
+  margin:0!important;
+  box-sizing:border-box!important;
+}
+.quick-add-modal .quick-add-customer-grid>label>span{
+  display:block!important;
+  margin:0!important;
+}
+.quick-add-modal .quick-add-customer-grid input[type="text"],
+.quick-add-modal .quick-add-customer-grid input[type="email"],
+.quick-add-modal .quick-add-customer-grid input[type="tel"],
+.quick-add-modal .quick-add-customer-grid select,
+.quick-add-modal .quick-add-customer-grid textarea{
+  display:block!important;
+  width:100%!important;
+  min-width:0!important;
+  max-width:100%!important;
+  box-sizing:border-box!important;
+  margin:0!important;
+}
+.quick-add-modal .quick-add-customer-grid input[type="text"],
+.quick-add-modal .quick-add-customer-grid input[type="email"],
+.quick-add-modal .quick-add-customer-grid input[type="tel"],
+.quick-add-modal .quick-add-customer-grid select{
+  height:42px!important;
+}
+.quick-add-modal .quick-add-customer-grid textarea{
+  min-height:92px!important;
+  resize:vertical!important;
+}
+.quick-add-modal .quick-add-customer-category-wrap{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 42px!important;
+  gap:8px!important;
+  align-items:stretch!important;
+  width:100%!important;
+  min-width:0!important;
+}
+.quick-add-modal .quick-add-customer-category-wrap .quick-add-customer-category-select{
+  width:100%!important;
+  min-width:0!important;
+  height:42px!important;
+}
+.quick-add-modal .quick-add-customer-category-wrap .quick-add-customer-category-btn{
+  width:42px!important;
+  min-width:42px!important;
+  height:42px!important;
+  padding:0!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  font-size:24px!important;
+  line-height:1!important;
+}
+@media(max-width:700px){
+  .quick-add-modal:has(.quick-add-customer-fields:not([hidden])){
+    width:calc(100vw - 24px)!important;
+  }
+}
+
+
+/* v2.10.41 — Robust Customer Quick Add modal layout (no :has dependency) */
+.quick-add-modal.quick-add-customer-mode{
+  width:min(620px,calc(100vw - 32px))!important;
+  max-width:620px!important;
+  padding:24px!important;
+  box-sizing:border-box!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-modal-head{margin-bottom:20px!important;}
+.quick-add-modal.quick-add-customer-mode .quick-add-modal-head h3{font-size:24px!important;line-height:1.25!important;}
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:14px!important;
+  width:100%!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid>label,
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid>label.wide{
+  grid-column:1/-1!important;
+  display:flex!important;
+  flex-direction:column!important;
+  gap:7px!important;
+  width:100%!important;
+  margin:0!important;
+  min-width:0!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid>label>span{
+  font-size:15px!important;
+  line-height:1.25!important;
+  font-weight:600!important;
+  margin:0!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid input[type="text"],
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid input[type="email"],
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid input[type="tel"],
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid select,
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid textarea{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  box-sizing:border-box!important;
+  margin:0!important;
+  border:1px solid #12b8a6!important;
+  border-radius:7px!important;
+  background:#fff!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid input[type="text"],
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid input[type="email"],
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid input[type="tel"],
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid select{
+  height:46px!important;
+  padding:9px 11px!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid textarea{
+  min-height:96px!important;
+  padding:10px 11px!important;
+  resize:vertical!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-category-wrap{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 46px!important;
+  gap:10px!important;
+  width:100%!important;
+  min-width:0!important;
+  align-items:stretch!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-category-wrap select{
+  width:100%!important;
+  min-width:0!important;
+  height:46px!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-category-btn{
+  width:46px!important;
+  min-width:46px!important;
+  height:46px!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  font-size:25px!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-actions{margin-top:20px!important;}
+@media(max-width:700px){
+  .quick-add-modal.quick-add-customer-mode{width:calc(100vw - 24px)!important;padding:18px!important;max-height:calc(100vh - 24px)!important;overflow:auto!important;}
+}
+
+/* v2.10.42 — Compact Quick Add Customer modal with internal scrollbar */
+.quick-add-modal.quick-add-customer-mode{
+  width:min(540px,calc(100vw - 28px))!important;
+  max-width:540px!important;
+  max-height:86vh!important;
+  overflow:hidden!important;
+  padding:16px 18px 14px!important;
+  box-sizing:border-box!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-modal-head{
+  margin-bottom:10px!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-modal-head h3{
+  font-size:18px!important;
+  line-height:1.2!important;
+}
+.quick-add-modal.quick-add-customer-mode #bsoerp-quick-add-form{
+  max-height:calc(86vh - 62px)!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  padding-right:6px!important;
+  scrollbar-gutter:stable!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:8px!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid>label,
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid>label.wide{
+  gap:4px!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid>label>span{
+  font-size:12px!important;
+  line-height:1.2!important;
+  margin:0!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid input[type="text"],
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid input[type="email"],
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid input[type="tel"],
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid select{
+  height:36px!important;
+  min-height:36px!important;
+  padding:6px 9px!important;
+  font-size:12px!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-grid textarea{
+  min-height:64px!important;
+  height:64px!important;
+  padding:7px 9px!important;
+  font-size:12px!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-category-wrap{
+  grid-template-columns:minmax(0,1fr) 36px!important;
+  gap:8px!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-category-wrap select{
+  height:36px!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-customer-category-btn{
+  width:36px!important;
+  min-width:36px!important;
+  height:36px!important;
+  font-size:21px!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-message{
+  min-height:0!important;
+  margin-top:4px!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-actions{
+  position:sticky!important;
+  bottom:0!important;
+  z-index:2!important;
+  margin-top:8px!important;
+  padding:10px 0 0!important;
+  background:#fff!important;
+}
+.quick-add-modal.quick-add-customer-mode .quick-add-actions .btn{
+  min-height:34px!important;
+  padding:7px 13px!important;
+}
+.quick-add-modal.quick-add-customer-mode #bsoerp-quick-add-form::-webkit-scrollbar{width:8px}
+.quick-add-modal.quick-add-customer-mode #bsoerp-quick-add-form::-webkit-scrollbar-thumb{background:#c7cdd4;border-radius:8px}
+.quick-add-modal.quick-add-customer-mode #bsoerp-quick-add-form::-webkit-scrollbar-track{background:transparent}
+@media(max-width:700px){
+  .quick-add-modal.quick-add-customer-mode{
+    width:calc(100vw - 20px)!important;
+    max-height:90vh!important;
+    padding:14px 14px 12px!important;
+  }
+  .quick-add-modal.quick-add-customer-mode #bsoerp-quick-add-form{max-height:calc(90vh - 58px)!important}
+}
+
+
+/* v2.10.46 Add Item quick form: Category + UOM with nested quick-add buttons */
+.quick-add-item-fields{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+.quick-add-item-fields[hidden]{display:none!important}
+.quick-add-item-fields label{display:block;margin:0}
+.quick-add-item-fields label>span{display:block;font-size:11px;font-weight:600;margin:0 0 7px}
+.quick-add-item-fields select{width:100%;height:42px;padding:8px 10px;border:1px solid #d0d5dd;border-radius:7px;background:#fff;box-sizing:border-box}
+.quick-add-item-category-wrap,.quick-add-item-uom-wrap{display:grid;grid-template-columns:minmax(0,1fr) 42px;gap:8px;align-items:stretch}
+.quick-add-item-category-wrap .quick-add-btn,.quick-add-item-uom-wrap .quick-add-btn{width:42px;min-width:42px;height:42px;padding:0}
+.item-meta-inline-backdrop{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;background:rgba(16,24,40,.52)!important;z-index:2147483010!important}
+.item-meta-inline-backdrop[hidden],.item-meta-inline-modal[hidden]{display:none!important}
+.item-meta-inline-modal{position:fixed!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;width:min(440px,calc(100vw - 32px))!important;max-width:440px!important;background:#fff!important;border:1px solid #d0d5dd!important;border-radius:14px!important;box-shadow:0 24px 70px rgba(16,24,40,.30)!important;padding:20px!important;box-sizing:border-box!important;z-index:2147483011!important}
+.item-meta-inline-modal .quick-add-modal-head{display:flex!important;align-items:flex-start!important;justify-content:space-between!important;gap:12px!important;margin-bottom:18px!important}
+.item-meta-inline-modal form>label{display:block!important;margin:0!important}
+.item-meta-inline-modal form>label span{display:block!important;font-size:12px!important;font-weight:600!important;margin:0 0 7px!important;color:#1f2937!important}
+.item-meta-inline-modal input[type="text"]{display:block!important;width:100%!important;height:42px!important;padding:9px 11px!important;border:1px solid #12b8a6!important;border-radius:7px!important;box-sizing:border-box!important;margin:0!important;background:#fff!important}
+.item-meta-inline-modal .quick-add-actions{display:flex!important;justify-content:flex-end!important;gap:8px!important;margin-top:18px!important}
+@media(max-width:500px){.item-meta-inline-modal{width:calc(100vw - 24px)!important;padding:16px!important}.item-meta-inline-modal .quick-add-actions .btn{flex:1!important}}
+/* v2.10.47 — master driven UOM/GST in quotation/order */
+.quotation-line-row .quotation-uom-select.erp-readonly{pointer-events:none;background:#eef2f5!important;color:#374151!important;cursor:not-allowed}
+.quotation-line-row .gst-percent.erp-readonly{background:#eef2f5!important;color:#374151!important;cursor:not-allowed}
+.pdf-direct-download{display:inline-flex!important;align-items:center;justify-content:center;min-width:24px;height:24px;margin-left:3px;text-decoration:none;font-weight:700}
+/* v2.10.83 follow-up call icon */
+.follow-up-open{display:inline-flex!important;align-items:center;justify-content:center;padding:0!important;width:36px;height:36px;overflow:hidden}
+.follow-up-open .follow-up-call-icon{width:22px;height:22px;object-fit:contain;display:block;border-radius:50%}

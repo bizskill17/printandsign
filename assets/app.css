@@ -1,0 +1,108 @@
+
+/* v2.7.24 Purchase Order total beside Add Item */
+.purchase-order-line-box .line-head{align-items:center;}
+.purchase-order-line-box .po-line-head-actions{display:flex;align-items:center;gap:10px;flex-wrap:nowrap;}
+.purchase-order-line-box .po-total-amount{display:flex;align-items:center;gap:8px;min-height:34px;padding:0 12px;border:1px solid #14b8a6;border-radius:8px;background:#f8fffe;white-space:nowrap;font-size:13px;}
+.purchase-order-line-box .po-total-amount span{font-weight:600;color:#334155;}
+.purchase-order-line-box .po-total-amount strong{min-width:80px;text-align:right;font-size:14px;color:#0f766e;}
+@media(max-width:700px){.purchase-order-line-box .line-head{align-items:flex-start}.purchase-order-line-box .po-line-head-actions{width:100%;justify-content:flex-end;flex-wrap:wrap}.purchase-order-line-box .po-total-amount{flex:1;justify-content:space-between}}
+
+/* v2.8.04 - Customer quick-add mirrors Customer Master fields */
+.quick-add-modal:has(.quick-add-customer-fields:not([hidden])){width:min(760px,calc(100vw - 32px));max-width:760px}
+.quick-add-customer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 14px}
+.quick-add-customer-grid label{display:flex;flex-direction:column;gap:6px}
+.quick-add-customer-grid label.wide{grid-column:1/-1}
+.quick-add-customer-grid input,.quick-add-customer-grid select,.quick-add-customer-grid textarea{width:100%;box-sizing:border-box}
+@media(max-width:700px){.quick-add-customer-grid{grid-template-columns:1fr}}
+
+/* v2.8.07 — hard-hide Filter controls on every Master view. */
+.bsoerp-app.bsoerp-master-view .bsoerp-header-filter,
+.bsoerp-app.bsoerp-master-view .mobile-filter-toggle,
+.bsoerp-app.bsoerp-master-view .filter-clear { display:none !important; }
+
+/* v2.10.36 - Cleaner Quick Add Customer UI */
+.quick-add-modal:has(.quick-add-customer-fields:not([hidden])){width:min(620px,calc(100vw - 32px));max-width:620px}
+.quick-add-customer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 14px}
+.quick-add-customer-grid label{display:flex;flex-direction:column;gap:6px;margin:0}
+.quick-add-customer-grid label.wide{grid-column:1/-1}
+.quick-add-customer-grid input,.quick-add-customer-grid select,.quick-add-customer-grid textarea{width:100%;box-sizing:border-box;margin:0}
+.quick-add-customer-category-wrap{display:grid;grid-template-columns:minmax(0,1fr) 42px;gap:8px;align-items:stretch}
+.quick-add-customer-category-wrap .quick-add-customer-category-select{min-width:0}
+.quick-add-customer-category-wrap .quick-add-customer-category-btn{width:42px;height:42px;min-width:42px;padding:0;display:inline-flex;align-items:center;justify-content:center;font-size:24px;line-height:1}
+@media(max-width:700px){.quick-add-modal:has(.quick-add-customer-fields:not([hidden])){width:calc(100vw - 24px)}.quick-add-customer-grid{grid-template-columns:1fr}.quick-add-customer-grid label{grid-column:1/-1}}
+
+
+/* v2.10.37 - Centered Customer Category inline modal */
+.customer-category-inline-backdrop{position:fixed;inset:0;background:rgba(16,24,40,.42);z-index:1000030}
+.customer-category-inline-backdrop[hidden],.customer-category-inline-modal[hidden]{display:none!important}
+.customer-category-inline-modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1000040;width:min(440px,calc(100vw - 28px));background:#fff;border:1px solid #d0d5dd;border-radius:14px;box-shadow:0 24px 70px rgba(16,24,40,.28);padding:20px;box-sizing:border-box}
+.customer-category-inline-modal form>label{display:block}
+.customer-category-inline-modal form>label span{display:block;font-size:12px;font-weight:600;margin-bottom:7px;color:#1f2937}
+.customer-category-inline-modal input[type="text"]{width:100%;height:42px;padding:9px 11px;border:1px solid #12b8a6;border-radius:7px;font:12px Montserrat;box-sizing:border-box;margin:0}
+.customer-category-inline-modal input[type="text"]:focus{outline:2px solid #99f6e4;outline-offset:1px}
+.customer-category-inline-modal .quick-add-actions{margin-top:18px}
+@media(max-width:500px){.customer-category-inline-modal{width:calc(100vw - 24px);padding:16px}.customer-category-inline-modal .quick-add-actions .btn{flex:1}}
+
+/* v2.10.39 - Quick Add Customer layout to match approved mockup */
+.quick-add-modal:has(.quick-add-customer-fields:not([hidden])){
+  width:min(620px,calc(100vw - 32px));
+  max-width:620px;
+}
+.quick-add-customer-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+.quick-add-customer-grid label,
+.quick-add-customer-grid label.wide{
+  grid-column:1/-1;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin:0;
+  width:100%;
+}
+.quick-add-customer-grid input,
+.quick-add-customer-grid select,
+.quick-add-customer-grid textarea{
+  display:block;
+  width:100%;
+  min-width:0;
+  max-width:none;
+  box-sizing:border-box;
+  margin:0;
+}
+.quick-add-customer-grid input,
+.quick-add-customer-grid select{
+  height:42px;
+}
+.quick-add-customer-grid textarea{
+  min-height:92px;
+  resize:vertical;
+}
+.quick-add-customer-category-wrap{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 42px;
+  gap:8px;
+  align-items:stretch;
+  width:100%;
+}
+.quick-add-customer-category-wrap .quick-add-customer-category-select{
+  width:100%;
+  min-width:0;
+  height:42px;
+}
+.quick-add-customer-category-wrap .quick-add-customer-category-btn{
+  width:42px;
+  min-width:42px;
+  height:42px;
+  padding:0;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  line-height:1;
+}
+@media(max-width:700px){
+  .quick-add-modal:has(.quick-add-customer-fields:not([hidden])){width:calc(100vw - 24px)}
+}
