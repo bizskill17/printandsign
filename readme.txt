@@ -1,3 +1,4 @@
+* v2.10.102: Switched updates to the Deployer for Git plugin (tracks the release branch). Removed the built-in GitHub update checker to avoid two updaters.
 * v2.10.101: Added automatic updates from GitHub (bizskill17/printandsign). New GitHub Releases appear as normal WordPress plugin updates and install automatically when auto-updates are enabled. Optional BSOERP_GITHUB_TOKEN constant in wp-config.php for a private repository.
 * v2.10.100: Removed Backup from ERP Settings. Backup is now available only under WordPress Settings → BizSkill ERP Backup.
 * v2.10.99: Added BizSkill ERP Backup under native WordPress Settings, with Daily Backup, Backup Time, Email To, Download Backup and Upload Backup/Restore.

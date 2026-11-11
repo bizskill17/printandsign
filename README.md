@@ -14,15 +14,13 @@ GitHub Actions then checks the two versions match, runs a PHP syntax check, buil
 `bizskill-operations-erp.zip` and publishes Release `vX.Y.Z`.
 Pushes that do not change the version do **not** create a release and do **not** reach the live site.
 
-The site checks for new Releases every 6 hours (or click **Check for updates** on the Plugins page).
-With **Enable auto-updates** turned on for the plugin, WordPress installs it automatically.
+It also moves the **`release` branch** to that commit. The live site uses the
+**Deployer for Git** plugin linked to `release`, so a new version deploys automatically
+(via the GitHub webhook) or when you click Deploy in WordPress → Deployer for Git.
 
 ## Private repository
-If this repo is private, add a read-only fine-grained token (Contents: Read, this repo only) to `wp-config.php`:
-
-```php
-define('BSOERP_GITHUB_TOKEN', 'github_pat_...');
-```
+The free Deployer for Git works only with public repositories. A private repository needs Deployer for Git Pro
+and a fine-grained token (Contents: Read, this repo only) entered in the Deployer package settings.
 
 ## Rollback
 Restore the previous code, give it a **higher** version number (e.g. 2.10.103), push.
@@ -32,4 +30,3 @@ Always take a backup first: Settings → BizSkill ERP Backup → Download Backup
 ## Contents
 - `bizskill-operations-erp.php` – the plugin
 - `assets/` – CSS, JS, icons
-- `lib/plugin-update-checker/` – GitHub update library (YahnisElsts/plugin-update-checker v5.6, MIT)

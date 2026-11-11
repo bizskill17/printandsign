@@ -1,7 +1,10 @@
 name: Build plugin release
 
-# A Release is created only when the plugin Version changes.
-# Ordinary pushes with the same Version do nothing, so the live site is not updated.
+# When the plugin Version changes:
+#   1. a GitHub Release with the plugin ZIP is created, and
+#   2. the `release` branch is moved to this commit.
+# Deployer for Git on the live site tracks the `release` branch, so only new versions go live.
+# Ordinary pushes with the same Version do nothing.
 on:
   push:
     branches: [main]
@@ -15,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Read and check version
         id: ver
@@ -60,3 +65,7 @@ jobs:
             --target "$GITHUB_SHA" --title "v$V" --notes "$NOTES"
         env:
           GH_TOKEN: ${{ github.token }}
+
+      - name: Publish to release branch (deployed by Deployer for Git)
+        if: steps.ver.outputs.exists == 'false'
+        run: git push --force origin "$GITHUB_SHA:refs/heads/release"

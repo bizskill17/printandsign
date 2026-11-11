@@ -2,30 +2,13 @@
 /**
  * Plugin Name: BizSkill Operations ERP
  * Description: Complete operations ERP for masters, tasks, enquiries, recce, designs, quotations, orders, production, deliveries, purchase orders and GRN.
- * Version: 2.10.101
- * Update URI: https://github.com/bizskill17/printandsign
+ * Version: 2.10.102
  * Author: BizSkill
  * Text Domain: bizskill-operations-erp
  */
 if (!defined('ABSPATH')) exit;
-/*
- * GitHub auto-update (v2.10.101).
- * Checks Releases of https://github.com/bizskill17/printandsign and offers them as normal WordPress plugin updates.
- * For a private repository, add to wp-config.php:  define('BSOERP_GITHUB_TOKEN', 'github_pat_...');
- */
-if (is_file(__DIR__.'/lib/plugin-update-checker/plugin-update-checker.php')) {
- require_once __DIR__.'/lib/plugin-update-checker/plugin-update-checker.php';
- if (class_exists('YahnisElsts\\PluginUpdateChecker\\v5\\PucFactory')) {
-  $bsoerp_update_checker = \YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker('https://github.com/bizskill17/printandsign/', __FILE__, 'bizskill-operations-erp', 6);
-  $bsoerp_update_checker->setBranch('main');
-  $bsoerp_vcs = $bsoerp_update_checker->getVcsApi();
-  if ($bsoerp_vcs && method_exists($bsoerp_vcs, 'enableReleaseAssets')) $bsoerp_vcs->enableReleaseAssets('/^bizskill-operations-erp\.zip$/i');
-  if (defined('BSOERP_GITHUB_TOKEN') && BSOERP_GITHUB_TOKEN) $bsoerp_update_checker->setAuthentication(BSOERP_GITHUB_TOKEN);
-  unset($bsoerp_vcs);
- }
-}
 final class BSOERP_Complete {
- const VERSION='2.10.101'; const PAGES='bsoerp_pages_v2'; const NONCE='bsoerp_v2_nonce';
+ const VERSION='2.10.102'; const PAGES='bsoerp_pages_v2'; const NONCE='bsoerp_v2_nonce';
  private static $i; private $current_type=''; private $current_record_id=0;
  static function instance(){ return self::$i ?: (self::$i=new self()); }
  function __construct(){
