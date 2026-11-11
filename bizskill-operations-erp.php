@@ -2,7 +2,7 @@
 /**
  * Plugin Name: BizSkill Operations ERP
  * Description: Complete operations ERP for masters, tasks, enquiries, recce, designs, quotations, orders, production, deliveries, purchase orders and GRN.
- * Version: 2.10.103
+ * Version: 2.10.104
  * Update URI: https://github.com/bizskill17/printandsign
  * Author: BizSkill
  * Text Domain: bizskill-operations-erp
@@ -26,7 +26,7 @@ if (is_file(__DIR__.'/lib/plugin-update-checker/plugin-update-checker.php')) {
  }
 }
 final class BSOERP_Complete {
- const VERSION='2.10.103'; const PAGES='bsoerp_pages_v2'; const NONCE='bsoerp_v2_nonce';
+ const VERSION='2.10.104'; const PAGES='bsoerp_pages_v2'; const NONCE='bsoerp_v2_nonce';
  private static $i; private $current_type=''; private $current_record_id=0;
  static function instance(){ return self::$i ?: (self::$i=new self()); }
  function __construct(){

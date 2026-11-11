@@ -1,3 +1,4 @@
+* v2.10.104: Test release to confirm instant automatic updates (GitHub webhook → Deployer for Git). No functional changes.
 * v2.10.103: Restored built-in automatic updates from GitHub Releases (bizskill17/printandsign). Enable auto-updates for this plugin on the Plugins page; WordPress then installs new versions by itself. Deployer for Git is no longer needed.
 * v2.10.102: Switched updates to the Deployer for Git plugin (tracks the release branch). Removed the built-in GitHub update checker to avoid two updaters.
 * v2.10.101: Added automatic updates from GitHub (bizskill17/printandsign). New GitHub Releases appear as normal WordPress plugin updates and install automatically when auto-updates are enabled. Optional BSOERP_GITHUB_TOKEN constant in wp-config.php for a private repository.
