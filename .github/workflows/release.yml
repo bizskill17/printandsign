@@ -1,0 +1,62 @@
+name: Build plugin release
+
+# A Release is created only when the plugin Version changes.
+# Ordinary pushes with the same Version do nothing, so the live site is not updated.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read and check version
+        id: ver
+        run: |
+          HEADER=$(grep -m1 -E '^\s*\*\s*Version:' bizskill-operations-erp.php | sed -E 's/.*Version:\s*([0-9.]+).*/\1/')
+          CONST=$(grep -m1 -oE "const VERSION='[0-9.]+'" bizskill-operations-erp.php | grep -oE "[0-9.]+")
+          echo "Header: $HEADER  Const: $CONST"
+          if [ -z "$HEADER" ] || [ "$HEADER" != "$CONST" ]; then
+            echo "::error::Plugin header Version ($HEADER) and const VERSION ($CONST) must match."
+            exit 1
+          fi
+          echo "version=$HEADER" >> "$GITHUB_OUTPUT"
+          if gh release view "v$HEADER" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Release v$HEADER already exists - nothing to do."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: PHP syntax check
+        if: steps.ver.outputs.exists == 'false'
+        run: php -l bizskill-operations-erp.php && php -l blank-template.php
+
+      - name: Build ZIP
+        if: steps.ver.outputs.exists == 'false'
+        run: |
+          mkdir -p build/bizskill-operations-erp
+          rsync -a ./ build/bizskill-operations-erp/ \
+            --exclude .git --exclude .github --exclude .gitignore \
+            --exclude README.md --exclude build
+          cd build && zip -qr bizskill-operations-erp.zip bizskill-operations-erp
+          unzip -l bizskill-operations-erp.zip | tail -1
+
+      - name: Create GitHub Release
+        if: steps.ver.outputs.exists == 'false'
+        run: |
+          V="${{ steps.ver.outputs.version }}"
+          NOTES=$(grep -m1 -E "^[*-] v$V:" readme.txt | sed -E 's/^[*-] //')
+          [ -z "$NOTES" ] && NOTES="BizSkill Operations ERP v$V"
+          gh release create "v$V" build/bizskill-operations-erp.zip \
+            --target "$GITHUB_SHA" --title "v$V" --notes "$NOTES"
+        env:
+          GH_TOKEN: ${{ github.token }}
