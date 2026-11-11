@@ -69,3 +69,14 @@ jobs:
       - name: Publish to release branch (deployed by Deployer for Git)
         if: steps.ver.outputs.exists == 'false'
         run: git push --force origin "$GITHUB_SHA:refs/heads/release"
+
+      # The site's webhook can fetch the branch ZIP a few seconds before GitHub serves the new code.
+      # After a pause, push an empty commit (same files) so a second webhook deploys the new version for sure.
+      - name: Second deploy nudge
+        if: steps.ver.outputs.exists == 'false'
+        run: |
+          sleep 90
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "Deploy v${{ steps.ver.outputs.version }}"
+          git push --force origin "HEAD:refs/heads/release"

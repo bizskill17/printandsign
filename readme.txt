@@ -1,3 +1,4 @@
+* v2.10.105: Release workflow now sends a second deploy webhook after 90 seconds so the live site always receives the new version. No functional changes.
 * v2.10.104: Test release to confirm instant automatic updates (GitHub webhook → Deployer for Git). No functional changes.
 * v2.10.103: Restored built-in automatic updates from GitHub Releases (bizskill17/printandsign). Enable auto-updates for this plugin on the Plugins page; WordPress then installs new versions by itself. Deployer for Git is no longer needed.
 * v2.10.102: Switched updates to the Deployer for Git plugin (tracks the release branch). Removed the built-in GitHub update checker to avoid two updaters.
