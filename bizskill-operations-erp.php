@@ -2,7 +2,7 @@
 /**
  * Plugin Name: BizSkill Operations ERP
  * Description: Complete operations ERP for masters, tasks, enquiries, recce, designs, quotations, orders, production, deliveries, purchase orders and GRN.
- * Version: 2.10.105
+ * Version: 2.10.106
  * Update URI: https://github.com/bizskill17/printandsign
  * Author: BizSkill
  * Text Domain: bizskill-operations-erp
@@ -26,7 +26,7 @@ if (is_file(__DIR__.'/lib/plugin-update-checker/plugin-update-checker.php')) {
  }
 }
 final class BSOERP_Complete {
- const VERSION='2.10.105'; const PAGES='bsoerp_pages_v2'; const NONCE='bsoerp_v2_nonce';
+ const VERSION='2.10.106'; const PAGES='bsoerp_pages_v2'; const NONCE='bsoerp_v2_nonce';
  private static $i; private $current_type=''; private $current_record_id=0;
  static function instance(){ return self::$i ?: (self::$i=new self()); }
  function __construct(){
@@ -1672,8 +1672,8 @@ JS;
     }elseif($is_order&&$view==='order-master'){
      $pdf_url=wp_nonce_url(admin_url('admin-post.php?action=bsoerp_print&id='.$r->id),'bsoerp_print_'.$r->id);
      $job_pdf_url=add_query_arg('doc','job-order',$pdf_url);
-     echo'<a class="pdf-download-action" title="Download Order PDF" aria-label="Download Order PDF" href="'.esc_url($pdf_url).'"><img src="'.esc_url(plugin_dir_url(__FILE__).'assets/pdf-icon.png?v='.self::VERSION).'" alt="PDF" width="18" height="18" style="display:block;width:18px;height:18px;object-fit:contain"></a>';
-     echo'<a class="pdf-download-action job-order-pdf-action" title="Download Job Order" aria-label="Download Job Order" href="'.esc_url($job_pdf_url).'"><img src="'.esc_url(plugin_dir_url(__FILE__).'assets/pdf-icon.png?v='.self::VERSION).'" alt="Job Order PDF" width="18" height="18" style="display:block;width:18px;height:18px;object-fit:contain"></a>';
+     echo'<a class="pdf-download-action" data-pdf-label="Order Pdf" title="Order Pdf" aria-label="Order Pdf" href="'.esc_url($pdf_url).'"><img src="'.esc_url(plugin_dir_url(__FILE__).'assets/pdf-icon.png?v='.self::VERSION).'" alt="PDF" width="18" height="18" style="display:block;width:18px;height:18px;object-fit:contain"></a>';
+     echo'<a class="pdf-download-action job-order-pdf-action" data-pdf-label="Internal Pdf" title="Internal Pdf" aria-label="Internal Pdf" href="'.esc_url($job_pdf_url).'"><img src="'.esc_url(plugin_dir_url(__FILE__).'assets/pdf-icon.png?v='.self::VERSION).'" alt="Job Order PDF" width="18" height="18" style="display:block;width:18px;height:18px;object-fit:contain"></a>';
     }elseif($is_order&&$view==='delivered-orders'){
      $pdf_url=add_query_arg('doc','dispatch',wp_nonce_url(admin_url('admin-post.php?action=bsoerp_print&id='.$r->id),'bsoerp_print_'.$r->id));
      echo'<a class="pdf-download-action" title="Download Dispatch PDF" aria-label="Download Dispatch PDF" href="'.esc_url($pdf_url).'"><img src="'.esc_url(plugin_dir_url(__FILE__).'assets/pdf-icon.png?v='.self::VERSION).'" alt="PDF" width="18" height="18" style="display:block;width:18px;height:18px;object-fit:contain"></a>';

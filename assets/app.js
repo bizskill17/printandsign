@@ -62,7 +62,7 @@ jQuery(function($){
   setInterval(function(){$('.listing-panel .master-toolbar button[type="submit"]').filter(function(){return $(this).text().trim()==='Filter';}).remove();},100);
   // PDF actions open a preview first; direct download remains available beside the preview icon.
   $('.pdf-download-action').each(function(){
-    var $a=$(this),href=$a.attr('href')||'';$a.attr('target','_blank').attr('rel','noopener').attr('title','View PDF').attr('aria-label','View PDF');
+    var $a=$(this),href=$a.attr('href')||'';var lbl=$a.attr('data-pdf-label')||'View PDF';$a.attr('target','_blank').attr('rel','noopener').attr('title',lbl).attr('aria-label',lbl);
     if(!href||$a.next('.pdf-direct-download').length)return;
   });
   $('.add-delivery-form,.order-delivery-form').each(function(){var $form=$(this),$items=$form.find('.order-delivery-items').first();if(!$items.length||$form.find('[name="installation_required"]').length)return;$('<label class="installation-required-field"><input type="checkbox" name="installation_required" value="1"><span>Installation Required</span></label>').insertBefore($items);});
