@@ -2,7 +2,7 @@
 /**
  * Plugin Name: BizSkill Operations ERP
  * Description: Complete operations ERP for masters, tasks, enquiries, recce, designs, quotations, orders, production, deliveries, purchase orders and GRN.
- * Version: 2.10.106
+ * Version: 2.10.107
  * Update URI: https://github.com/bizskill17/printandsign
  * Author: BizSkill
  * Text Domain: bizskill-operations-erp
@@ -26,7 +26,7 @@ if (is_file(__DIR__.'/lib/plugin-update-checker/plugin-update-checker.php')) {
  }
 }
 final class BSOERP_Complete {
- const VERSION='2.10.106'; const PAGES='bsoerp_pages_v2'; const NONCE='bsoerp_v2_nonce';
+ const VERSION='2.10.107'; const PAGES='bsoerp_pages_v2'; const NONCE='bsoerp_v2_nonce';
  private static $i; private $current_type=''; private $current_record_id=0;
  static function instance(){ return self::$i ?: (self::$i=new self()); }
  function __construct(){
@@ -1644,7 +1644,7 @@ JS;
    }elseif($is_order){
     $oq=$wpdb->get_row($wpdb->prepare("SELECT COALESCE(SUM(qty),0) total_qty,COALESCE(SUM(delivered_qty),0) dispatch_qty FROM {$this->t('line_items')} WHERE record_id=%d",$r->id));
     $dispatch_qty=(float)($oq->dispatch_qty??0);$pending_dispatch=max(0,(float)($oq->total_qty??0)-$dispatch_qty);
-    $ometa=json_decode((string)$r->meta,true);if(!is_array($ometa))$ometa=[];$quotation_no=trim((string)($ometa['source_quotation_no']??''));if($quotation_no===''&&$r->parent_id){$quotation_no=(string)$wpdb->get_var($wpdb->prepare("SELECT reference_no FROM {$this->t('records')} WHERE id=%d AND module='quotations' AND record_type='quotation'",(int)$r->parent_id));}echo'<td><strong>'.esc_html($r->reference_no?:'—').'</strong></td>';if(in_array($view,['orders-in-progress','order-master'],true))echo'<td>'.esc_html($quotation_no?:'—').'</td>';echo'<td>'.esc_html($this->master_name_by_id($r->customer_id)?:'—').'</td><td>'.($r->record_date?esc_html(date_i18n('d/m/y',strtotime($r->record_date))):'—').'</td>';if($view!=='delivered-orders')echo'<td><span class="status '.sanitize_html_class(strtolower(str_replace(' ','-',$r->status))).'">'.esc_html($r->status==='Pending Approval'?'Pending Client Approval':$r->status).'</span></td>';
+    $ometa=json_decode((string)$r->meta,true);if(!is_array($ometa))$ometa=[];$quotation_no=trim((string)($ometa['source_quotation_no']??''));if($quotation_no===''&&$r->parent_id){$quotation_no=(string)$wpdb->get_var($wpdb->prepare("SELECT reference_no FROM {$this->t('records')} WHERE id=%d AND module='quotations' AND record_type='quotation'",(int)$r->parent_id));}echo'<td style="white-space:nowrap"><strong>'.esc_html($r->reference_no?:'—').'</strong></td>';if(in_array($view,['orders-in-progress','order-master'],true))echo'<td style="white-space:nowrap">'.esc_html($quotation_no?:'—').'</td>';echo'<td>'.esc_html($this->master_name_by_id($r->customer_id)?:'—').'</td><td>'.($r->record_date?esc_html(date_i18n('d/m/y',strtotime($r->record_date))):'—').'</td>';if($view!=='delivered-orders')echo'<td><span class="status '.sanitize_html_class(strtolower(str_replace(' ','-',$r->status))).'">'.esc_html($r->status==='Pending Approval'?'Pending Client Approval':$r->status).'</span></td>';
     if($show_order_qty)echo'<td>'.esc_html(number_format_i18n((float)($oq->total_qty??0),2)).'</td>';
     if($show_dispatch){echo'<td>'.esc_html(number_format_i18n($dispatch_qty,2)).'</td>';if($view!=='delivered-orders')echo'<td>'.esc_html(number_format_i18n($pending_dispatch,2)).'</td>';}
     if($view==='orders-in-progress'){$fh=is_array($ometa['follow_up_history']??null)?$ometa['follow_up_history']:[];$lf=$fh?end($fh):null;$lfdt=is_array($lf)?trim((string)($lf['follow_up_datetime']??'')):'';$lfrm=is_array($lf)?trim((string)($lf['remarks']??'')):'';$lfnext=is_array($lf)?trim((string)($lf['next_follow_up_date']??'')):'';echo'<td>'.($lfdt?esc_html($this->format_follow_up_datetime($lfdt)):'—').'</td><td>'.($lfrm!==''?nl2br(esc_html($lfrm)):'—').'</td><td>'.($lfnext?esc_html(date_i18n('d/m/Y',strtotime($lfnext))):'—').'</td>';}
@@ -2191,28 +2191,58 @@ if(!in_array($type,$allowed,true))wp_send_json_error(['message'=>'This master ca
   $objs[2]='<< /Type /Pages /Kids ['.implode(' ',$kids).'] /Count '.count($kids).' >>';ksort($objs);
   $pdf="%PDF-1.4\n%\xE2\xE3\xCF\xD3\n";$offs=[0=>0];$max=max(array_keys($objs));for($i=1;$i<=$max;$i++){if(!isset($objs[$i]))$objs[$i]='<< >>';$offs[$i]=strlen($pdf);$pdf.="$i 0 obj\n".$objs[$i]."\nendobj\n";}$xref=strlen($pdf);$pdf.="xref\n0 ".($max+1)."\n0000000000 65535 f \n";for($i=1;$i<=$max;$i++)$pdf.=sprintf("%010d 00000 n \n",$offs[$i]);$pdf.="trailer\n<< /Size ".($max+1)." /Root 1 0 R >>\nstartxref\n$xref\n%%EOF";return$pdf;
  }
+ function pdf_wrap_lines($text,$width,$size){
+  $per=max(1,(int)floor(($width-8)/($size*0.5)));$out=[];
+  foreach(preg_split('/\R/',(string)$text)as$p){$p=trim($p);if($p==='')continue;foreach(explode("\n",wordwrap($p,$per,"\n",true))as$ln)$out[]=$ln;}
+  return $out?:[''];
+ }
  function order_pdf_content($r,$lines,$settings,$party,$logo_file=''){
   $meta=json_decode((string)$r->meta,true);if(!is_array($meta))$meta=[];
   $subtotal=(float)($meta['quotation_subtotal']??0);$discount=(float)($meta['quotation_discount']??0);$gst=(float)($meta['quotation_gst']??0);$round_off=round((float)($meta['quotation_round_off']??0),2);$grand=(float)($meta['quotation_total']??$r->amount);
   if(!$subtotal){foreach($lines as$l)$subtotal+=(float)$l->qty*(float)$l->rate;}
-  $W=595.28;$H=841.89;$margin=40;$table_y=690;$head_h=20;$row_h=18;$per_page=24;$chunks=array_chunk($lines,$per_page);if(!$chunks)$chunks=[[]];$pages=[];
+  $W=595.28;$H=841.89;$margin=40;$table_y=690;$head_h=20;$row_h=18;$fs=7.6;$line_h=9.2;$bottom=50;$pages=[];
   $cols=[24,68,122,42,40,48,52,42,77];$headers=['Sl.','Item','Description','Qty','UOM','Disc','GST','Rate','Amount'];$pdfesc=function($x){return $this->pdf_text_escape($x);};
   $txt=function($font,$size,$x,$y,$text)use($pdfesc){return "BT /$font $size Tf 1 0 0 1 $x $y Tm (".$pdfesc($text).") Tj ET\n";};$rect=function($x,$y,$w,$h,$fill=false){return $fill?"0.93 g $x $y $w $h re f 0 g\n":"$x $y $w $h re S\n";};
-  foreach($chunks as$pi=>$chunk){$c="0 G 0 g 0.7 w\n";$c.=$txt('F2',14,274,812,'ORDER');$c.=$this->pdf_logo_command($logo_file,$margin,776,76,30);$c.=$txt('F2',12,400,790,$r->reference_no?:'—');$c.=$txt('F2',12,400,773,'Date: '.($r->record_date?date_i18n('d/m/Y',strtotime($r->record_date)):'—'));$c.=$txt('F2',12,$margin,744,'Customer: '.($party?:'—'));
-   $x=$margin;$y=$table_y;$totalw=array_sum($cols);$c.=$rect($x,$y-$head_h,$totalw,$head_h,true);foreach($cols as$ci=>$cw){$c.=$rect($x,$y-$head_h,$cw,$head_h,false);$h=(string)$headers[$ci];$est=strlen($h)*3.55;$tx=max($x+3,$x+(($cw-$est)/2));$c.=$txt('F2',7.6,$tx,$y-13.5,$h);$x+=$cw;}$y-=$head_h;
-   foreach($chunk as$ri=>$l){$global_i=$pi*$per_page+$ri+1;$lm=json_decode((string)$l->meta,true);if(!is_array($lm))$lm=[];$vals=[(string)$global_i,$l->item_title?:'—',$l->description?:'',number_format((float)$l->qty,2,'.',','),$l->uom?:'—',number_format((float)($lm['discount_amount']??0),2,'.',','),number_format((float)($lm['gst_amount']??0),2,'.',','),number_format((float)$l->rate,2,'.',','),number_format((float)$l->amount,2,'.',',')];$x=$margin;foreach($cols as$ci=>$cw){$c.=$rect($x,$y-$row_h,$cw,$row_h,false);$v=(string)$vals[$ci];if($ci===2&&strlen($v)>31)$v=substr($v,0,29).'..';if($ci===1&&strlen($v)>15)$v=substr($v,0,13).'..';$is_center=($ci===4);$is_right=in_array($ci,[3,5,6,7,8],true);if($is_center){$est=strlen($v)*3.65;$tx=max($x+3,$x+(($cw-$est)/2));}elseif($is_right){$tx=max($x+3,$x+$cw-4-(strlen($v)*3.65));}else{$tx=$x+4;}$c.=$txt('F1',7.6,$tx,$y-12.7,$v);$x+=$cw;}$y-=$row_h;}
-   if($pi===count($chunks)-1){$labels=['Amount :','Discount :','GST :','Round Off :','Total :'];$values=[number_format($subtotal,2,'.',','),number_format($discount,2,'.',','),number_format($gst,2,'.',','),number_format($round_off,2,'.',','),number_format($grand,2,'.',',')];$labelw=array_sum(array_slice($cols,0,8));$valw=$cols[8];for($i=0;$i<5;$i++){$c.=$rect($margin,$y-$row_h,$labelw,$row_h,false);$c.=$rect($margin+$labelw,$y-$row_h,$valw,$row_h,false);$lab=$labels[$i];$lab_size=$i===4?9:8.5;$lab_est=strlen($lab)*($i===4?4.65:4.35);$lab_x=max($margin+4,$margin+$labelw-5-$lab_est);$c.=$txt('F2',$lab_size,$lab_x,$y-13,$lab);$v=$values[$i];$c.=$txt($i===4?'F2':'F1',$i===4?9:8.5,$margin+$labelw+$valw-5-(strlen($v)*4.2),$y-13,$v);$y-=$row_h;}$terms_y=$y-28;$c.=$txt('F2',11,$margin,$terms_y,'Terms / Remarks:');foreach(array_slice(preg_split('/\R/',trim((string)$r->notes)),0,5)as$ti=>$tl)$c.=$txt('F1',9,$margin,$terms_y-17-($ti*14),$tl);}
-   $pages[]=$c;}
+  $start_page=function()use($txt,$rect,$r,$party,$logo_file,$margin,$table_y,$head_h,$cols,$headers){
+   $c="0 G 0 g 0.7 w\n";$c.=$txt('F2',14,274,812,'ORDER');$c.=$this->pdf_logo_command($logo_file,$margin,776,76,30);$c.=$txt('F2',12,400,790,$r->reference_no?:'—');$c.=$txt('F2',12,400,773,'Date: '.($r->record_date?date_i18n('d/m/Y',strtotime($r->record_date)):'—'));$c.=$txt('F2',12,$margin,744,'Customer: '.($party?:'—'));
+   $x=$margin;$y=$table_y;$totalw=array_sum($cols);$c.=$rect($x,$y-$head_h,$totalw,$head_h,true);foreach($cols as$ci=>$cw){$c.=$rect($x,$y-$head_h,$cw,$head_h,false);$h=(string)$headers[$ci];$est=strlen($h)*3.55;$tx=max($x+3,$x+(($cw-$est)/2));$c.=$txt('F2',7.6,$tx,$y-13.5,$h);$x+=$cw;}
+   return [$c,$y-$head_h];
+  };
+  list($c,$y)=$start_page();$n=0;
+  foreach($lines as$l){$n++;$lm=json_decode((string)$l->meta,true);if(!is_array($lm))$lm=[];
+   $vals=[(string)$n,$l->item_title?:'—',$l->description?:'',number_format((float)$l->qty,2,'.',','),$l->uom?:'—',number_format((float)($lm['discount_amount']??0),2,'.',','),number_format((float)($lm['gst_amount']??0),2,'.',','),number_format((float)$l->rate,2,'.',','),number_format((float)$l->amount,2,'.',',')];
+   $cell=[];$max=1;foreach($cols as$ci=>$cw){$cell[$ci]=in_array($ci,[1,2],true)?$this->pdf_wrap_lines($vals[$ci],$cw,$fs):[(string)$vals[$ci]];$max=max($max,count($cell[$ci]));}
+   $rh=max($row_h,$max*$line_h+8);
+   if($y-$rh<$bottom){$pages[]=$c;list($c,$y)=$start_page();}
+   $x=$margin;foreach($cols as$ci=>$cw){$c.=$rect($x,$y-$rh,$cw,$rh,false);
+    foreach($cell[$ci]as$li=>$v){$is_center=($ci===4);$is_right=in_array($ci,[3,5,6,7,8],true);if($is_center){$est=strlen($v)*3.65;$tx=max($x+3,$x+(($cw-$est)/2));}elseif($is_right){$tx=max($x+3,$x+$cw-4-(strlen($v)*3.65));}else{$tx=$x+4;}$c.=$txt('F1',$fs,$tx,$y-12.7-($li*$line_h),$v);}
+    $x+=$cw;}
+   $y-=$rh;}
+  $note_lines=array_slice(preg_split('/\R/',trim((string)$r->notes)),0,5);
+  if($y-(5*$row_h)-28-17-(count($note_lines)*14)<$bottom){$pages[]=$c;list($c,$y)=$start_page();}
+  $labels=['Amount :','Discount :','GST :','Round Off :','Total :'];$values=[number_format($subtotal,2,'.',','),number_format($discount,2,'.',','),number_format($gst,2,'.',','),number_format($round_off,2,'.',','),number_format($grand,2,'.',',')];$labelw=array_sum(array_slice($cols,0,8));$valw=$cols[8];for($i=0;$i<5;$i++){$c.=$rect($margin,$y-$row_h,$labelw,$row_h,false);$c.=$rect($margin+$labelw,$y-$row_h,$valw,$row_h,false);$lab=$labels[$i];$lab_size=$i===4?9:8.5;$lab_est=strlen($lab)*($i===4?4.65:4.35);$lab_x=max($margin+4,$margin+$labelw-5-$lab_est);$c.=$txt('F2',$lab_size,$lab_x,$y-13,$lab);$v=$values[$i];$c.=$txt($i===4?'F2':'F1',$i===4?9:8.5,$margin+$labelw+$valw-5-(strlen($v)*4.2),$y-13,$v);$y-=$row_h;}$terms_y=$y-28;$c.=$txt('F2',11,$margin,$terms_y,'Terms / Remarks:');foreach($note_lines as$ti=>$tl)$c.=$txt('F1',9,$margin,$terms_y-17-($ti*14),$tl);
+  $pages[]=$c;
   return $this->simple_pdf_a5_from_a4_pages($pages,$logo_file);
  }
  function job_order_pdf_content($r,$lines,$settings,$party){
-  $W=595.28;$H=841.89;$margin=40;$table_y=700;$head_h=22;$row_h=22;$per_page=27;$chunks=array_chunk($lines,$per_page);if(!$chunks)$chunks=[[]];$pages=[];
+  $W=595.28;$H=841.89;$margin=40;$table_y=700;$head_h=22;$row_h=22;$fs=8.2;$line_h=10;$bottom=50;$pages=[];
   $cols=[36,125,220,62,72];$headers=['Sl.','Item','Description','Qty','UOM'];$pdfesc=function($x){return $this->pdf_text_escape($x);};
   $txt=function($font,$size,$x,$y,$text)use($pdfesc){return "BT /$font $size Tf 1 0 0 1 $x $y Tm (".$pdfesc($text).") Tj ET\n";};$rect=function($x,$y,$w,$h,$fill=false){return $fill?"0.93 g $x $y $w $h re f 0 g\n":"$x $y $w $h re S\n";};
-  foreach($chunks as$pi=>$chunk){$c="0 G 0 g 0.7 w\n";$c.=$txt('F2',14,258,812,'JOB ORDER');$c.=$txt('F2',24,$margin,790,$settings['company']?:'BizSkill');$c.=$txt('F2',12,400,790,$r->reference_no?:'—');$c.=$txt('F2',12,400,773,'Date: '.($r->record_date?date_i18n('d/m/Y',strtotime($r->record_date)):'—'));$c.=$txt('F2',12,$margin,744,'Customer: '.($party?:'—'));
-   $x=$margin;$y=$table_y;foreach($cols as$ci=>$cw){$c.=$rect($x,$y-$head_h,$cw,$head_h,true);$c.=$rect($x,$y-$head_h,$cw,$head_h,false);$h=$headers[$ci];$est=strlen($h)*3.7;$tx=max($x+3,$x+(($cw-$est)/2));$c.=$txt('F2',8,$tx,$y-15,$h);$x+=$cw;}$y-=$head_h;
-   foreach($chunk as$ri=>$l){$global_i=$pi*$per_page+$ri+1;$vals=[(string)$global_i,$l->item_title?:'—',$l->description?:'',number_format((float)$l->qty,2,'.',','),$l->uom?:'—'];$x=$margin;foreach($cols as$ci=>$cw){$c.=$rect($x,$y-$row_h,$cw,$row_h,false);$v=(string)$vals[$ci];if($ci===2&&strlen($v)>55)$v=substr($v,0,53).'..';if($ci===1&&strlen($v)>25)$v=substr($v,0,23).'..';$is_center=in_array($ci,[0,3,4],true);if($is_center){$est=strlen($v)*3.8;$tx=max($x+3,$x+(($cw-$est)/2));}else{$tx=$x+4;}$c.=$txt('F1',8.2,$tx,$y-15,$v);$x+=$cw;}$y-=$row_h;}
-   $pages[]=$c;}
+  $start_page=function()use($txt,$rect,$r,$party,$settings,$margin,$table_y,$head_h,$cols,$headers){
+   $c="0 G 0 g 0.7 w\n";$c.=$txt('F2',14,258,812,'JOB ORDER');$c.=$txt('F2',24,$margin,790,$settings['company']?:'BizSkill');$c.=$txt('F2',12,400,790,$r->reference_no?:'—');$c.=$txt('F2',12,400,773,'Date: '.($r->record_date?date_i18n('d/m/Y',strtotime($r->record_date)):'—'));$c.=$txt('F2',12,$margin,744,'Customer: '.($party?:'—'));
+   $x=$margin;$y=$table_y;foreach($cols as$ci=>$cw){$c.=$rect($x,$y-$head_h,$cw,$head_h,true);$c.=$rect($x,$y-$head_h,$cw,$head_h,false);$h=$headers[$ci];$est=strlen($h)*3.7;$tx=max($x+3,$x+(($cw-$est)/2));$c.=$txt('F2',8,$tx,$y-15,$h);$x+=$cw;}
+   return [$c,$y-$head_h];
+  };
+  list($c,$y)=$start_page();$n=0;
+  foreach($lines as$l){$n++;$vals=[(string)$n,$l->item_title?:'—',$l->description?:'',number_format((float)$l->qty,2,'.',','),$l->uom?:'—'];
+   $cell=[];$max=1;foreach($cols as$ci=>$cw){$cell[$ci]=in_array($ci,[1,2],true)?$this->pdf_wrap_lines($vals[$ci],$cw,$fs):[(string)$vals[$ci]];$max=max($max,count($cell[$ci]));}
+   $rh=max($row_h,$max*$line_h+12);
+   if($y-$rh<$bottom){$pages[]=$c;list($c,$y)=$start_page();}
+   $x=$margin;foreach($cols as$ci=>$cw){$c.=$rect($x,$y-$rh,$cw,$rh,false);
+    foreach($cell[$ci]as$li=>$v){$is_center=in_array($ci,[0,3,4],true);if($is_center){$est=strlen($v)*3.8;$tx=max($x+3,$x+(($cw-$est)/2));}else{$tx=$x+4;}$c.=$txt('F1',$fs,$tx,$y-15-($li*$line_h),$v);}
+    $x+=$cw;}
+   $y-=$rh;}
+  $pages[]=$c;
   return $this->simple_pdf_a5_from_a4_pages($pages);
  }
  function installation_pdf_content($r,$lines,$settings,$party,$logo_file=''){
