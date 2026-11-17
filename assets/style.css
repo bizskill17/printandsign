@@ -2712,3 +2712,6 @@ body.bsoerp-theme-bw .bi-period-buttons a.active,body.bsoerp-theme-bw .bi-kpi-ic
 .order-size-inputs{display:flex;align-items:center;gap:6px}
 .quotation-line-table td .order-size-inputs input{min-width:0!important;width:70px!important}
 .order-size-inputs span{color:#666}
+
+/* v2.10.109 Add/Edit Order: 4 fields per row on desktop */
+@media(min-width:1101px){.form-grid.form-grid-order{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
