@@ -1,3 +1,4 @@
+* v2.10.119: Order Pdf and Internal Pdf now have a separate Size column (L x B with unit) in the item table instead of printing size under the description.
 * v2.10.118: Empty values in all tables, lists, PDFs and exports now show blank instead of "—".
 * v2.10.117: Pending Order Items: Order No. and the Size header stay on one line.
 * v2.10.116: Pending Order Items (work-order pending list) now shows a Size (L × B) column with unit.
