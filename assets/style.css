@@ -2707,11 +2707,26 @@ body.bsoerp-theme-bw .bi-period-buttons a.active,body.bsoerp-theme-bw .bi-kpi-ic
 .follow-up-open{display:inline-flex!important;align-items:center;justify-content:center;padding:0!important;width:36px;height:36px;overflow:hidden}
 .follow-up-open .follow-up-call-icon{width:22px;height:22px;object-fit:contain;display:block;border-radius:50%}
 
-/* v2.10.108 Order: Size (L x B) column */
-.quotation-line-table:not(.quotation-only-table) th.order-size-cell,.quotation-line-table:not(.quotation-only-table) td.order-size-cell{width:170px!important;min-width:170px}
-.order-size-inputs{display:flex;align-items:center;gap:6px}
-.quotation-line-table td .order-size-inputs input{min-width:0!important;width:70px!important}
-.order-size-inputs span{color:#666}
+/* v2.10.111 Order items: fit all 12 columns on desktop (incl. Size L x B) */
+.quotation-line-table:not(.quotation-only-table) table{width:100%!important;min-width:980px!important;table-layout:fixed!important}
+.quotation-line-table:not(.quotation-only-table) th:nth-child(1),.quotation-line-table:not(.quotation-only-table) td:nth-child(1){width:18%!important}
+.quotation-line-table:not(.quotation-only-table) th:nth-child(2),.quotation-line-table:not(.quotation-only-table) td:nth-child(2){width:15%!important;min-width:0!important}
+.quotation-line-table:not(.quotation-only-table) th:nth-child(3),.quotation-line-table:not(.quotation-only-table) td:nth-child(3){width:12%!important;min-width:0!important}
+.quotation-line-table:not(.quotation-only-table) th:nth-child(4),.quotation-line-table:not(.quotation-only-table) td:nth-child(4){width:6%!important}
+.quotation-line-table:not(.quotation-only-table) th:nth-child(5),.quotation-line-table:not(.quotation-only-table) td:nth-child(5){width:7%!important}
+.quotation-line-table:not(.quotation-only-table) th:nth-child(6),.quotation-line-table:not(.quotation-only-table) td:nth-child(6){width:7%!important}
+.quotation-line-table:not(.quotation-only-table) th:nth-child(7),.quotation-line-table:not(.quotation-only-table) td:nth-child(7){width:6%!important}
+.quotation-line-table:not(.quotation-only-table) th:nth-child(8),.quotation-line-table:not(.quotation-only-table) td:nth-child(8){width:7%!important}
+.quotation-line-table:not(.quotation-only-table) th:nth-child(9),.quotation-line-table:not(.quotation-only-table) td:nth-child(9){width:5%!important}
+.quotation-line-table:not(.quotation-only-table) th:nth-child(10),.quotation-line-table:not(.quotation-only-table) td:nth-child(10){width:7%!important}
+.quotation-line-table:not(.quotation-only-table) th:nth-child(11),.quotation-line-table:not(.quotation-only-table) td:nth-child(11){width:7%!important}
+.quotation-line-table:not(.quotation-only-table) th:nth-child(12),.quotation-line-table:not(.quotation-only-table) td:nth-child(12){width:3%!important;padding-left:2px!important;padding-right:2px!important}
+.quotation-line-table:not(.quotation-only-table) th{white-space:normal!important;font-size:12px}
+.quotation-line-table:not(.quotation-only-table) td input,.quotation-line-table:not(.quotation-only-table) td select{padding-left:5px!important;padding-right:5px!important}
+.quotation-line-table:not(.quotation-only-table) .line-select-with-add{min-width:0!important;max-width:100%!important}
+.order-size-inputs{display:flex;align-items:center;gap:4px}
+.quotation-line-table td .order-size-inputs input{min-width:0!important;width:calc(50% - 7px)!important;flex:1 1 0}
+.order-size-inputs span{color:#666;flex:0 0 auto}
 
 /* v2.10.109 Add/Edit Order: 4 fields per row on desktop */
 @media(min-width:1101px){.form-grid.form-grid-order{grid-template-columns:repeat(4,minmax(0,1fr))!important}}

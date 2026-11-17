@@ -1,3 +1,4 @@
+* v2.10.111: Add/Edit Order item table now fits on desktop screens without sideways scrolling (all columns incl. Size, Amount and delete visible).
 * v2.10.110: Size (L × B) column added to the expanded item tables in Pending Orders and Order Master, and to Pending Order Items.
 * v2.10.109: Add/Edit Order shows 4 fields per row on desktop (2 per row on tablet, 1 on mobile).
 * v2.10.108: Add/Edit Order gets Order Prepared By (defaults to logged-in user), Designer, Date of Delivery and Time of Delivery, plus a Size (L x B) column per item. These print on Order Pdf and Internal Pdf (header line; size under each item description).
