@@ -447,6 +447,7 @@ jQuery(function($){
     var $select=$(el);
     if($select.data('search-ready')) return;
     if($select.prop('multiple')) return;
+    if($select.hasClass('size-unit-select')) return;
     $select.data('search-ready',1);
     sortOptions($select);
 

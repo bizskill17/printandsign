@@ -1,3 +1,4 @@
+* v2.10.115: Order item Size now has a unit dropdown (Inch / Feet / CM, default Feet). Unit shows in order item tables and on Order Pdf / Internal Pdf.
 * v2.10.114: Square field boxes applied to all ERP forms (add/edit forms and popup update forms), not just Add Order.
 * v2.10.113: Add/Edit Order: all input boxes now have square corners, matching the Description box.
 * v2.10.112: Order/Quotation item rows: long Particulars names and Descriptions now wrap onto more lines (boxes grow to fit) instead of being cut off.

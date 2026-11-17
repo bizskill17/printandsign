@@ -2709,13 +2709,13 @@ body.bsoerp-theme-bw .bi-period-buttons a.active,body.bsoerp-theme-bw .bi-kpi-ic
 
 /* v2.10.111 Order items: fit all 12 columns on desktop (incl. Size L x B) */
 .quotation-line-table:not(.quotation-only-table) table{width:100%!important;min-width:980px!important;table-layout:fixed!important}
-.quotation-line-table:not(.quotation-only-table) th:nth-child(1),.quotation-line-table:not(.quotation-only-table) td:nth-child(1){width:18%!important}
-.quotation-line-table:not(.quotation-only-table) th:nth-child(2),.quotation-line-table:not(.quotation-only-table) td:nth-child(2){width:15%!important;min-width:0!important}
-.quotation-line-table:not(.quotation-only-table) th:nth-child(3),.quotation-line-table:not(.quotation-only-table) td:nth-child(3){width:12%!important;min-width:0!important}
+.quotation-line-table:not(.quotation-only-table) th:nth-child(1),.quotation-line-table:not(.quotation-only-table) td:nth-child(1){width:17%!important}
+.quotation-line-table:not(.quotation-only-table) th:nth-child(2),.quotation-line-table:not(.quotation-only-table) td:nth-child(2){width:14%!important;min-width:0!important}
+.quotation-line-table:not(.quotation-only-table) th:nth-child(3),.quotation-line-table:not(.quotation-only-table) td:nth-child(3){width:17%!important;min-width:0!important}
 .quotation-line-table:not(.quotation-only-table) th:nth-child(4),.quotation-line-table:not(.quotation-only-table) td:nth-child(4){width:6%!important}
-.quotation-line-table:not(.quotation-only-table) th:nth-child(5),.quotation-line-table:not(.quotation-only-table) td:nth-child(5){width:7%!important}
+.quotation-line-table:not(.quotation-only-table) th:nth-child(5),.quotation-line-table:not(.quotation-only-table) td:nth-child(5){width:6%!important}
 .quotation-line-table:not(.quotation-only-table) th:nth-child(6),.quotation-line-table:not(.quotation-only-table) td:nth-child(6){width:7%!important}
-.quotation-line-table:not(.quotation-only-table) th:nth-child(7),.quotation-line-table:not(.quotation-only-table) td:nth-child(7){width:6%!important}
+.quotation-line-table:not(.quotation-only-table) th:nth-child(7),.quotation-line-table:not(.quotation-only-table) td:nth-child(7){width:5%!important}
 .quotation-line-table:not(.quotation-only-table) th:nth-child(8),.quotation-line-table:not(.quotation-only-table) td:nth-child(8){width:7%!important}
 .quotation-line-table:not(.quotation-only-table) th:nth-child(9),.quotation-line-table:not(.quotation-only-table) td:nth-child(9){width:5%!important}
 .quotation-line-table:not(.quotation-only-table) th:nth-child(10),.quotation-line-table:not(.quotation-only-table) td:nth-child(10){width:7%!important}
@@ -2743,3 +2743,6 @@ body.bsoerp-theme-bw .bi-period-buttons a.active,body.bsoerp-theme-bw .bi-kpi-ic
 .erp-form textarea,
 .erp-form .erp-search-select-input,
 .erp-form .erp-search-select{border-radius:0!important}
+
+/* v2.10.115 Order items: size unit (Inch / Feet / CM) */
+.quotation-line-table td .order-size-inputs select.size-unit-select{flex:0 0 58px;width:58px!important;min-width:58px!important;max-width:58px!important;padding:0 2px!important;font-size:12px;height:34px;border-radius:0!important}
