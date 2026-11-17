@@ -2,7 +2,7 @@
 /**
  * Plugin Name: BizSkill Operations ERP
  * Description: Complete operations ERP for masters, tasks, enquiries, recce, designs, quotations, orders, production, deliveries, purchase orders and GRN.
- * Version: 2.10.115
+ * Version: 2.10.116
  * Update URI: https://github.com/bizskill17/printandsign
  * Author: BizSkill
  * Text Domain: bizskill-operations-erp
@@ -26,7 +26,7 @@ if (is_file(__DIR__.'/lib/plugin-update-checker/plugin-update-checker.php')) {
  }
 }
 final class BSOERP_Complete {
- const VERSION='2.10.115'; const PAGES='bsoerp_pages_v2'; const NONCE='bsoerp_v2_nonce';
+ const VERSION='2.10.116'; const PAGES='bsoerp_pages_v2'; const NONCE='bsoerp_v2_nonce';
  private static $i; private $current_type=''; private $current_record_id=0;
  static function instance(){ return self::$i ?: (self::$i=new self()); }
  function __construct(){
@@ -1841,8 +1841,8 @@ JS;
   $rows=$wpdb->get_results($args?$wpdb->prepare($sql,$args):$sql);
   echo'<div class="panel listing-panel"><div class="panel-head"><div><h2>Pending Order Items</h2></div></div><form class="toolbar master-toolbar" method="get"><label><span>Search</span><input type="search" name="s" value="'.esc_attr($s).'" placeholder="Search"></label><label><span>Order No.</span><input type="search" name="order_no" value="'.esc_attr($order_no).'"></label><label><span>Customer</span><select class="erp-searchable" name="customer"><option value="0">All Customers</option>';foreach($this->master_options('customers')as$o)echo'<option value="'.$o->id.'" '.selected($customer,$o->id,false).'>'.esc_html($o->title).'</option>';echo'</select></label><label><span>Item</span><select class="erp-searchable" name="item"><option value="0">All Items</option>';foreach($this->master_options('items')as$o)echo'<option value="'.$o->id.'" '.selected($item,$o->id,false).'>'.esc_html($o->title).'</option>';echo'</select></label><label><span>Category</span><select class="erp-searchable" name="category"><option value="0">All Categories</option>';foreach($this->master_options('item-categories')as$o)echo'<option value="'.$o->id.'" '.selected($category,$o->id,false).'>'.esc_html($o->title).'</option>';echo'</select></label><button class="btn" type="submit">Filter</button><a class="btn filter-clear" href="'.esc_url($this->url('pending-order-items')).'">Clear</a></form>';
   if(!$rows){echo'<div class="empty"><strong>No pending order items</strong><span>All Order items have been fully processed into Work Orders.</span></div></div>';return;}
-  echo'<div class="table-wrap"><table class="data"><thead><tr><th>Sl.</th><th>Order No.</th><th>Order Date</th><th>Customer</th><th>Items</th><th>Category</th><th>Description</th><th>Ordered Qty</th><th>Processed Qty</th><th>Pending Qty</th><th>UOM</th><th>Status</th></tr></thead><tbody>';
-  foreach($rows as$i=>$r){$pending=max(0,(float)$r->qty-(float)$r->processed_qty);echo'<tr><td>'.($i+1).'</td><td><strong>'.esc_html($r->reference_no?:'—').'</strong></td><td>'.esc_html($r->record_date?date_i18n('d/m/Y',strtotime($r->record_date)):'—').'</td><td>'.esc_html($r->customer_name?:'—').'</td><td>'.esc_html($r->item_title?:'—').'</td><td>'.esc_html($r->category_name?:'—').'</td><td>'.esc_html($r->description?:'—').'</td><td>'.esc_html(number_format_i18n((float)$r->qty,2)).'</td><td>'.esc_html(number_format_i18n((float)$r->processed_qty,2)).'</td><td><strong>'.esc_html(number_format_i18n($pending,2)).'</strong></td><td>'.esc_html($r->uom?:'—').'</td><td><span class="status">Pending</span></td></tr>';}
+  echo'<div class="table-wrap"><table class="data"><thead><tr><th>Sl.</th><th>Order No.</th><th>Order Date</th><th>Customer</th><th>Items</th><th>Category</th><th>Description</th><th>Size (L × B)</th><th>Ordered Qty</th><th>Processed Qty</th><th>Pending Qty</th><th>UOM</th><th>Status</th></tr></thead><tbody>';
+  foreach($rows as$i=>$r){$pending=max(0,(float)$r->qty-(float)$r->processed_qty);echo'<tr><td>'.($i+1).'</td><td><strong>'.esc_html($r->reference_no?:'—').'</strong></td><td>'.esc_html($r->record_date?date_i18n('d/m/Y',strtotime($r->record_date)):'—').'</td><td>'.esc_html($r->customer_name?:'—').'</td><td>'.esc_html($r->item_title?:'—').'</td><td>'.esc_html($r->category_name?:'—').'</td><td>'.esc_html($r->description?:'—').'</td><td style="white-space:nowrap">'.esc_html($this->order_size_display($r->meta??'')).'</td><td>'.esc_html(number_format_i18n((float)$r->qty,2)).'</td><td>'.esc_html(number_format_i18n((float)$r->processed_qty,2)).'</td><td><strong>'.esc_html(number_format_i18n($pending,2)).'</strong></td><td>'.esc_html($r->uom?:'—').'</td><td><span class="status">Pending</span></td></tr>';}
   echo'</tbody></table></div></div>';
  }
  function line_items_listing($v){
