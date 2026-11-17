@@ -2,7 +2,7 @@
 /**
  * Plugin Name: BizSkill Operations ERP
  * Description: Complete operations ERP for masters, tasks, enquiries, recce, designs, quotations, orders, production, deliveries, purchase orders and GRN.
- * Version: 2.10.109
+ * Version: 2.10.110
  * Update URI: https://github.com/bizskill17/printandsign
  * Author: BizSkill
  * Text Domain: bizskill-operations-erp
@@ -26,7 +26,7 @@ if (is_file(__DIR__.'/lib/plugin-update-checker/plugin-update-checker.php')) {
  }
 }
 final class BSOERP_Complete {
- const VERSION='2.10.109'; const PAGES='bsoerp_pages_v2'; const NONCE='bsoerp_v2_nonce';
+ const VERSION='2.10.110'; const PAGES='bsoerp_pages_v2'; const NONCE='bsoerp_v2_nonce';
  private static $i; private $current_type=''; private $current_record_id=0;
  static function instance(){ return self::$i ?: (self::$i=new self()); }
  function __construct(){
@@ -1710,9 +1710,9 @@ JS;
      if(!$k)echo'<tr><td colspan="13">No dispatch rows found.</td></tr>';
      echo'</tbody></table></div></td></tr>';
     }else{
-     echo'<tr id="order-detail-'.(int)$r->id.'" class="order-item-detail-row" hidden><td colspan="'.$order_colspan.'"><div class="order-item-detail-wrap"><table class="data order-item-detail-table"><thead><tr><th>Sl.</th><th>Item</th><th>Description</th><th>Qty</th><th>Dispatch Qty</th><th>Pending Dispatch</th><th>UOM</th><th>Rate</th><th>Amount</th><th>Status</th></tr></thead><tbody>';
-     if($items){foreach($items as$j=>$it){$li=$wpdb->get_row($wpdb->prepare("SELECT rate,amount,status FROM {$this->t('line_items')} WHERE id=%d",(int)$it['id']));echo'<tr><td>'.($j+1).'</td><td>'.esc_html($it['item']).'</td><td>'.esc_html($it['description']).'</td><td>'.esc_html(number_format_i18n((float)$it['qty'],2)).'</td><td>'.esc_html(number_format_i18n((float)$it['delivered_qty'],2)).'</td><td>'.esc_html(number_format_i18n((float)$it['pending_qty'],2)).'</td><td>'.esc_html($it['uom']).'</td><td>'.esc_html(number_format_i18n((float)($li->rate??0),2)).'</td><td>'.esc_html(number_format_i18n((float)($li->amount??0),2)).'</td><td><span class="status '.sanitize_html_class(strtolower(str_replace(' ','-',($li->status??'Pending')))).'">'.esc_html($li->status??'Pending').'</span></td></tr>';}}
-     else echo'<tr><td colspan="10">No item rows found.</td></tr>';
+     echo'<tr id="order-detail-'.(int)$r->id.'" class="order-item-detail-row" hidden><td colspan="'.$order_colspan.'"><div class="order-item-detail-wrap"><table class="data order-item-detail-table"><thead><tr><th>Sl.</th><th>Item</th><th>Description</th><th>Size (L × B)</th><th>Qty</th><th>Dispatch Qty</th><th>Pending Dispatch</th><th>UOM</th><th>Rate</th><th>Amount</th><th>Status</th></tr></thead><tbody>';
+     if($items){foreach($items as$j=>$it){$li=$wpdb->get_row($wpdb->prepare("SELECT rate,amount,status,meta FROM {$this->t('line_items')} WHERE id=%d",(int)$it['id']));echo'<tr><td>'.($j+1).'</td><td>'.esc_html($it['item']).'</td><td>'.esc_html($it['description']).'</td><td style="white-space:nowrap">'.esc_html($this->order_size_display($li->meta??'')).'</td><td>'.esc_html(number_format_i18n((float)$it['qty'],2)).'</td><td>'.esc_html(number_format_i18n((float)$it['delivered_qty'],2)).'</td><td>'.esc_html(number_format_i18n((float)$it['pending_qty'],2)).'</td><td>'.esc_html($it['uom']).'</td><td>'.esc_html(number_format_i18n((float)($li->rate??0),2)).'</td><td>'.esc_html(number_format_i18n((float)($li->amount??0),2)).'</td><td><span class="status '.sanitize_html_class(strtolower(str_replace(' ','-',($li->status??'Pending')))).'">'.esc_html($li->status??'Pending').'</span></td></tr>';}}
+     else echo'<tr><td colspan="11">No item rows found.</td></tr>';
      echo'</tbody></table></div></td></tr>';
     }
    }
@@ -1888,7 +1888,7 @@ JS;
     $fa=array_filter($f,fn($x)=>$x!==''&&$x!==0);$export=wp_nonce_url(add_query_arg(array_merge(['action'=>'bsoerp_export','view'=>$v],$fa),admin_url('admin-post.php')),'bsoerp_export');
     echo'<div class="panel listing-panel"><div class="panel-head"><div><h2>Order Items Master</h2></div><div class="head-actions"><a class="btn mobile-excel" href="'.esc_url($export).'">⇩ Excel</a></div></div><form class="toolbar master-toolbar" method="get">';
     echo'<label><span>Search</span><input type="search" name="s" value="'.esc_attr($f['s']).'" placeholder="Search all fields"></label><label><span>Order No.</span><input type="search" name="order_no" value="'.esc_attr($f['order_no']).'" placeholder="Order No."></label><label><span>Customer</span><select class="erp-searchable" name="customer"><option value="0">All Customers</option>';foreach($this->master_options('customers')as$o)echo'<option value="'.$o->id.'" '.selected($f['customer'],$o->id,false).'>'.esc_html($o->title).'</option>';echo'</select></label><label><span>Item</span><select class="erp-searchable" name="item"><option value="0">All Items</option>';foreach($this->master_options('items')as$o)echo'<option value="'.$o->id.'" '.selected($f['item'],$o->id,false).'>'.esc_html($o->title).'</option>';echo'</select></label><button class="btn" type="submit">Filter</button><a class="btn filter-clear" href="'.esc_url($this->url($v)).'">Clear</a></form>';
-    if(!$rows)echo'<div class="empty"><strong>No order item rows found</strong><span>No rows match the current filters.</span></div>';else{echo'<div class="table-wrap"><table class="data"><thead><tr><th>Sl.</th><th>Order No.</th><th>Customer Name</th><th>Item</th><th>Description</th><th>Qty</th><th>Dispatch Qty</th><th>Pending Dispatch</th><th>UOM</th><th>Rate</th><th>Amount</th><th>Item Status</th><th>Status</th></tr></thead><tbody>';foreach($rows as$idx=>$r){echo'<tr><td>'.(($page-1)*$per+$idx+1).'</td><td>'.esc_html($r->reference_no?:'—').'</td><td>'.esc_html($this->master_name_by_id($r->customer_id)?:'—').'</td><td>'.esc_html($r->item_title?:'—').'</td><td>'.esc_html($r->description?:'—').'</td><td>'.esc_html($r->qty).'</td><td>'.esc_html(number_format_i18n((float)$r->delivered_qty,2)).'</td><td>'.esc_html(number_format_i18n(max(0,(float)$r->qty-(float)$r->delivered_qty),2)).'</td><td>'.esc_html($r->uom?:'—').'</td><td>'.esc_html(number_format_i18n($r->rate,2)).'</td><td>'.esc_html(number_format_i18n($r->amount,2)).'</td><td><span class="status">'.esc_html($r->status).'</span></td><td><span class="status '.sanitize_html_class(strtolower(str_replace(' ','-',$r->parent_status))).'">'.esc_html($r->parent_status).'</span></td></tr>';}echo'</tbody></table></div>';}
+    if(!$rows)echo'<div class="empty"><strong>No order item rows found</strong><span>No rows match the current filters.</span></div>';else{echo'<div class="table-wrap"><table class="data"><thead><tr><th>Sl.</th><th>Order No.</th><th>Customer Name</th><th>Item</th><th>Description</th><th>Size (L × B)</th><th>Qty</th><th>Dispatch Qty</th><th>Pending Dispatch</th><th>UOM</th><th>Rate</th><th>Amount</th><th>Item Status</th><th>Status</th></tr></thead><tbody>';foreach($rows as$idx=>$r){echo'<tr><td>'.(($page-1)*$per+$idx+1).'</td><td>'.esc_html($r->reference_no?:'—').'</td><td>'.esc_html($this->master_name_by_id($r->customer_id)?:'—').'</td><td>'.esc_html($r->item_title?:'—').'</td><td>'.esc_html($r->description?:'—').'</td><td style="white-space:nowrap">'.esc_html($this->order_size_display($r->meta??'')).'</td><td>'.esc_html($r->qty).'</td><td>'.esc_html(number_format_i18n((float)$r->delivered_qty,2)).'</td><td>'.esc_html(number_format_i18n(max(0,(float)$r->qty-(float)$r->delivered_qty),2)).'</td><td>'.esc_html($r->uom?:'—').'</td><td>'.esc_html(number_format_i18n($r->rate,2)).'</td><td>'.esc_html(number_format_i18n($r->amount,2)).'</td><td><span class="status">'.esc_html($r->status).'</span></td><td><span class="status '.sanitize_html_class(strtolower(str_replace(' ','-',$r->parent_status))).'">'.esc_html($r->parent_status).'</span></td></tr>';}echo'</tbody></table></div>';}
     $this->pagination_controls($total,$page,$per,add_query_arg($fa,$this->url($v)));echo'</div>';return;
   }
   if($v!=='quotation-items-master'){
@@ -2199,6 +2199,10 @@ if(!in_array($type,$allowed,true))wp_send_json_error(['message'=>'This master ca
   $del=($dd!==''&&strtotime($dd))?date('d/m/Y',strtotime($dd)):'';if($dt!==''&&strtotime('2000-01-01 '.$dt))$del=trim($del.' '.date('h:i A',strtotime('2000-01-01 '.$dt)));
   if($del!=='')$parts[]='Delivery: '.$del;
   return implode('     ',$parts);
+ }
+ function order_size_display($meta){
+  $lm=is_array($meta)?$meta:json_decode((string)$meta,true);if(!is_array($lm))$lm=[];$a=trim((string)($lm['length']??''));$b=trim((string)($lm['height']??''));
+  if($a===''&&$b==='')return'—';return ($a!==''?$a:'-').' × '.($b!==''?$b:'-');
  }
  function order_line_size_text($l){
   $lm=json_decode((string)($l->meta??''),true);if(!is_array($lm))$lm=[];$a=trim((string)($lm['length']??''));$b=trim((string)($lm['height']??''));
