@@ -1,3 +1,4 @@
+* v2.10.117: Pending Order Items: Order No. and the Size header stay on one line.
 * v2.10.116: Pending Order Items (work-order pending list) now shows a Size (L × B) column with unit.
 * v2.10.115: Order item Size now has a unit dropdown (Inch / Feet / CM, default Feet). Unit shows in order item tables and on Order Pdf / Internal Pdf.
 * v2.10.114: Square field boxes applied to all ERP forms (add/edit forms and popup update forms), not just Add Order.
