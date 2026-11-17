@@ -2730,3 +2730,9 @@ body.bsoerp-theme-bw .bi-period-buttons a.active,body.bsoerp-theme-bw .bi-kpi-ic
 
 /* v2.10.109 Add/Edit Order: 4 fields per row on desktop */
 @media(min-width:1101px){.form-grid.form-grid-order{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+
+/* v2.10.112 Order/Quotation items: wrap Particulars and Description */
+.quotation-line-table td textarea.line-desc-wrap,.quotation-line-table td textarea.line-wrap-input{display:block;width:100%!important;min-width:0!important;min-height:34px;height:34px;resize:none!important;overflow:hidden!important;white-space:pre-wrap!important;overflow-wrap:anywhere!important;line-height:1.3!important;padding:7px 7px!important;font-family:inherit;font-size:13px;box-sizing:border-box}
+.quotation-line-table td textarea.line-wrap-input{padding-right:22px!important}
+.quotation-line-table .line-select-with-add{align-items:flex-start!important}
+.quotation-line-table td{vertical-align:top!important}

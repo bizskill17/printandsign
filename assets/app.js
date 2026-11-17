@@ -451,7 +451,8 @@ jQuery(function($){
     sortOptions($select);
 
     var $wrap=$('<div class="erp-search-select"></div>');
-    var $input=$select.hasClass('job-order-select')?$('<textarea class="erp-search-select-input job-order-wrap-input" rows="2" autocomplete="off" aria-label="Search options"></textarea>'):$('<input type="search" class="erp-search-select-input" autocomplete="off" aria-label="Search options">');
+    var $input=$select.hasClass('job-order-select')?$('<textarea class="erp-search-select-input job-order-wrap-input" rows="2" autocomplete="off" aria-label="Search options"></textarea>'):($select.hasClass('quotation-item-select')?$('<textarea class="erp-search-select-input line-wrap-input" rows="1" autocomplete="off" aria-label="Search options"></textarea>'):$('<input type="search" class="erp-search-select-input" autocomplete="off" aria-label="Search options">'));
+    function growInput(){if(!$input.hasClass('line-wrap-input'))return;var t=$input[0];t.style.height='auto';if(t.scrollHeight)t.style.height=Math.max(34,t.scrollHeight+2)+'px';}
     var $menu=$('<div class="erp-search-select-menu" hidden></div>');
     $select.wrap($wrap);
     $wrap=$select.parent();
@@ -513,6 +514,7 @@ jQuery(function($){
       $wrap.toggleClass('erp-search-select-disabled',disabled);
       if(disabled)closeMenu();
       buildMenu('');
+      growInput();
     }
     el._bsoerpRefresh=function(){sortOptions($select);sync();};
 
@@ -544,6 +546,7 @@ jQuery(function($){
       }
       buildMenu($input.val());
       $menu.removeAttr('hidden');
+      growInput();
     });
     $menu.on('click','.erp-search-option',function(){
       if($select.prop('disabled')){closeMenu();return;}
@@ -2106,3 +2109,15 @@ jQuery(function($){
     try{var q=new URLSearchParams(window.location.search);var id=q.get('open_design_details');if(!id)return;var row=document.querySelector('tr.design-details-row[data-design-id="'+id+'"]');if(row)row.click();}catch(e){}
   });
 })();
+
+// v2.10.112 Order/Quotation items: Description box wraps and grows; Particulars text wraps
+(function($){
+  if(!$)return;
+  function grow(el){if(!el)return;el.style.height='auto';if(el.scrollHeight)el.style.height=Math.max(34,el.scrollHeight+2)+'px';}
+  function growAll(root){$(root||document).find('textarea.line-desc-wrap,textarea.line-wrap-input').each(function(){grow(this);});}
+  $(document).on('input','textarea.line-desc-wrap',function(){grow(this);});
+  $(document).on('keydown','textarea.line-desc-wrap,textarea.line-wrap-input',function(e){if(e.key==='Enter'){e.preventDefault();}});
+  $(document).on('click','.add-line',function(){setTimeout(function(){growAll(document);},60);});
+  $(function(){growAll(document);setTimeout(function(){growAll(document);},400);});
+  $(window).on('load resize',function(){growAll(document);});
+})(window.jQuery);
