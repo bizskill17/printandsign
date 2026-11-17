@@ -1,3 +1,4 @@
+* v2.10.118: Empty values in all tables, lists, PDFs and exports now show blank instead of "—".
 * v2.10.117: Pending Order Items: Order No. and the Size header stay on one line.
 * v2.10.116: Pending Order Items (work-order pending list) now shows a Size (L × B) column with unit.
 * v2.10.115: Order item Size now has a unit dropdown (Inch / Feet / CM, default Feet). Unit shows in order item tables and on Order Pdf / Internal Pdf.
