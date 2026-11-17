@@ -2706,3 +2706,9 @@ body.bsoerp-theme-bw .bi-period-buttons a.active,body.bsoerp-theme-bw .bi-kpi-ic
 /* v2.10.83 follow-up call icon */
 .follow-up-open{display:inline-flex!important;align-items:center;justify-content:center;padding:0!important;width:36px;height:36px;overflow:hidden}
 .follow-up-open .follow-up-call-icon{width:22px;height:22px;object-fit:contain;display:block;border-radius:50%}
+
+/* v2.10.108 Order: Size (L x B) column */
+.quotation-line-table:not(.quotation-only-table) th.order-size-cell,.quotation-line-table:not(.quotation-only-table) td.order-size-cell{width:170px!important;min-width:170px}
+.order-size-inputs{display:flex;align-items:center;gap:6px}
+.quotation-line-table td .order-size-inputs input{min-width:0!important;width:70px!important}
+.order-size-inputs span{color:#666}

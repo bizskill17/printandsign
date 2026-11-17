@@ -1,3 +1,4 @@
+* v2.10.108: Add/Edit Order gets Order Prepared By (defaults to logged-in user), Designer, Date of Delivery and Time of Delivery, plus a Size (L x B) column per item. These print on Order Pdf and Internal Pdf (header line; size under each item description).
 * v2.10.107: Order lists show Order No. and Quotation No. on one line. Order Pdf and Internal Pdf (Job Order) now wrap long Item and Description text onto extra lines instead of cutting it off with ".."; rows grow taller and continue onto new pages as needed.
 * v2.10.106: Order Master PDF icons renamed: first icon "Order Pdf", second icon "Internal Pdf" (was "View PDF" for both).
 * v2.10.105: Release workflow now sends a second deploy webhook after 90 seconds so the live site always receives the new version. No functional changes.
