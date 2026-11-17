@@ -2736,3 +2736,10 @@ body.bsoerp-theme-bw .bi-period-buttons a.active,body.bsoerp-theme-bw .bi-kpi-ic
 .quotation-line-table td textarea.line-wrap-input{padding-right:22px!important}
 .quotation-line-table .line-select-with-add{align-items:flex-start!important}
 .quotation-line-table td{vertical-align:top!important}
+
+/* v2.10.113 Add/Edit Order: all fields square like Description */
+.erp-form.erp-form-order input:not([type=hidden]):not([type=checkbox]):not([type=radio]),
+.erp-form.erp-form-order select,
+.erp-form.erp-form-order textarea,
+.erp-form.erp-form-order .erp-search-select-input,
+.erp-form.erp-form-order .erp-search-select{border-radius:0!important}

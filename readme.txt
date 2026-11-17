@@ -1,3 +1,4 @@
+* v2.10.113: Add/Edit Order: all input boxes now have square corners, matching the Description box.
 * v2.10.112: Order/Quotation item rows: long Particulars names and Descriptions now wrap onto more lines (boxes grow to fit) instead of being cut off.
 * v2.10.111: Add/Edit Order item table now fits on desktop screens without sideways scrolling (all columns incl. Size, Amount and delete visible).
 * v2.10.110: Size (L × B) column added to the expanded item tables in Pending Orders and Order Master, and to Pending Order Items.
