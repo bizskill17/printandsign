@@ -1,3 +1,4 @@
+* v2.10.121: Add/Edit Work Order has a Work Assigned To field (ERP user). It shows in Pending Work Orders / Work Orders Master and on the Work Order PDF.
 * v2.10.120: Speed: customer/vendor/item names, user names and dropdown lists are looked up once per page load instead of once per row/field (far fewer database queries on lists and forms).
 * v2.10.119: Order Pdf and Internal Pdf now have a separate Size column (L x B with unit) in the item table instead of printing size under the description.
 * v2.10.118: Empty values in all tables, lists, PDFs and exports now show blank instead of "—".
