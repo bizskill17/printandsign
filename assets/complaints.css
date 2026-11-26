@@ -116,3 +116,25 @@
  color:#c62828!important;background:#fff0f0!important;border:1px solid #f3c6c6!important;border-radius:6px;
 }
 .bsoerp-app .cr-register-table .cr-delete-action:disabled{opacity:.5;cursor:wait}
+
+/* Compact update form; history is available in details and Update Log. */
+.bsoerp-app .cr-update-panel .cr-form .cr-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.bsoerp-app .cr-update-panel .cr-update-summary{background:#eaf3ff;border-radius:6px;padding:18px 20px;margin-bottom:24px;color:#14213d;overflow-wrap:anywhere}
+.bsoerp-app .cr-update-panel .cr-update-summary-main{display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-size:14px}
+.bsoerp-app .cr-update-panel .cr-update-summary-main>strong{font-size:18px}
+.bsoerp-app .cr-update-panel .cr-update-summary-main>span{border-left:1px solid #bfd1ea;padding-left:18px}
+.bsoerp-app .cr-update-panel .cr-update-summary-main .cr-summary-type{border:0;background:#0961ed!important;color:#fff!important;border-radius:4px;padding:5px 12px;font-size:12px;font-weight:600}
+.bsoerp-app .cr-update-panel .cr-update-summary-details{display:flex;align-items:flex-start;gap:16px 30px;flex-wrap:wrap;margin-top:12px;font-size:13px;line-height:1.6}
+.bsoerp-app .cr-update-panel .cr-update-summary-details>div{flex:1 1 260px;min-width:0}
+.bsoerp-app .cr-update-panel .cr-form .cr-option span{gap:8px}
+.bsoerp-app .cr-update-panel .cr-form .cr-option i{font-style:normal;color:inherit!important}
+.bsoerp-app .cr-update-panel .cr-locked-input{position:relative}
+.bsoerp-app .cr-update-panel .cr-locked-input svg{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:#667085;pointer-events:none}
+.bsoerp-app .cr-update-panel .cr-form .cr-locked-input input[readonly]{background:#f1f4f8!important;border-color:#b8c6da!important;color:#344054!important;padding-right:40px!important;cursor:default}
+@media(max-width:600px){
+ .bsoerp-app .cr-update-panel .cr-form .cr-grid{grid-template-columns:1fr!important}
+ .bsoerp-app .cr-update-panel .cr-update-summary{padding:14px;margin-bottom:18px}
+ .bsoerp-app .cr-update-panel .cr-update-summary-main{gap:10px;font-size:12px}
+ .bsoerp-app .cr-update-panel .cr-update-summary-main>span{padding-left:10px}
+ .bsoerp-app .cr-update-panel .cr-update-summary-details{gap:8px;font-size:12px}
+}

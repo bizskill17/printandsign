@@ -11,7 +11,7 @@ trait BSOERP_Complaints {
  function complaint_time($value,$date_only=false){$d=DateTimeImmutable::createFromFormat($date_only?'!Y-m-d':'Y-m-d H:i:s',(string)$value,new DateTimeZone('Asia/Kolkata'));return $d?$d->format($date_only?'d/m/Y':'d/m/Y g:i A').' '.($date_only?'':'IST'):'';}
  function complaint_choice($name,$label,$values,$selected){
   echo '<fieldset class="cr-choice"><legend>'.esc_html($label).' *</legend><div class="cr-buttons">';
-  foreach($values as $v)echo '<label class="cr-option cr-'.esc_attr(strtolower($v)).'"><input type="radio" name="'.esc_attr($name).'" value="'.esc_attr($v).'" '.checked($v,$selected,false).' required><span>'.esc_html($v).'</span></label>';
+  foreach($values as $v)echo '<label class="cr-option cr-'.esc_attr(strtolower($v)).'"><input type="radio" name="'.esc_attr($name).'" value="'.esc_attr($v).'" '.checked($v,$selected,false).' required><span>'.($name==='complaint_status'&&$v==='Completed'?'<i aria-hidden="true">✓</i> ':'').esc_html($v).'</span></label>';
   echo '</div></fieldset>';
  }
  function complaint_select($name,$label,$type,$selected=0,$required=true){
@@ -45,10 +45,14 @@ trait BSOERP_Complaints {
   echo '</div><div class="form-actions"><a class="btn" href="'.esc_url($this->url('complaints-pending')).'">Cancel</a><button class="btn primary" type="submit"><span aria-hidden="true">✓</span> Save</button></div></form></div>';
  }
  function complaint_update_form($r){
-  echo '<div class="panel form-panel cr-panel"><h2>Update Complaint / Repairing</h2>';$this->complaint_summary($r);$this->complaint_form_start('bsoerp_update_complaint');echo '<input type="hidden" name="complaint_id" value="'.(int)$r->id.'"><input type="hidden" name="expected_updated_at" value="'.esc_attr($r->updated_at).'"><div class="form-grid cr-grid">';
+  $m=$this->complaint_meta($r);
+  echo '<div class="panel form-panel cr-panel cr-update-panel"><div class="cr-update-summary"><div class="cr-update-summary-main"><strong>'.esc_html($r->reference_no).'</strong><span class="cr-summary-type">'.esc_html($m['type']??'').'</span><span>'.esc_html($this->master_name_by_id($r->customer_id)).'</span><span>'.esc_html($m['mobile']??'').'</span></div><div class="cr-update-summary-details"><div><strong>Description:</strong> '.nl2br(esc_html($r->notes)).'</div><div><strong>Assigned To:</strong> '.esc_html($this->task_user_display_name($r->assigned_to)).'</div></div></div>';
+  $this->complaint_form_start('bsoerp_update_complaint');
+  echo '<input type="hidden" name="complaint_id" value="'.(int)$r->id.'"><input type="hidden" name="expected_updated_at" value="'.esc_attr($r->updated_at).'"><div class="form-grid cr-grid">';
   $this->complaint_choice('complaint_status','Status',['Inprogress','Completed'],$r->status);
-  echo '<label class="cr-wide"><span>Update Remarks *</span><textarea name="remarks" rows="4" required></textarea></label><label><span>Update By</span><input type="text" value="'.esc_attr(wp_get_current_user()->display_name).'" readonly></label>';$this->complaint_upload_field('Update Document');echo '</div><div class="form-actions"><a class="btn" href="'.esc_url($this->url('complaints-pending')).'">Cancel</a><button class="btn primary" type="submit">Save Update</button></div></form>';
-  $this->complaint_history($r->id);echo '</div>';
+  echo '<label class="cr-update-by"><span>Update By</span><div class="cr-locked-input"><input type="text" value="'.esc_attr(wp_get_current_user()->display_name).'" readonly aria-readonly="true"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div></label><label class="cr-wide"><span>Update Remarks *</span><textarea name="remarks" rows="4" placeholder="Enter work done / latest update" required></textarea></label>';
+  $this->complaint_upload_field('Update Document',true);
+  echo '</div><div class="form-actions"><a class="btn" href="'.esc_url($this->url('complaints-pending')).'">Cancel</a><button class="btn primary" type="submit"><span aria-hidden="true">✓</span> Save Update</button></div></form></div>';
  }
  function complaint_history($id){
   global $wpdb;$rows=$wpdb->get_results($wpdb->prepare("SELECT * FROM {$this->t('records')} WHERE module='complaints' AND record_type='complaint-update' AND parent_id=%d ORDER BY id DESC",$id));echo '<h3>Update History</h3><div class="table-wrap"><table class="data"><thead><tr><th>Update Date & Time</th><th>Status</th><th>Update Remarks</th><th>Update By</th><th>Update Document</th></tr></thead><tbody>';
