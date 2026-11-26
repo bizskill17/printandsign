@@ -2141,3 +2141,14 @@ jQuery(function($){
     $(this).closest('.cr-upload-field').find('.cr-upload-files').text(names.join(', '));
   });
 });
+
+jQuery(function($){
+  $('.cr-filter-toggle').on('click',function(){
+    var panel=document.getElementById(this.getAttribute('aria-controls'));
+    if(!panel)return;
+    var open=panel.hidden;
+    panel.hidden=!open;
+    this.setAttribute('aria-expanded',open?'true':'false');
+    if(!open)document.querySelectorAll('.erp-search-select-menu').forEach(function(menu){menu.hidden=true;});
+  });
+});

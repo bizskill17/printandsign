@@ -104,19 +104,36 @@ trait BSOERP_Complaints {
   $search=sanitize_text_field(wp_unslash($_GET['s']??''));if($search!==''){$like='%'.$wpdb->esc_like($search).'%';$where[]='(r.reference_no LIKE %s OR r.notes LIKE %s OR c.title LIKE %s OR r.meta LIKE %s)';array_push($args,$like,$like,$like,$like);}
   $base="FROM {$this->t('records')} r LEFT JOIN {$this->t('records')} c ON c.id=r.customer_id WHERE ".implode(' AND ',$where);$total=(int)$wpdb->get_var($args?$wpdb->prepare("SELECT COUNT(*) $base",$args):"SELECT COUNT(*) $base");$per=$this->pagination_size();$page=min(max(1,absint($_GET['pg']??1)),max(1,(int)ceil($total/$per)));$off=($page-1)*$per;
   $sql="SELECT r.*,c.title AS customer_name $base ORDER BY r.id DESC LIMIT $per OFFSET $off";$rows=$wpdb->get_results($args?$wpdb->prepare($sql,$args):$sql);
-  echo '<div class="panel listing-panel cr-panel"><div class="panel-head"><h2>'.esc_html($this->flat()[$view]).'</h2>';if($this->can_view_slug('add-complaint'))echo '<a class="btn primary" href="'.esc_url($this->url('add-complaint')).'">＋ Add Complaint / Repairing</a>';echo '</div>';
-  $this->complaint_filters($view,$search);
-  $headers=$log?['Update Date & Time','Reference','Customer','Type','Status','Update Remarks','Update By','Update Document']:['Reference','Complaint Date','Type','Customer','Mobile','Priority','Complaint Description','Assigned To','Status','Actions'];
-  echo '<div class="table-wrap"><table class="data cr-table"><thead><tr>';foreach($headers as $h)echo '<th>'.esc_html($h).'</th>';echo '</tr></thead><tbody>';
+  // Fetch the newest update for each visible complaint in one query.
+  $latest=[];
+  if(!$log&&$rows){
+   $ids=array_map('absint',array_column($rows,'id'));$placeholders=implode(',',array_fill(0,count($ids),'%d'));
+   $updates=$wpdb->get_results($wpdb->prepare("SELECT u.* FROM {$this->t('records')} u INNER JOIN (SELECT parent_id,MAX(id) AS latest_id FROM {$this->t('records')} WHERE module='complaints' AND record_type='complaint-update' AND parent_id IN ($placeholders) GROUP BY parent_id) newest ON newest.latest_id=u.id",$ids));
+   foreach($updates as $update)$latest[(int)$update->parent_id]=$update;
+  }
+  $filters_open=($_GET['filters_open']??'')==='1';
+  echo '<div class="panel listing-panel cr-panel"><div class="cr-list-tools"><button type="button" class="btn cr-filter-toggle" aria-expanded="'.($filters_open?'true':'false').'" aria-controls="cr-filter-panel"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 4h18l-7 8v7l-4 2v-9Z"/></svg> Filter</button>';
+  if($this->can_view_slug('add-complaint'))echo '<a class="btn primary" href="'.esc_url($this->url('add-complaint')).'">＋ Add Complaint / Repairing</a>';echo '</div><div id="cr-filter-panel"'.($filters_open?'':' hidden').'>';
+  $this->complaint_filters($view,$search);echo '</div>';
+  $headers=$log?['Update Date & Time','Reference','Customer','Type','Status','Update Remarks','Update By','Update Document']:['Date','Type','Customer','Mobile','Priority','Description','Assigned To','Document','Status','Update Date','Update Remarks','Update By','Update Document','Action'];
+  echo '<div class="table-wrap"><table class="data cr-table'.($log?'':' cr-register-table').'"><thead><tr>';foreach($headers as $h)echo '<th>'.esc_html($h).'</th>';echo '</tr></thead><tbody>';
   foreach($rows as $r){$m=$this->complaint_meta($r);echo '<tr>';
-   $cells=$log?[$this->complaint_time($r->created_at),$r->reference_no,$r->customer_name,$m['type']??'',$r->status,$r->notes,$this->user_display_name($r->created_by)]:[$r->reference_no,$this->complaint_time($r->record_date,true),$m['type']??'',$r->customer_name,$m['mobile']??'',$m['priority']??'',$r->notes,$this->task_user_display_name($r->assigned_to),$r->status];
-   foreach($cells as $i=>$cell){$badge=(!$log&&in_array($i,[5,8],true))||($log&&$i===4);echo '<td class="cr-text">'.($badge?'<span class="cr-badge cr-'.esc_attr(strtolower((string)$cell)).'">':'').nl2br(esc_html((string)$cell)).($badge?'</span>':'').'</td>';}
-   echo '<td>';if($log)$this->complaint_documents($m['documents']??[]);else{echo '<div class="actions"><a class="btn" title="View details and history" aria-label="View details and history" href="'.esc_url(add_query_arg('complaint',(int)$r->id,$this->url($view))).'">◉</a>';if($this->complaint_can_update($r))echo '<a class="btn" title="Update" aria-label="Update" href="'.esc_url(add_query_arg('update_complaint',(int)$r->id,$this->url($view))).'">✎</a>';echo '</div>';}echo '</td></tr>';
+   if($log){
+    $cells=[$this->complaint_time($r->created_at),$r->reference_no,$r->customer_name,$m['type']??'',$r->status,$r->notes,$this->user_display_name($r->created_by)];
+    foreach($cells as $i=>$cell){$badge=$i===4;echo '<td class="cr-text">'.($badge?'<span class="cr-badge cr-'.esc_attr(strtolower((string)$cell)).'">':'').nl2br(esc_html((string)$cell)).($badge?'</span>':'').'</td>';}
+    echo '<td>';$this->complaint_documents($m['documents']??[]);echo '</td>';
+   }else{
+    $update=$latest[(int)$r->id]??null;$update_meta=$update?$this->complaint_meta($update):[];
+    $cells=[$this->complaint_time($r->record_date,true),$m['type']??'',$r->customer_name,$m['mobile']??'',$m['priority']??'',$r->notes,$this->task_user_display_name($r->assigned_to),$m['documents']??[],$r->status,$update?$this->complaint_time($update->created_at):'',$update?$update->notes:'',$update?$this->user_display_name($update->created_by):'',$update_meta['documents']??[]];
+    foreach($cells as $i=>$cell){echo '<td class="cr-text">';if(in_array($i,[7,12],true))$this->complaint_documents($cell);else{$badge=in_array($i,[4,8],true);echo ($badge?'<span class="cr-badge cr-'.esc_attr(strtolower((string)$cell)).'">':'').nl2br(esc_html((string)$cell)).($badge?'</span>':'');}echo '</td>';}
+    echo '<td><div class="actions"><a class="btn" title="View details and history" aria-label="View details and history" href="'.esc_url(add_query_arg('complaint',(int)$r->id,$this->url($view))).'">◉</a>';if($this->complaint_can_update($r))echo '<a class="btn" title="Update" aria-label="Update" href="'.esc_url(add_query_arg('update_complaint',(int)$r->id,$this->url($view))).'">✎</a>';echo '</div></td>';
+   }
+   echo '</tr>';
   }
   if(!$rows)echo '<tr><td colspan="'.count($headers).'">No records found.</td></tr>';echo '</tbody></table></div>';$this->pagination_controls($total,$page,$per,$this->url($view));echo '</div>';
  }
  function complaint_filters($view,$search){
-  echo '<form class="cr-filters" method="get" action="'.esc_url($this->url($view)).'"><label>Search<input type="search" name="erp_search" value="'.esc_attr($search).'" placeholder="Reference, customer, mobile, remarks"></label>';
+  echo '<form class="cr-filters" method="get" action="'.esc_url($this->url($view)).'"><input type="hidden" name="filters_open" value="1"><label>Search<input type="search" name="erp_search" value="'.esc_attr($search).'" placeholder="Reference, customer, mobile, remarks"></label>';
   foreach(['date_from'=>'From Date','date_to'=>'To Date'] as $key=>$label)echo '<label>'.esc_html($label).'<input type="date" name="'.esc_attr($key).'" value="'.esc_attr(sanitize_text_field(wp_unslash($_GET[$key]??''))).'"></label>';
   $options=['type'=>['Type',['Complaint'=>'Complaint','Repairing'=>'Repairing']],'priority'=>['Priority',array_combine(['Low','Medium','High','Urgent'],['Low','Medium','High','Urgent'])]];
   if($view==='complaints-update-log')unset($options['priority']);

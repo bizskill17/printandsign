@@ -92,3 +92,17 @@
  .bsoerp-app .cr-panel .cr-form .cr-upload-text{flex:1;min-width:130px}
  .bsoerp-app .cr-panel .cr-form .cr-upload-button{margin-left:0!important}
 }
+
+/* Register controls and the requested fourteen-column layout. */
+.bsoerp-app .cr-panel .cr-list-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.bsoerp-app .cr-panel .cr-filter-toggle{display:inline-flex;align-items:center;gap:7px;min-height:36px}
+.bsoerp-app .cr-panel #cr-filter-panel[hidden]{display:none!important}
+.bsoerp-app .cr-register-table{min-width:1870px;table-layout:fixed}
+.bsoerp-app .cr-register-table th{white-space:normal;overflow-wrap:anywhere}
+.bsoerp-app .cr-register-table th:nth-child(3),.bsoerp-app .cr-register-table th:nth-child(7){width:145px}
+.bsoerp-app .cr-register-table th:nth-child(4){width:110px}
+.bsoerp-app .cr-register-table th:nth-child(6),.bsoerp-app .cr-register-table th:nth-child(11){width:210px}
+.bsoerp-app .cr-register-table th:nth-child(10){width:155px}
+.bsoerp-app .cr-register-table th:nth-child(8),.bsoerp-app .cr-register-table th:nth-child(13){width:140px}
+.bsoerp-app .cr-register-table td{vertical-align:top}
+.bsoerp-app .cr-register-table .cr-document{display:block;margin:0 0 5px;font-size:11px}
