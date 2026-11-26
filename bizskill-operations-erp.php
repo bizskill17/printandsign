@@ -2,7 +2,7 @@
 /**
  * Plugin Name: BizSkill Operations ERP
  * Description: Complete operations ERP for masters, tasks, enquiries, recce, designs, quotations, orders, production, deliveries, purchase orders and GRN.
- * Version: 2.10.122
+ * Version: 2.10.123
  * Update URI: https://github.com/bizskill17/printandsign
  * Author: BizSkill
  * Text Domain: bizskill-operations-erp
@@ -28,7 +28,7 @@ if (is_file(__DIR__.'/lib/plugin-update-checker/plugin-update-checker.php')) {
 require_once __DIR__.'/includes/complaints.php';
 final class BSOERP_Complete {
  use BSOERP_Complaints;
- const VERSION='2.10.122'; const PAGES='bsoerp_pages_v2'; const NONCE='bsoerp_v2_nonce';
+ const VERSION='2.10.123'; const PAGES='bsoerp_pages_v2'; const NONCE='bsoerp_v2_nonce';
  private static $i; private $current_type=''; private $current_record_id=0;
  static function instance(){ return self::$i ?: (self::$i=new self()); }
  function __construct(){
@@ -255,6 +255,7 @@ final class BSOERP_Complete {
   if(!$this->is_page())return;
   wp_enqueue_style('bsoerp-font','https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap',[],null);
   wp_enqueue_style('bsoerp',plugins_url('assets/style.css',__FILE__),[],self::VERSION);
+  wp_enqueue_style('bsoerp-complaints',plugins_url('assets/complaints.css',__FILE__),['bsoerp'],self::VERSION);
   $s=$this->theme_settings();
   $soft=(($s['theme_style']??'theme_color')==='black_white')?'#f2f2f2':'color-mix(in srgb,var(--bsoerp-theme) 10%,white)';$css=':root{--bsoerp-theme:'.esc_attr($s['theme_color']).';--bsoerp-theme-soft:'.$soft.';--bsoerp-font-color:'.esc_attr($s['font_color']).';--bsoerp-secondary-color:'.esc_attr($s['secondary_font_color']).';--bsoerp-font-weight:'.absint($s['font_weight']).';--bsoerp-font-size:'.absint($s['font_size']).'px;--bsoerp-border-color:'.esc_attr($s['border_color']).';--bsoerp-table-head-bg:'.esc_attr($s['table_header_bg']).';--bsoerp-card-bg:'.esc_attr($s['card_bg']).';--bsoerp-button-text:'.esc_attr($s['button_text_color']).';}.dashboard-queue-panel+.dashboard-queue-panel{margin-top:20px!important}@media(max-width:800px){.dashboard-queue-panel+.dashboard-queue-panel{margin-top:14px!important}}';
   wp_add_inline_style('bsoerp',$css);

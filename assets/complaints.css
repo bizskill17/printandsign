@@ -1,0 +1,94 @@
+/* Complaints & Repairs views */
+.cr-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.cr-wide{grid-column:1/-1}.cr-choice{border:0;padding:0;margin:0;min-width:0}.cr-choice legend{font-weight:600;font-size:13px;margin-bottom:8px}.cr-buttons{display:flex;flex-wrap:wrap;gap:6px}.cr-option{position:relative;cursor:pointer}.cr-option input{position:absolute;opacity:0;width:1px;height:1px}.cr-option span{display:block;padding:9px 13px;border:1px solid #1666de;color:#1457b3;background:#fff}.cr-option input:checked+span{background:#1666de;color:white}.cr-option input:focus-visible+span{outline:3px solid #84b7ff;outline-offset:2px}.cr-option.cr-low span{border-color:#23864a;color:#23864a}.cr-option.cr-high span,.cr-option.cr-urgent span{border-color:#c33030;color:#c33030}.cr-option.cr-low input:checked+span{background:#23864a;color:#fff}.cr-option.cr-high input:checked+span,.cr-option.cr-urgent input:checked+span{background:#c33030;color:#fff}.cr-summary{padding:16px;background:#eff5ff;margin:14px 0 20px;overflow-wrap:anywhere}.cr-document{display:inline-block;margin:4px;overflow-wrap:anywhere}.cr-text{white-space:normal!important;overflow-wrap:anywhere;max-width:300px}.cr-table th{white-space:nowrap}.cr-badge{display:inline-block;padding:4px 8px;background:#eaf2ff;color:#1457b3;border-radius:4px;white-space:nowrap}.cr-completed,.cr-low{background:#eaf8ee;color:#21763b}.cr-high,.cr-urgent{background:#fff0f0;color:#b92323}.cr-filters{display:flex;gap:10px;align-items:end;flex-wrap:wrap;margin:16px 0}.cr-filters label{display:grid;gap:5px;font-size:12px}.cr-filters input,.cr-filters select{max-width:210px;padding:8px;border:1px solid #8daee1}.cr-form textarea{min-height:110px}.cr-panel h2{font-size:20px}@media(max-width:1100px){.cr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.cr-grid{grid-template-columns:1fr}.cr-filters label{flex:1 1 135px}.cr-filters input,.cr-filters select{width:100%;max-width:100%}}
+
+/* Keep the approved form layout independent of global theme overrides. */
+.bsoerp-app .cr-panel.form-panel{
+ padding:26px!important;border:1px solid #d1dbea!important;border-radius:10px!important;
+ box-shadow:0 3px 12px #14213d08;background:#fff!important;
+}
+.bsoerp-app .cr-panel .cr-form{max-width:none;width:100%}
+.bsoerp-app .cr-panel .cr-form .cr-grid{
+ grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:24px 22px!important;align-items:start;
+}
+.bsoerp-app .cr-panel .cr-form .cr-grid>label{margin:0!important;min-width:0}
+.bsoerp-app .cr-panel .cr-form .cr-wide{grid-column:1/-1!important}
+.bsoerp-app .cr-panel .cr-form .cr-grid>label>span,
+.bsoerp-app .cr-panel .cr-form .cr-field-label,
+.bsoerp-app .cr-panel .cr-form .cr-choice legend{
+ display:block;color:#14213d!important;font-size:13px!important;font-weight:600!important;
+ line-height:1.4;margin:0 0 9px!important;padding:0;
+}
+.bsoerp-app .cr-panel .cr-form input:not([type="radio"]):not([type="file"]),
+.bsoerp-app .cr-panel .cr-form select,
+.bsoerp-app .cr-panel .cr-form textarea,
+.bsoerp-app .cr-panel .cr-form .erp-search-select-input{
+ border:1px solid #1767ed!important;border-radius:4px!important;background:#fff!important;
+ padding:10px 12px!important;min-height:42px;color:#172b46!important;font-size:13px!important;
+ box-shadow:none;line-height:1.5;
+}
+.bsoerp-app .cr-panel .cr-form .has-field-error input,
+.bsoerp-app .cr-panel .cr-form .has-field-error textarea,
+.bsoerp-app .cr-panel .cr-form .has-field-error .erp-search-select-input{border-color:#c33030!important}
+.bsoerp-app .cr-panel .cr-form input:focus-visible,
+.bsoerp-app .cr-panel .cr-form textarea:focus-visible{outline:2px solid #abcaff;outline-offset:2px}
+.bsoerp-app .cr-panel .cr-form textarea{min-height:115px!important;resize:vertical}
+.bsoerp-app .cr-panel .cr-form .cr-choice{margin:0!important;border:0!important;padding:0!important;min-width:0}
+.bsoerp-app .cr-panel .cr-form .cr-buttons{display:flex!important;flex-wrap:nowrap;gap:7px}
+.bsoerp-app .cr-panel .cr-form .cr-option{flex:1;display:block!important;min-width:0;margin:0!important}
+.bsoerp-app .cr-panel .cr-form .cr-option input[type="radio"]{
+ position:absolute!important;opacity:0!important;width:1px!important;height:1px!important;
+ min-height:0!important;padding:0!important;margin:0!important;
+}
+.bsoerp-app .cr-panel .cr-form .cr-option span{
+ display:flex!important;align-items:center;justify-content:center;min-height:42px;
+ margin:0!important;padding:9px 7px!important;font-size:12px!important;font-weight:600!important;
+ border:1px solid #1767ed!important;border-radius:4px!important;color:#1559c6!important;
+ background:#fff!important;white-space:nowrap;line-height:1.4;
+}
+.bsoerp-app .cr-panel .cr-form .cr-option.cr-low span{border-color:#27813d!important;color:#27813d!important}
+.bsoerp-app .cr-panel .cr-form .cr-option.cr-high span{border-color:#bc7307!important;color:#a25f00!important}
+.bsoerp-app .cr-panel .cr-form .cr-option.cr-urgent span{border-color:#c82b2b!important;color:#bc2525!important}
+.bsoerp-app .cr-panel .cr-form .cr-option input:checked+span{background:#0961ed!important;color:#fff!important;border-color:#0961ed!important}
+.bsoerp-app .cr-panel .cr-form .cr-option.cr-low input:checked+span{background:#27813d!important;border-color:#27813d!important}
+.bsoerp-app .cr-panel .cr-form .cr-option.cr-high input:checked+span{background:#a25f00!important;border-color:#a25f00!important}
+.bsoerp-app .cr-panel .cr-form .cr-option.cr-urgent input:checked+span{background:#bc2525!important;border-color:#bc2525!important}
+.bsoerp-app .cr-panel .cr-form .cr-upload-field{min-width:0}
+.bsoerp-app .cr-panel .cr-form .cr-upload{
+ position:relative;display:flex!important;align-items:center;justify-content:center;gap:14px;
+ border:1px dashed #779bce!important;border-radius:6px;background:#f7faff;
+ padding:16px 20px;min-height:78px;cursor:pointer;
+}
+.bsoerp-app .cr-panel .cr-form .cr-upload:hover{background:#eef5ff}
+.bsoerp-app .cr-panel .cr-form .cr-upload:focus-within{outline:2px solid #1767ed;outline-offset:2px}
+.bsoerp-app .cr-panel .cr-form .cr-upload input[type="file"]{
+ position:absolute!important;inset:0;width:100%!important;height:100%!important;
+ opacity:0!important;padding:0!important;margin:0!important;cursor:pointer;z-index:1;
+}
+.bsoerp-app .cr-panel .cr-form .cr-upload span{margin:0!important;font-size:13px!important;line-height:1.5}
+.bsoerp-app .cr-panel .cr-form .cr-upload-icon{display:flex!important;flex:0 0 auto;color:#1767ed!important}
+.bsoerp-app .cr-panel .cr-form .cr-upload-text{color:#243752!important;font-weight:500!important}
+.bsoerp-app .cr-panel .cr-form .cr-upload-button{
+ flex:0 0 auto;margin-left:auto!important;padding:7px 14px;border:1px solid #1767ed;
+ border-radius:4px;color:#1459c4!important;background:#fff;
+}
+.bsoerp-app .cr-panel .cr-form .cr-upload-files{display:block;font-size:12px;color:#344054;overflow-wrap:anywhere;margin-top:6px}
+.bsoerp-app .cr-panel .cr-form .cr-upload-files:empty{display:none}
+.bsoerp-app .cr-panel .cr-form .form-actions{
+ justify-content:flex-end!important;border-top:1px solid #d9e2ef;padding-top:18px;margin-top:24px;gap:10px;
+}
+.bsoerp-app .cr-panel .cr-form .form-actions .btn{
+ min-width:92px;min-height:40px;border:1px solid #98a2b3!important;background:#fff!important;
+ color:#344054!important;border-radius:5px!important;font-size:13px!important;gap:7px;
+}
+.bsoerp-app .cr-panel .cr-form .form-actions .btn.primary{
+ background:#0961ed!important;border-color:#0961ed!important;color:#fff!important;
+}
+.bsoerp-app .cr-panel .cr-form .form-actions .btn.primary span{color:#fff!important;margin:0!important}
+@media(max-width:1100px){.bsoerp-app .cr-panel .cr-form .cr-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:600px){
+ .bsoerp-app .cr-panel.form-panel{padding:18px!important}
+ .bsoerp-app .cr-panel .cr-form .cr-grid{grid-template-columns:1fr!important;gap:18px!important}
+ .bsoerp-app .cr-panel .cr-form .cr-upload{flex-wrap:wrap;padding:14px;gap:10px}
+ .bsoerp-app .cr-panel .cr-form .cr-upload-text{flex:1;min-width:130px}
+ .bsoerp-app .cr-panel .cr-form .cr-upload-button{margin-left:0!important}
+}

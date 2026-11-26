@@ -1,3 +1,4 @@
+* v2.10.123: Refine Complaints & Repairs forms with aligned three-column layout, readable selection buttons, improved document uploads and right-aligned actions.
 * v2.10.122: Add Complaints & Repairs with registration, Pending, Master, immutable Update Log, document uploads, assigned-user updates and filters. No notifications.
 * v2.10.121: Add/Edit Work Order has a Work Assigned To field (ERP user). It shows in Pending Work Orders / Work Orders Master and on the Work Order PDF.
 * v2.10.120: Speed: customer/vendor/item names, user names and dropdown lists are looked up once per page load instead of once per row/field (far fewer database queries on lists and forms).

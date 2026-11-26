@@ -23,27 +23,31 @@ trait BSOERP_Complaints {
  function complaint_documents($ids){foreach((array)$ids as $id){$url=wp_get_attachment_url(absint($id));if($url)echo '<a class="cr-document" href="'.esc_url($url).'" target="_blank" rel="noopener">📎 '.esc_html(get_the_title($id)?:'Document').'</a> ';}}
  function complaint_summary($r){$m=$this->complaint_meta($r);echo '<div class="cr-summary"><strong>'.esc_html($r->reference_no.' | '.$this->master_name_by_id($r->customer_id).' | '.($m['type']??'')).'</strong><p>'.nl2br(esc_html($r->notes)).'</p><div>'.esc_html($this->complaint_time($r->record_date,true).' | '.($m['mobile']??'').' | '.($m['priority']??'').' | Assigned To: '.$this->task_user_display_name($r->assigned_to).' | '.$r->status).'</div>'; $this->complaint_documents($m['documents']??[]);echo '</div>';}
  function complaint_view($view){
-  $this->complaint_styles();
   if($view==='add-complaint')return $this->complaint_add_form();
   if(!empty($_GET['update_complaint'])){$r=$this->complaint_record(absint($_GET['update_complaint']));if(!$this->complaint_can_update($r)) {echo '<div class="notice">You cannot update this record.</div>';return;}return $this->complaint_update_form($r);}
   if(!empty($_GET['complaint'])){$r=$this->complaint_record(absint($_GET['complaint']));if(!$r){echo '<div class="notice">Record not found.</div>';return;}echo '<div class="panel"><h2>Complaint / Repairing Details</h2>';$this->complaint_summary($r);$this->complaint_history($r->id);echo '<a class="btn" href="'.esc_url($this->url($view)).'">Back</a></div>';return;}
   return $this->complaint_listing($view);
  }
+ function complaint_upload_field($label,$wide=false){
+  echo '<div class="cr-upload-field'.($wide?' cr-wide':'').'"><span class="cr-field-label">'.esc_html($label).'</span><label class="cr-upload"><input type="file" name="documents[]" multiple aria-label="'.esc_attr($label).'"><span class="cr-upload-icon" aria-hidden="true">';
+  echo '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17H6a4 4 0 0 1-.5-7.97A6.5 6.5 0 0 1 18 8a4.5 4.5 0 0 1 .5 9H17M12 20V10m-4 4 4-4 4 4"/></svg></span><span class="cr-upload-text">Click to upload photos or documents</span><span class="cr-upload-button">Choose Files</span></label><small class="cr-upload-files" aria-live="polite"></small></div>';
+ }
  function complaint_add_form(){
-  echo '<div class="panel form-panel cr-panel"><h2>Add Complaint / Repairing</h2>';$this->complaint_form_start('bsoerp_save_complaint');echo '<div class="form-grid cr-grid">';
+  echo '<div class="panel form-panel cr-panel cr-add-panel">';$this->complaint_form_start('bsoerp_save_complaint');echo '<div class="form-grid cr-grid">';
   echo '<label><span>Complaint Date *</span><input type="date" name="complaint_date" value="'.esc_attr(substr($this->complaint_now(),0,10)).'" required></label>';
   $this->complaint_choice('complaint_type','Type',['Complaint','Repairing'],'Complaint');
+  $this->complaint_select('assigned_to','Assigned To','user');
   $this->complaint_select('customer_id','Customer','customer');
   echo '<label><span>Mobile *</span><input type="tel" name="mobile" inputmode="numeric" pattern="[0-9]{10}" minlength="10" maxlength="10" title="Enter a 10-digit mobile number" required></label>';
   $this->complaint_choice('priority','Priority',['Low','Medium','High','Urgent'],'Medium');
-  echo '<label class="cr-wide"><span>Complaint Description *</span><textarea name="description" rows="4" required></textarea></label><label><span>Document</span><input type="file" name="documents[]" multiple></label>';
-  $this->complaint_select('assigned_to','Assigned To','user');
-  echo '</div><div class="form-actions"><a class="btn" href="'.esc_url($this->url('complaints-pending')).'">Cancel</a><button class="btn primary" type="submit">Save</button></div></form></div>';
+  echo '<label class="cr-wide"><span>Complaint Description *</span><textarea name="description" rows="4" placeholder="Enter complaint / repairing details" required></textarea></label>';
+  $this->complaint_upload_field('Document',true);
+  echo '</div><div class="form-actions"><a class="btn" href="'.esc_url($this->url('complaints-pending')).'">Cancel</a><button class="btn primary" type="submit"><span aria-hidden="true">✓</span> Save</button></div></form></div>';
  }
  function complaint_update_form($r){
   echo '<div class="panel form-panel cr-panel"><h2>Update Complaint / Repairing</h2>';$this->complaint_summary($r);$this->complaint_form_start('bsoerp_update_complaint');echo '<input type="hidden" name="complaint_id" value="'.(int)$r->id.'"><input type="hidden" name="expected_updated_at" value="'.esc_attr($r->updated_at).'"><div class="form-grid cr-grid">';
   $this->complaint_choice('complaint_status','Status',['Inprogress','Completed'],$r->status);
-  echo '<label class="cr-wide"><span>Update Remarks *</span><textarea name="remarks" rows="4" required></textarea></label><label><span>Update By</span><input type="text" value="'.esc_attr(wp_get_current_user()->display_name).'" readonly></label><label><span>Update Document</span><input type="file" name="documents[]" multiple></label></div><div class="form-actions"><a class="btn" href="'.esc_url($this->url('complaints-pending')).'">Cancel</a><button class="btn primary" type="submit">Save Update</button></div></form>';
+  echo '<label class="cr-wide"><span>Update Remarks *</span><textarea name="remarks" rows="4" required></textarea></label><label><span>Update By</span><input type="text" value="'.esc_attr(wp_get_current_user()->display_name).'" readonly></label>';$this->complaint_upload_field('Update Document');echo '</div><div class="form-actions"><a class="btn" href="'.esc_url($this->url('complaints-pending')).'">Cancel</a><button class="btn primary" type="submit">Save Update</button></div></form>';
   $this->complaint_history($r->id);echo '</div>';
  }
  function complaint_history($id){
@@ -122,5 +126,5 @@ trait BSOERP_Complaints {
   foreach($options as $key=>[$label,$values]){echo '<label>'.esc_html($label).'<select name="'.esc_attr($key).'"><option value="">All</option>';foreach($values as $value=>$text)echo '<option value="'.esc_attr($value).'" '.selected((string)($_GET[$key]??''),(string)$value,false).'>'.esc_html($text).'</option>';echo '</select></label>';}
   echo '<a class="btn" href="'.esc_url($this->url($view)).'">Clear</a></form>';
  }
- function complaint_styles(){echo '<style>.cr-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.cr-wide{grid-column:1/-1}.cr-choice{border:0;padding:0;margin:0;min-width:0}.cr-choice legend{font-weight:600;font-size:13px;margin-bottom:8px}.cr-buttons{display:flex;flex-wrap:wrap;gap:6px}.cr-option{position:relative;cursor:pointer}.cr-option input{position:absolute;opacity:0;width:1px;height:1px}.cr-option span{display:block;padding:9px 13px;border:1px solid #1666de;color:#1457b3;background:#fff}.cr-option input:checked+span{background:#1666de;color:white}.cr-option input:focus-visible+span{outline:3px solid #84b7ff;outline-offset:2px}.cr-option.cr-low span{border-color:#23864a;color:#23864a}.cr-option.cr-high span,.cr-option.cr-urgent span{border-color:#c33030;color:#c33030}.cr-option.cr-low input:checked+span{background:#23864a;color:#fff}.cr-option.cr-high input:checked+span,.cr-option.cr-urgent input:checked+span{background:#c33030;color:#fff}.cr-summary{padding:16px;background:#eff5ff;margin:14px 0 20px;overflow-wrap:anywhere}.cr-document{display:inline-block;margin:4px;overflow-wrap:anywhere}.cr-text{white-space:normal!important;overflow-wrap:anywhere;max-width:300px}.cr-table th{white-space:nowrap}.cr-badge{display:inline-block;padding:4px 8px;background:#eaf2ff;color:#1457b3;border-radius:4px;white-space:nowrap}.cr-completed,.cr-low{background:#eaf8ee;color:#21763b}.cr-high,.cr-urgent{background:#fff0f0;color:#b92323}.cr-filters{display:flex;gap:10px;align-items:end;flex-wrap:wrap;margin:16px 0}.cr-filters label{display:grid;gap:5px;font-size:12px}.cr-filters input,.cr-filters select{max-width:210px;padding:8px;border:1px solid #8daee1}.cr-form textarea{min-height:110px}.cr-panel h2{font-size:20px}@media(max-width:1100px){.cr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.cr-grid{grid-template-columns:1fr}.cr-filters label{flex:1 1 135px}.cr-filters input,.cr-filters select{width:100%;max-width:100%}}</style>';}
+
 }

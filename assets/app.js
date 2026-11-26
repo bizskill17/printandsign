@@ -2134,3 +2134,10 @@ jQuery(function($){
     $(form).on('input','input[name="erp_search"]',function(){clearTimeout(timer);timer=setTimeout(function(){form.submit();},600);});
   });
 });
+
+jQuery(function($){
+  $('.cr-form input[type="file"]').on('change',function(){
+    var names=Array.from(this.files||[]).map(function(file){return file.name;});
+    $(this).closest('.cr-upload-field').find('.cr-upload-files').text(names.join(', '));
+  });
+});
