@@ -46,7 +46,7 @@ trait BSOERP_Complaints {
  }
  function complaint_update_form($r){
   $m=$this->complaint_meta($r);
-  echo '<div class="panel form-panel cr-panel cr-update-panel"><div class="cr-update-summary"><div class="cr-update-summary-main"><strong>'.esc_html($r->reference_no).'</strong><span class="cr-summary-type">'.esc_html($m['type']??'').'</span><span>'.esc_html($this->master_name_by_id($r->customer_id)).'</span><span>'.esc_html($m['mobile']??'').'</span></div><div class="cr-update-summary-details"><div><strong>Description:</strong> '.nl2br(esc_html($r->notes)).'</div><div><strong>Assigned To:</strong> '.esc_html($this->task_user_display_name($r->assigned_to)).'</div></div></div>';
+  echo '<div class="panel form-panel cr-panel cr-update-panel"><div class="cr-update-summary"><div class="cr-update-summary-main"><span class="cr-summary-type">'.esc_html($m['type']??'').'</span><span>'.esc_html($this->master_name_by_id($r->customer_id)).'</span><span>'.esc_html($m['mobile']??'').'</span></div><div class="cr-update-summary-details"><div><strong>Description:</strong> '.nl2br(esc_html($r->notes)).'</div><div><strong>Assigned To:</strong> '.esc_html($this->task_user_display_name($r->assigned_to)).'</div></div></div>';
   $this->complaint_form_start('bsoerp_update_complaint');
   echo '<input type="hidden" name="complaint_id" value="'.(int)$r->id.'"><input type="hidden" name="expected_updated_at" value="'.esc_attr($r->updated_at).'"><div class="form-grid cr-grid">';
   $this->complaint_choice('complaint_status','Status',['Inprogress','Completed'],$r->status);

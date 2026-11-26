@@ -1,3 +1,4 @@
+* v2.10.127: Hide the complaint reference ID from the Update form summary.
 * v2.10.126: Apply approved Complaint / Repairing Update form with compact summary, two-column status/user row and full-width document upload; remove history from the form while retaining Update Log and details history.
 * v2.10.125: Complaints Pending/Master actions include administrator Delete with confirmation; Update uses a tick icon.
 * v2.10.124: Hide complaint filters behind a Filter button; Pending and Master show the requested columns with original documents and latest update details/documents.
