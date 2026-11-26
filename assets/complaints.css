@@ -3,12 +3,12 @@
 
 /* Keep the approved form layout independent of global theme overrides. */
 .bsoerp-app .cr-panel.form-panel{
- padding:26px!important;border:1px solid #d1dbea!important;border-radius:10px!important;
+ padding:18px!important;border:1px solid #d1dbea!important;border-radius:10px!important;
  box-shadow:0 3px 12px #14213d08;background:#fff!important;
 }
 .bsoerp-app .cr-panel .cr-form{max-width:none;width:100%}
 .bsoerp-app .cr-panel .cr-form .cr-grid{
- grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:24px 22px!important;align-items:start;
+ grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px 16px!important;align-items:start;
 }
 .bsoerp-app .cr-panel .cr-form .cr-grid>label{margin:0!important;min-width:0}
 .bsoerp-app .cr-panel .cr-form .cr-wide{grid-column:1/-1!important}
@@ -16,14 +16,14 @@
 .bsoerp-app .cr-panel .cr-form .cr-field-label,
 .bsoerp-app .cr-panel .cr-form .cr-choice legend{
  display:block;color:#14213d!important;font-size:13px!important;font-weight:600!important;
- line-height:1.4;margin:0 0 9px!important;padding:0;
+ line-height:1.4;margin:0 0 6px!important;padding:0;
 }
 .bsoerp-app .cr-panel .cr-form input:not([type="radio"]):not([type="file"]),
 .bsoerp-app .cr-panel .cr-form select,
 .bsoerp-app .cr-panel .cr-form textarea,
 .bsoerp-app .cr-panel .cr-form .erp-search-select-input{
  border:1px solid #1767ed!important;border-radius:4px!important;background:#fff!important;
- padding:10px 12px!important;min-height:42px;color:#172b46!important;font-size:13px!important;
+ padding:8px 10px!important;min-height:36px;color:#172b46!important;font-size:13px!important;
  box-shadow:none;line-height:1.5;
 }
 .bsoerp-app .cr-panel .cr-form .has-field-error input,
@@ -31,7 +31,7 @@
 .bsoerp-app .cr-panel .cr-form .has-field-error .erp-search-select-input{border-color:#c33030!important}
 .bsoerp-app .cr-panel .cr-form input:focus-visible,
 .bsoerp-app .cr-panel .cr-form textarea:focus-visible{outline:2px solid #abcaff;outline-offset:2px}
-.bsoerp-app .cr-panel .cr-form textarea{min-height:115px!important;resize:vertical}
+.bsoerp-app .cr-panel .cr-form textarea{min-height:76px!important;height:76px!important;resize:vertical}
 .bsoerp-app .cr-panel .cr-form .cr-choice{margin:0!important;border:0!important;padding:0!important;min-width:0}
 .bsoerp-app .cr-panel .cr-form .cr-buttons{display:flex!important;flex-wrap:nowrap;gap:7px}
 .bsoerp-app .cr-panel .cr-form .cr-option{flex:1;display:block!important;min-width:0;margin:0!important}
@@ -40,8 +40,8 @@
  min-height:0!important;padding:0!important;margin:0!important;
 }
 .bsoerp-app .cr-panel .cr-form .cr-option span{
- display:flex!important;align-items:center;justify-content:center;min-height:42px;
- margin:0!important;padding:9px 7px!important;font-size:12px!important;font-weight:600!important;
+ display:flex!important;align-items:center;justify-content:center;min-height:36px;
+ margin:0!important;padding:7px!important;font-size:12px!important;font-weight:600!important;
  border:1px solid #1767ed!important;border-radius:4px!important;color:#1559c6!important;
  background:#fff!important;white-space:nowrap;line-height:1.4;
 }
@@ -54,9 +54,9 @@
 .bsoerp-app .cr-panel .cr-form .cr-option.cr-urgent input:checked+span{background:#bc2525!important;border-color:#bc2525!important}
 .bsoerp-app .cr-panel .cr-form .cr-upload-field{min-width:0}
 .bsoerp-app .cr-panel .cr-form .cr-upload{
- position:relative;display:flex!important;align-items:center;justify-content:center;gap:14px;
+ position:relative;display:flex!important;align-items:center;justify-content:center;gap:10px;
  border:1px dashed #779bce!important;border-radius:6px;background:#f7faff;
- padding:16px 20px;min-height:78px;cursor:pointer;
+ padding:10px 14px;min-height:52px;cursor:pointer;
 }
 .bsoerp-app .cr-panel .cr-form .cr-upload:hover{background:#eef5ff}
 .bsoerp-app .cr-panel .cr-form .cr-upload:focus-within{outline:2px solid #1767ed;outline-offset:2px}
@@ -68,16 +68,16 @@
 .bsoerp-app .cr-panel .cr-form .cr-upload-icon{display:flex!important;flex:0 0 auto;color:#1767ed!important}
 .bsoerp-app .cr-panel .cr-form .cr-upload-text{color:#243752!important;font-weight:500!important}
 .bsoerp-app .cr-panel .cr-form .cr-upload-button{
- flex:0 0 auto;margin-left:auto!important;padding:7px 14px;border:1px solid #1767ed;
+ flex:0 0 auto;margin-left:auto!important;padding:5px 12px;border:1px solid #1767ed;
  border-radius:4px;color:#1459c4!important;background:#fff;
 }
 .bsoerp-app .cr-panel .cr-form .cr-upload-files{display:block;font-size:12px;color:#344054;overflow-wrap:anywhere;margin-top:6px}
 .bsoerp-app .cr-panel .cr-form .cr-upload-files:empty{display:none}
 .bsoerp-app .cr-panel .cr-form .form-actions{
- justify-content:flex-end!important;border-top:1px solid #d9e2ef;padding-top:18px;margin-top:24px;gap:10px;
+ justify-content:flex-end!important;border-top:1px solid #d9e2ef;padding-top:12px;margin-top:16px;gap:10px;
 }
 .bsoerp-app .cr-panel .cr-form .form-actions .btn{
- min-width:92px;min-height:40px;border:1px solid #98a2b3!important;background:#fff!important;
+ min-width:86px;min-height:36px;border:1px solid #98a2b3!important;background:#fff!important;
  color:#344054!important;border-radius:5px!important;font-size:13px!important;gap:7px;
 }
 .bsoerp-app .cr-panel .cr-form .form-actions .btn.primary{
@@ -86,8 +86,8 @@
 .bsoerp-app .cr-panel .cr-form .form-actions .btn.primary span{color:#fff!important;margin:0!important}
 @media(max-width:1100px){.bsoerp-app .cr-panel .cr-form .cr-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:600px){
- .bsoerp-app .cr-panel.form-panel{padding:18px!important}
- .bsoerp-app .cr-panel .cr-form .cr-grid{grid-template-columns:1fr!important;gap:18px!important}
+ .bsoerp-app .cr-panel.form-panel{padding:14px!important}
+ .bsoerp-app .cr-panel .cr-form .cr-grid{grid-template-columns:1fr!important;gap:12px!important}
  .bsoerp-app .cr-panel .cr-form .cr-upload{flex-wrap:wrap;padding:14px;gap:10px}
  .bsoerp-app .cr-panel .cr-form .cr-upload-text{flex:1;min-width:130px}
  .bsoerp-app .cr-panel .cr-form .cr-upload-button{margin-left:0!important}
@@ -119,12 +119,12 @@
 
 /* Compact update form; history is available in details and Update Log. */
 .bsoerp-app .cr-update-panel .cr-form .cr-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
-.bsoerp-app .cr-update-panel .cr-update-summary{background:#eaf3ff;border-radius:6px;padding:18px 20px;margin-bottom:24px;color:#14213d;overflow-wrap:anywhere}
+.bsoerp-app .cr-update-panel .cr-update-summary{background:#eaf3ff;border-radius:6px;padding:12px 14px;margin-bottom:16px;color:#14213d;overflow-wrap:anywhere}
 .bsoerp-app .cr-update-panel .cr-update-summary-main{display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-size:14px}
 .bsoerp-app .cr-update-panel .cr-update-summary-main>strong{font-size:18px}
 .bsoerp-app .cr-update-panel .cr-update-summary-main>span{border-left:1px solid #bfd1ea;padding-left:18px}
 .bsoerp-app .cr-update-panel .cr-update-summary-main .cr-summary-type{border:0;background:#0961ed!important;color:#fff!important;border-radius:4px;padding:5px 12px;font-size:12px;font-weight:600}
-.bsoerp-app .cr-update-panel .cr-update-summary-details{display:flex;align-items:flex-start;gap:16px 30px;flex-wrap:wrap;margin-top:12px;font-size:13px;line-height:1.6}
+.bsoerp-app .cr-update-panel .cr-update-summary-details{display:flex;align-items:flex-start;gap:8px 20px;flex-wrap:wrap;margin-top:8px;font-size:13px;line-height:1.6}
 .bsoerp-app .cr-update-panel .cr-update-summary-details>div{flex:1 1 260px;min-width:0}
 .bsoerp-app .cr-update-panel .cr-form .cr-option span{gap:8px}
 .bsoerp-app .cr-update-panel .cr-form .cr-option i{font-style:normal;color:inherit!important}
@@ -133,7 +133,7 @@
 .bsoerp-app .cr-update-panel .cr-form .cr-locked-input input[readonly]{background:#f1f4f8!important;border-color:#b8c6da!important;color:#344054!important;padding-right:40px!important;cursor:default}
 @media(max-width:600px){
  .bsoerp-app .cr-update-panel .cr-form .cr-grid{grid-template-columns:1fr!important}
- .bsoerp-app .cr-update-panel .cr-update-summary{padding:14px;margin-bottom:18px}
+ .bsoerp-app .cr-update-panel .cr-update-summary{padding:12px;margin-bottom:14px}
  .bsoerp-app .cr-update-panel .cr-update-summary-main{gap:10px;font-size:12px}
  .bsoerp-app .cr-update-panel .cr-update-summary-main>span{padding-left:10px}
  .bsoerp-app .cr-update-panel .cr-update-summary-details{gap:8px;font-size:12px}
