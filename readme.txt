@@ -1,3 +1,4 @@
+* v2.10.125: Complaints Pending/Master actions include administrator Delete with confirmation; Update uses a tick icon.
 * v2.10.124: Hide complaint filters behind a Filter button; Pending and Master show the requested columns with original documents and latest update details/documents.
 * v2.10.123: Refine Complaints & Repairs forms with aligned three-column layout, readable selection buttons, improved document uploads and right-aligned actions.
 * v2.10.122: Add Complaints & Repairs with registration, Pending, Master, immutable Update Log, document uploads, assigned-user updates and filters. No notifications.

@@ -26,10 +26,11 @@ function admin_url($path){return '/'.$path;}
 function wp_nonce_field($action,$key){echo '<input name="nonce" value="valid">';}
 function wp_get_attachment_url($id){return '';}
 class MemoryDB {
- public $rows=[],$insert_id=0,$fail_update=false,$queries=[];private $snapshot;
+ public $rows=[],$insert_id=0,$fail_update=false,$fail_delete_id=0,$queries=[];private $snapshot;
  function prepare($sql,...$args){if(count($args)===1&&is_array($args[0]))$args=$args[0];foreach($args as $arg)$sql=preg_replace('/%[ds]/',is_int($arg)?(string)$arg:"'".str_replace("'","''",$arg)."'",$sql,1);return $sql;}
  function insert($table,$data){$this->insert_id=count($this->rows)+1;$this->rows[$this->insert_id]=(object)array_merge(['id'=>$this->insert_id,'parent_id'=>0,'reference_no'=>''],$data);return 1;}
  function update($table,$data,$where){if($this->fail_update)return false;foreach($data as $k=>$v)$this->rows[$where['id']]->$k=$v;return 1;}
+ function delete($table,$where){if(isset($where['id'])&&$where['id']===$this->fail_delete_id)return false;$count=0;foreach($this->rows as $id=>$row){$matches=true;foreach($where as $key=>$value)if(($row->$key??null)!=$value)$matches=false;if($matches){unset($this->rows[$id]);$count++;}}return $count;}
  function get_row($sql){preg_match('/id=(\d+)/',$sql,$m);$r=$this->rows[(int)($m[1]??0)]??null;if(str_contains($sql,"record_type='complaint'")&&$r&&$r->record_type!=='complaint')return null;return $r?clone $r:null;}
  function query($sql){$this->queries[]=$sql;if($sql==='START TRANSACTION')$this->snapshot=unserialize(serialize($this->rows));if($sql==='ROLLBACK')$this->rows=$this->snapshot;return 1;}
  function get_results($sql){$this->queries[]=$sql;return [];}
@@ -72,4 +73,9 @@ $_POST['nonce']='bad';request(fn()=>$erp->update_complaint(),'Invalid request');
 $_GET=[];ob_start();$erp->complaint_listing('complaints-pending');ob_end_clean();assert_true((bool)array_filter($wpdb->queries,fn($q)=>str_contains($q,"r.status='Inprogress'")),'Pending excludes Completed');
 ob_start();$erp->complaint_listing('complaints-update-log');ob_end_clean();assert_true((bool)array_filter($wpdb->queries,fn($q)=>str_contains($q,"r.record_type='complaint-update'")),'Update Log uses history records');
 ob_start();$erp->complaint_add_form();$html=ob_get_clean();assert_true(str_contains($html,'value="Complaint"')&&str_contains($html,'value="Repairing"')&&!str_contains($html,'Warranty'),'Add form contains approved Type buttons without removed fields');
+$_POST=['nonce'=>'valid','complaint_id'=>1,'return_view'=>'complaints-pending'];request(fn()=>$erp->delete_complaint(),'Only administrators');assert_true(count($wpdb->rows)===3,'Assignee cannot delete');
+$GLOBALS['manager']=true;$_POST['nonce']='bad';request(fn()=>$erp->delete_complaint(),'Invalid request');$_POST['nonce']='valid';
+$_POST['complaint_id']=2;request(fn()=>$erp->delete_complaint(),'Complaint not found');assert_true(count($wpdb->rows)===3,'History cannot be deleted directly');$_POST['complaint_id']=1;
+$wpdb->fail_delete_id=1;request(fn()=>$erp->delete_complaint(),'Unable to delete complaint');assert_true(count($wpdb->rows)===3,'Failed delete restores complaint and history');$wpdb->fail_delete_id=0;
+request(fn()=>$erp->delete_complaint(),'/complaints-pending?notice=deleted');assert_true(count($wpdb->rows)===0,'Admin delete removes complaint and linked history');
 echo "All complaint checks passed.\n";

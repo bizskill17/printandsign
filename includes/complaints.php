@@ -94,6 +94,22 @@ trait BSOERP_Complaints {
   }catch(Throwable $e){$wpdb->query('ROLLBACK');foreach($documents as $doc)wp_delete_attachment($doc,true);wp_die(esc_html($e->getMessage()));}
   $destination=$status==='Completed'&&$this->can_view_slug('complaints-master')?'complaints-master':($this->can_view_slug('complaints-pending')?'complaints-pending':'complaints-master');wp_safe_redirect(add_query_arg('notice','saved',$this->url($destination)));exit;
  }
+ function complaint_delete_button($r,$view){
+  echo '<form class="cr-delete-form" method="post" action="'.esc_url(admin_url('admin-post.php')).'">';wp_nonce_field(self::NONCE,'nonce');
+  echo '<input type="hidden" name="action" value="bsoerp_delete_complaint"><input type="hidden" name="complaint_id" value="'.(int)$r->id.'"><input type="hidden" name="return_view" value="'.esc_attr($view).'"><button type="submit" class="btn cr-delete-action" title="Delete" aria-label="Delete"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/></svg></button></form>';
+ }
+ function delete_complaint(){
+  $this->complaint_request_guard();if(!$this->complaint_manager())wp_die('Only administrators can delete complaints.');
+  $view=$this->complaint_post('return_view');if(!in_array($view,['complaints-pending','complaints-master'],true)||!$this->can_view_slug($view))wp_die('Permission denied.');
+  global $wpdb;$id=absint($_POST['complaint_id']??0);$wpdb->query('START TRANSACTION');
+  try{
+   $r=$wpdb->get_row($wpdb->prepare("SELECT * FROM {$this->t('records')} WHERE id=%d AND module='complaints' AND record_type='complaint' FOR UPDATE",$id));if(!$r)throw new RuntimeException('Complaint not found.');
+   if($wpdb->delete($this->t('records'),['parent_id'=>$id,'module'=>'complaints','record_type'=>'complaint-update'])===false)throw new RuntimeException('Unable to delete complaint history.');
+   if($wpdb->delete($this->t('records'),['id'=>$id,'module'=>'complaints','record_type'=>'complaint'])!==1)throw new RuntimeException('Unable to delete complaint.');
+   $wpdb->query('COMMIT');
+  }catch(Throwable $e){$wpdb->query('ROLLBACK');wp_die(esc_html($e->getMessage()));}
+  wp_safe_redirect(add_query_arg('notice','deleted',$this->url($view)));exit;
+ }
  function complaint_listing($view){
   global $wpdb;$log=$view==='complaints-update-log';$where=["r.module='complaints'","r.record_type='".($log?'complaint-update':'complaint')."'"];$args=[];
   if($view==='complaints-pending')$where[]="r.status='Inprogress'";
@@ -126,7 +142,7 @@ trait BSOERP_Complaints {
     $update=$latest[(int)$r->id]??null;$update_meta=$update?$this->complaint_meta($update):[];
     $cells=[$this->complaint_time($r->record_date,true),$m['type']??'',$r->customer_name,$m['mobile']??'',$m['priority']??'',$r->notes,$this->task_user_display_name($r->assigned_to),$m['documents']??[],$r->status,$update?$this->complaint_time($update->created_at):'',$update?$update->notes:'',$update?$this->user_display_name($update->created_by):'',$update_meta['documents']??[]];
     foreach($cells as $i=>$cell){echo '<td class="cr-text">';if(in_array($i,[7,12],true))$this->complaint_documents($cell);else{$badge=in_array($i,[4,8],true);echo ($badge?'<span class="cr-badge cr-'.esc_attr(strtolower((string)$cell)).'">':'').nl2br(esc_html((string)$cell)).($badge?'</span>':'');}echo '</td>';}
-    echo '<td><div class="actions"><a class="btn" title="View details and history" aria-label="View details and history" href="'.esc_url(add_query_arg('complaint',(int)$r->id,$this->url($view))).'">◉</a>';if($this->complaint_can_update($r))echo '<a class="btn" title="Update" aria-label="Update" href="'.esc_url(add_query_arg('update_complaint',(int)$r->id,$this->url($view))).'">✎</a>';echo '</div></td>';
+    echo '<td><div class="actions"><a class="btn" title="View details and history" aria-label="View details and history" href="'.esc_url(add_query_arg('complaint',(int)$r->id,$this->url($view))).'">◉</a>';if($this->complaint_can_update($r))echo '<a class="btn" title="Update" aria-label="Update" href="'.esc_url(add_query_arg('update_complaint',(int)$r->id,$this->url($view))).'">✓</a>';if($this->complaint_manager())$this->complaint_delete_button($r,$view);echo '</div></td>';
    }
    echo '</tr>';
   }

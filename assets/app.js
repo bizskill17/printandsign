@@ -2152,3 +2152,12 @@ jQuery(function($){
     if(!open)document.querySelectorAll('.erp-search-select-menu').forEach(function(menu){menu.hidden=true;});
   });
 });
+
+jQuery(function($){
+  $('.cr-delete-form').on('submit',function(event){
+    if(!window.confirm('Delete this complaint / repairing record and its update history?')){
+      event.preventDefault();return;
+    }
+    $(this).find('button[type="submit"]').prop('disabled',true);
+  });
+});

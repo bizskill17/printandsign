@@ -106,3 +106,13 @@
 .bsoerp-app .cr-register-table th:nth-child(8),.bsoerp-app .cr-register-table th:nth-child(13){width:140px}
 .bsoerp-app .cr-register-table td{vertical-align:top}
 .bsoerp-app .cr-register-table .cr-document{display:block;margin:0 0 5px;font-size:11px}
+
+.bsoerp-app .cr-register-table th:last-child{width:128px}
+.bsoerp-app .cr-register-table .actions{display:flex;align-items:center;gap:5px}
+.bsoerp-app .cr-register-table .actions>a{margin:0;flex:0 0 30px}
+.bsoerp-app .cr-register-table .cr-delete-form{display:inline-flex;margin:0;padding:0}
+.bsoerp-app .cr-register-table .cr-delete-action{
+ display:inline-grid;place-items:center;width:30px;height:30px;padding:0;
+ color:#c62828!important;background:#fff0f0!important;border:1px solid #f3c6c6!important;border-radius:6px;
+}
+.bsoerp-app .cr-register-table .cr-delete-action:disabled{opacity:.5;cursor:wait}
