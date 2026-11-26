@@ -43,7 +43,7 @@ jobs:
 
       - name: PHP syntax check
         if: steps.ver.outputs.exists == 'false'
-        run: php -l bizskill-operations-erp.php && php -l blank-template.php
+        run: php -l bizskill-operations-erp.php && php -l blank-template.php && php -l includes/complaints.php && php tests/complaints-test.php
 
       - name: Build ZIP
         if: steps.ver.outputs.exists == 'false'
@@ -51,7 +51,7 @@ jobs:
           mkdir -p build/bizskill-operations-erp
           rsync -a ./ build/bizskill-operations-erp/ \
             --exclude .git --exclude .github --exclude .gitignore \
-            --exclude README.md --exclude build
+            --exclude README.md --exclude tests --exclude build
           cd build && zip -qr bizskill-operations-erp.zip bizskill-operations-erp
           unzip -l bizskill-operations-erp.zip | tail -1
 

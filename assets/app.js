@@ -2122,3 +2122,15 @@ jQuery(function($){
   $(function(){growAll(document);setTimeout(function(){growAll(document);},400);});
   $(window).on('load resize',function(){growAll(document);});
 })(window.jQuery);
+
+/* Complaints & Repairs: customer mobile and automatic filters. */
+jQuery(function($){
+  $('.cr-form select[name="customer_id"]').on('change',function(){
+    $(this).closest('form').find('[name="mobile"]').val($(this).find('option:selected').attr('data-mobile')||'');
+  });
+  $('.cr-filters').each(function(){
+    var form=this,timer;
+    $(form).on('change','select,input[type="date"]',function(){clearTimeout(timer);form.submit();});
+    $(form).on('input','input[name="erp_search"]',function(){clearTimeout(timer);timer=setTimeout(function(){form.submit();},600);});
+  });
+});
